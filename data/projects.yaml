@@ -11,12 +11,46 @@ companies:
     location: "Bengaluru, India"
     roles:
       - title: "Principal Engineer"
-        start_date: "2018-02"
+        start_date: "2021-06"
         end_date: "Present"
         projects:
+          - name: "AMD Pensando SmartNIC"
+            start_date: "2025-06"
+            end_date: "Present"
+            keywords: ["Xen", "Linux Driver", "NVMe", "Storage"]
+            technologies:
+              languages: ["C", "ASM", "P4", "C++"]
+              tools: ["Make", "Git", "P4", "Qemu", "Xen"]
+              tech: ["SmartNIC", "Storage"]
+            summary: |
+              Initiated as a proof-of-concept for an ISV experiencing performance issues with AES-CFB on 
+              AMD-Milan servers. Evolved into a comprehensive cryptographic primitives library.
+            contributions:
+              - "Designed and developed parallel AES-CFB decryption algorithm achieving 3x performance improvement"
+              - "Implemented cryptographic primitives library utilizing both AVX2 and AESNI/SHANI instruction sets"
+              - "Developed dynamic dispatcher for runtime selection of most efficient algorithm"
+              - "Created OpenSSL provider to enable seamless interoperability"
+
+          - name: "AMD Cryptography Library"
+            start_date: "2022-01"
+            end_date: "2025-06"
+            keywords: ["cryptography", "aes", "sha", "performance", "optimization"]
+            technologies:
+              languages: ["C++"]
+              tools: ["Git", "OpenSSL"]
+              tech: ["AES", "SHA2", "AVX2", "AESNI", "SHANI"]
+            summary: |
+              Initiated as a proof-of-concept for an ISV experiencing performance issues with AES-CFB on 
+              AMD-Milan servers. Evolved into a comprehensive cryptographic primitives library.
+            contributions:
+              - "Designed and developed parallel AES-CFB decryption algorithm achieving 3x performance improvement"
+              - "Implemented cryptographic primitives library utilizing both AVX2 and AESNI/SHANI instruction sets"
+              - "Developed dynamic dispatcher for runtime selection of most efficient algorithm"
+              - "Created OpenSSL provider to enable seamless interoperability"
+
           - name: "AMD Math Library"
             start_date: "2018-02"
-            end_date: "Present"
+            end_date: "2021-12"
             keywords: ["optimization", "math", "performance", "simd", "fma", "assembly"]
             technologies:
               languages: ["C", "Assembly", "Python"]
@@ -31,15 +65,19 @@ companies:
               - "Achieved 30% performance improvement for scalar operations and approximately 2x improvement for vector operations"
               - "Developed dynamic dispatcher using cpuid instruction for runtime algorithm selection"
               - "Redesigned architecture with cache-aligned and interleaved tables"
-          
-          - name: "AMD Cryptography Library"
-            start_date: "2020-01"
-            end_date: "Present"
-            keywords: ["cryptography", "aes", "sha", "performance", "optimization"]
+
+      - title: "Sr. Member of Technical Staff"
+        start_date: "2018-02"
+        end_date: "2021-05"
+        projects:
+          - name: "Model0"
+            start_date: "2018-02"
+            end_date: "2021-05"
+            keywords: ["Xen", "Linux Driver", "NVMe", "Storage"]
             technologies:
-              languages: ["C++"]
-              tools: ["Git", "OpenSSL"]
-              tech: ["AES", "SHA2", "AVX2", "AESNI", "SHANI"]
+              languages: ["C", "ASM", "P4", "C++"]
+              tools: ["Make", "Git", "P4", "Qemu", "Xen"]
+              tech: ["SmartNIC", "Storage"]
             summary: |
               Initiated as a proof-of-concept for an ISV experiencing performance issues with AES-CFB on 
               AMD-Milan servers. Evolved into a comprehensive cryptographic primitives library.
@@ -48,7 +86,7 @@ companies:
               - "Implemented cryptographic primitives library utilizing both AVX2 and AESNI/SHANI instruction sets"
               - "Developed dynamic dispatcher for runtime selection of most efficient algorithm"
               - "Created OpenSSL provider to enable seamless interoperability"
-  
+         
   - name: "Broadcom Ltd."
     start_date: "2011-05"
     end_date: "2016-10"
