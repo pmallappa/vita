@@ -110,6 +110,25 @@ class ResumeSectionBuilder:
                     latex.append(description)
                     latex.append(r'  }')
         
+        # Add short stints section
+        if 'short_stints' in experience_data and experience_data['short_stints']:
+            latex.append(r'\vspace{5mm}')
+            latex.append(r'\cvsubsection{Short Stints}')
+            
+            for company in experience_data['short_stints']:
+                positions = company.get('positions', [])
+                if positions:
+                    pos = positions[0]
+                    latex.append(r'\cventry')
+                    latex.append(r'  {%s}' % self.fmt.escape_text(company['name']))
+                    latex.append(r'  {%s}' % self.fmt.escape_text(company['location']))
+                    latex.append(r'  {%s}' % self.fmt.escape_text(pos['title']))
+                    latex.append(r'  {%s -- %s}' % (
+                        self.fmt.format_date(pos['start_date']),
+                        self.fmt.format_date(pos['end_date'])
+                    ))
+                    latex.append(r'  {}')
+        
         latex.append(r'\end{cventries}')
         latex.append('')
         return latex
@@ -217,28 +236,21 @@ class ResumeSectionBuilder:
             for company in projects_data['companies']:
                 roles = company.get('roles', [])
                 
+                # Company header - show once per company
+                latex.append(r'\projectcompany')
+                latex.append(r'  {%s}' % self.fmt.escape_text(company['name']))
+                latex.append(r'  {%s}' % self.fmt.format_date(company['start_date'], year_only=True))
+                latex.append(r'  {%s}' % self.fmt.format_date(company['end_date'], year_only=True))
+                latex.append(r'  {%s}' % self.fmt.escape_text(company['location']))
+                
                 for role in roles:
                     projects = role.get('projects', [])
                     
                     if not projects:
                         continue
                     
-                    # Company header: name on left, dates and location on right
-                    latex.append(r'\cventry')
-                    latex.append(r'  {%s}' % self.fmt.escape_text(company['name']))
-                    latex.append(r'  {%s}' % self.fmt.escape_text(company['location']))
-                    latex.append(r'  {}')
-                    latex.append(r'  {%s -- %s}' % (
-                        self.fmt.format_date(company['start_date']),
-                        self.fmt.format_date(company['end_date'])
-                    ))
-                    latex.append(r'  {}')
-                    
-                    # Role as subentry (without dates for now)
-                    latex.append(r'\cvsubentry')
-                    latex.append(r'  {%s}' % self.fmt.escape_text(role['title']))
-                    latex.append(r'  {}')
-                    latex.append(r'  {}')
+                    # Role using new projectrole command
+                    latex.append(r'\projectrole{%s}' % self.fmt.escape_text(role['title']))
                     
                     # Projects under this role
                     for proj in projects:
@@ -260,18 +272,28 @@ class ResumeSectionBuilder:
                             margin_content = r'{\scriptsize\color{graytext} ' + r' \\ '.join(tech_lines) + r'}'
                             margin_note = r'\marginnote{' + margin_content + r'}[0pt]'
                         
-                        # Build description with summary and contributions as separate items
-                        desc_items = []
+                        # Build description - plain text without itemization
+                        description_parts = []
+                        if margin_note:
+                            description_parts.append(margin_note)
+                        
+                        # Add summary as plain text
                         if 'summary' in proj and proj['summary']:
-                            desc_items.append(r'  \item ' + self.fmt.escape_text(proj['summary'].strip()))
-                        if 'contributions' in proj:
-                            desc_items.extend([
-                                r'  \item ' + self.fmt.escape_text(item)
-                                for item in proj['contributions']
-                            ])
+                            summary_text = self.fmt.escape_text(proj['summary'].strip())
+                            description_parts.append(r'\textbf{Summary:} ' + summary_text)
+                            description_parts.append(r'')  # Add blank line
                         
-                        description = r'\begin{cvitems}' + '\n' + '\n'.join(desc_items) + '\n' + r'\end{cvitems}'
+                        # Add contributions as plain text
+                        if 'contributions' in proj and proj['contributions']:
+                            description_parts.append(r'\textbf{Contributions:}')
+                            for item in proj['contributions']:
+                                description_parts.append(r'\begin{itemize}[leftmargin=2ex, nosep, noitemsep]')
+                                description_parts.append(r'  \item ' + self.fmt.escape_text(item))
+                                description_parts.append(r'\end{itemize}')
                         
+                        description = '\n'.join(description_parts)
+                        
+                        # Use cvsubentry command (3 parameters: position, date, description)
                         latex.append(r'\cvsubentry')
                         latex.append(r'  {%s}' % self.fmt.escape_text(proj['name']))
                         latex.append(r'  {%s -- %s}' % (
@@ -279,8 +301,6 @@ class ResumeSectionBuilder:
                             self.fmt.format_date(proj['end_date'])
                         ))
                         latex.append(r'  {')
-                        if margin_note:
-                            latex.append(margin_note)
                         latex.append(description)
                         latex.append(r'  }')
             

@@ -157,14 +157,18 @@ class LaTeXFormatter:
         return MarkdownToLaTeX.convert_list(items)
     
     @staticmethod
-    def format_date(date_str):
+    def format_date(date_str, year_only=False):
         """Format date string for display"""
         if not date_str or date_str.lower() == 'present':
             return 'Present'
         try:
             date = datetime.strptime(date_str, '%Y-%m')
-            return date.strftime('%b. %Y')
+            if year_only:
+                return date.strftime('%Y')
+            else:
+                return date.strftime('%b. %Y')
         except:
+            # If it's already just a year, return as-is
             return date_str
     
     @staticmethod
