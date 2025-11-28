@@ -1,0 +1,32 @@
+FROM alpine:latest
+
+# Install LaTeX and required tools
+RUN apk add --progress \
+    texlive \
+    texlive-xetex \
+    texmf-dist \
+    texmf-dist-latexextra \
+    texmf-dist-fontsextra \
+    texmf-dist-fontutils \
+    python3 \
+    py3-pip \
+    py3-yaml \
+    py3-markdown \
+    pandoc \
+    make \
+    bash \
+    git \
+    fontconfig \
+    ttf-dejavu && \
+    apk add --progress texmf-dist-fontsrecommended || true
+
+# Python packages installed via apk
+# py3-yaml - YAML parsing
+# py3-markdown - Markdown to HTML conversion
+# pandoc - Universal document converter (markdown to latex)
+
+# Set working directory
+WORKDIR /workspace
+
+# Set default shell
+CMD ["/bin/bash"]
