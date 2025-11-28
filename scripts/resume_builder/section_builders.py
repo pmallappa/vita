@@ -293,8 +293,8 @@ class ResumeSectionBuilder:
                         
                         description = '\n'.join(description_parts)
                         
-                        # Use cvsubentry command (3 parameters: position, date, description)
-                        latex.append(r'\cvsubentry')
+                        # Use projectsubentry command (3 parameters: project name, date, description)
+                        latex.append(r'\projectsubentry')
                         latex.append(r'  {%s}' % self.fmt.escape_text(proj['name']))
                         latex.append(r'  {%s -- %s}' % (
                             self.fmt.format_date(proj['start_date']),
