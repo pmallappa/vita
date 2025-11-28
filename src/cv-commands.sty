@@ -194,11 +194,29 @@
   \end{tabular*}%
 }
 
-% Sub-job entry for Experience section - assumes the organization and place are specified in a preceding cventry
-% Usage: \cvsubentry{<position>}{<date>}{<description>}
-\newcommand*{\cvsubentry}[3]{%
+% Experience section entry - for main experience entries
+% Usage: \experienceentry{<organization>}{<location>}{<position>}{<date>}{<description>}
+\long\def\experienceentry#1#2#3#4#5{%
   \vspace{0.5mm}
-  %\needspace{2\baselineskip}
+  \needspace{0.5\baselineskip}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm} R{5.5cm}}
+    \ifempty{#1#2}
+    {\entrypositionstyle{#3} & \entrydatestyle{#4} }
+    {\ifempty{#3#4}
+    {{\fontsize{10pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} }
+    {{\fontsize{10pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} \\
+      \entrypositionstyle{#3} & \entrydatestyle{#4} }}
+    \ifempty{#5}{}{ \\
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+  \end{tabular*}%
+}
+
+% Sub-job entry for Experience section - assumes the organization and place are specified in a preceding cventry
+% Usage: \experiencesubentry{<position>}{<date>}{<description>}
+\long\def\experiencesubentry#1#2#3{%
+  \vspace{0.5mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.7cm} C{5.7cm}}
@@ -208,9 +226,66 @@
   \needspace{0.5\baselineskip}
 }
 
+% Short stint entry - for short stints section
+% Usage: \shortstintentry{<organization>}{<location>}{<position>}{<date>}{<description>}
+\long\def\shortstintentry#1#2#3#4#5{%
+  \vspace{0.5mm}
+  \needspace{0.5\baselineskip}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm} R{5.5cm}}
+    \ifempty{#1#2}
+    {\entrypositionstyle{#3} & \entrydatestyle{#4} }
+    {\ifempty{#3#4}
+    {{\fontsize{10pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} }
+    {{\fontsize{10pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} \\
+      \entrypositionstyle{#3} & \entrydatestyle{#4} }}
+    \ifempty{#5}{}{ \\
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+  \end{tabular*}%
+}
+
+% Open source entry - for open source contributions section
+% Usage: \opensourceentry{<project>}{<location>}{<position>}{<date>}{<description>}
+\long\def\opensourceentry#1#2#3#4#5{%
+  \vspace{0.5mm}
+  \needspace{0.5\baselineskip}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm} R{5.5cm}}
+    \ifempty{#1#2}
+    {\entrypositionstyle{#3} & \entrydatestyle{#4} }
+    {\ifempty{#3#4}
+    {\entrytitlestyle{#1} & \entrylocationstyle{#2} }
+    {\entrytitlestyle{#1} & \entrylocationstyle{#2} \\
+      \entrypositionstyle{#3} & \entrydatestyle{#4} }}
+    \ifempty{#5}{}{ \\
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+  \end{tabular*}%
+}
+
+% Education entry - for education section
+% Usage: \educationentry{<degree>}{<institution>}{<location>}{<date>}{<description>}
+\long\def\educationentry#1#2#3#4#5{%
+  \vspace{0.5mm}
+  \needspace{0.5\baselineskip}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm} R{5.5cm}}
+    \ifempty{#1#2}
+    {\entrypositionstyle{#3} & \entrydatestyle{#4} }
+    {\ifempty{#3#4}
+    {{\fontsize{10pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} }
+    {{\fontsize{10pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} \\
+      \entrypositionstyle{#3} & \entrydatestyle{#4} }}
+    \ifempty{#5}{}{ \\
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+  \end{tabular*}%
+}
+
 % Project entry for Projects section - specifically for project names
 % Usage: \projectsubentry{<project name>}{<date>}{<description>}
-\newcommand*{\projectsubentry}[3]{%
+\long\def\projectsubentry#1#2#3{%
   \vspace{0.5mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
@@ -220,6 +295,21 @@
   \end{tabular*}%
   \needspace{0.5\baselineskip}
 }
+
+% Open source subentry - for open source contributions (title and year on same line)
+% Usage: \opensourcesubentry{<project name>}{<date>}{<description>}
+\long\def\opensourcesubentry#1#2#3{%
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.7cm} C{5.7cm}}
+    {\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \projectdatestyle{#2} \\
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#3}}
+  \end{tabular*}%
+  \needspace{0.5\baselineskip}
+}
+
+% Keep original cvsubentry for backward compatibility
+\let\cvsubentry\experiencesubentry
 
 % Define an environment for cvhonor
 \newenvironment{cvhonors}{%
