@@ -194,11 +194,24 @@
   \end{tabular*}%
 }
 
-% Sub-job entry - assumes the organization and place are specified in a preceding cventry
+% Sub-job entry for Experience section - assumes the organization and place are specified in a preceding cventry
 % Usage: \cvsubentry{<position>}{<date>}{<description>}
 \newcommand*{\cvsubentry}[3]{%
   \vspace{0.5mm}
   %\needspace{2\baselineskip}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.7cm} C{5.7cm}}
+    {\fontsize{11pt}{1em}\bodyfont\bfseries\color{awesome}#1} & \projectdatestyle{#2} \\
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#3}}
+  \end{tabular*}%
+  \needspace{0.5\baselineskip}
+}
+
+% Project entry for Projects section - specifically for project names
+% Usage: \projectsubentry{<project name>}{<date>}{<description>}
+\newcommand*{\projectsubentry}[3]{%
+  \vspace{0.5mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.7cm} C{5.7cm}}
