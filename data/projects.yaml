@@ -1,0 +1,308 @@
+# Projects organized by Company -> Role -> Projects
+# Based on Zamboni vita structure where:
+# - Company has employment dates
+# - Role has dates and location
+# - Projects have dates and location
+
+companies:
+  - name: "AMD Ltd."
+    start_date: "2018-02"
+    end_date: "Present"
+    location: "Bengaluru, India"
+    roles:
+      - title: "Principal Engineer"
+        start_date: "2018-02"
+        end_date: "Present"
+        projects:
+          - name: "AMD Math Library"
+            start_date: "2018-02"
+            end_date: "Present"
+            keywords: ["optimization", "math", "performance", "simd", "fma", "assembly"]
+            technologies:
+              languages: ["C", "Assembly", "Python"]
+              tools: ["CMake", "GCC", "AOCC"]
+              tech: ["x86_64", "SIMD", "FMA"]
+            summary: |
+              AMD Floating Point Math Library is a high-performance software library primarily written in 
+              Assembly (x86_64) to leverage SIMD and FMA instructions. Led architectural modernization and 
+              algorithmic improvements to enhance performance and maintainability.
+            contributions:
+              - "Implemented advanced optimization techniques including look-up-tables, Estrin's method polynomial for parallel-FMA, and fast integer conversion"
+              - "Achieved 30% performance improvement for scalar operations and approximately 2x improvement for vector operations"
+              - "Developed dynamic dispatcher using cpuid instruction for runtime algorithm selection"
+              - "Redesigned architecture with cache-aligned and interleaved tables"
+          
+          - name: "AMD Cryptography Library"
+            start_date: "2020-01"
+            end_date: "Present"
+            keywords: ["cryptography", "aes", "sha", "performance", "optimization"]
+            technologies:
+              languages: ["C++"]
+              tools: ["Git", "OpenSSL"]
+              tech: ["AES", "SHA2", "AVX2", "AESNI", "SHANI"]
+            summary: |
+              Initiated as a proof-of-concept for an ISV experiencing performance issues with AES-CFB on 
+              AMD-Milan servers. Evolved into a comprehensive cryptographic primitives library.
+            contributions:
+              - "Designed and developed parallel AES-CFB decryption algorithm achieving 3x performance improvement"
+              - "Implemented cryptographic primitives library utilizing both AVX2 and AESNI/SHANI instruction sets"
+              - "Developed dynamic dispatcher for runtime selection of most efficient algorithm"
+              - "Created OpenSSL provider to enable seamless interoperability"
+  
+  - name: "Broadcom Ltd."
+    start_date: "2011-05"
+    end_date: "2016-10"
+    location: "Bengaluru, India"
+    roles:
+      - title: "Principal Engineer"
+        start_date: "2014-01"
+        end_date: "2016-10"
+        projects:
+          - name: "ARM IO Virtualization with SMMUv3"
+            start_date: "2014-01"
+            end_date: "2016-10"
+            keywords: ["iommu", "virtualization", "armv8", "qemu", "driver"]
+            technologies:
+              languages: ["C"]
+              tools: ["QEMU", "Git"]
+              tech: ["ARMv8", "SMMUv3", "IOMMU"]
+            summary: |
+              SMMUv3 is ARM's IOMMU implementation for ARMv8 platforms. Developed comprehensive emulation 
+              environment and software model to facilitate driver development.
+            contributions:
+              - "Designed and developed complete SMMUv3 emulation model for QEMU (merged into QEMU mainline)"
+              - "Implemented command queue processing, STE and CD parsing mechanisms"
+              - "Developed ARMv8/LPAE pagetable walk implementation supporting Stage1, Stage2, and nested translation"
+              - "Implemented comprehensive event reporting and interrupt handling mechanisms"
+          
+          - name: "SMMUv3 Driver for Vulcan"
+            start_date: "2014-01"
+            end_date: "2016-10"
+            keywords: ["driver", "iommu", "armv8", "kernel"]
+            technologies:
+              languages: ["C"]
+              tools: ["Git", "Linux Kernel"]
+              tech: ["ARMv8", "SMMUv3", "IOMMU"]
+            summary: |
+              Vulcan is Broadcom's ground-up ARMv8 processor design featuring up to 32 cores with 4 threads 
+              each. The SoC integrates SMMUv3 requiring comprehensive software support.
+            contributions:
+              - "Designed and developed initial Linux driver for SMMUv3 with minimal feature set"
+              - "Collaborated with hardware team to identify and resolve design issues"
+              - "Contributed bug fixes and enhancements to ARM's open-source SMMUv3 driver"
+              - "Developed comprehensive test suite for validating SMMU functionality"
+      
+      - title: "Tech Lead"
+        start_date: "2011-05"
+        end_date: "2013-12"
+        projects:
+          - name: "XLP (MIPS64) SDK Development"
+            start_date: "2011-05"
+            end_date: "2013-12"
+            keywords: ["mips64", "driver", "linux", "sdk"]
+            technologies:
+              languages: ["C"]
+              tools: ["Linux Kernel", "Git"]
+              tech: ["MIPS64", "RNG", "CLK Framework"]
+            summary: |
+              XLP is Broadcom's multicore+multithreaded MIPS64 processor featuring up to 80 execution cores 
+              with integrated hardware accelerators for networking.
+            contributions:
+              - "Developed RNG (Hardware Random Number Generator) driver for cryptographic applications"
+              - "Implemented Clock Framework driver for dynamic frequency management"
+              - "Created CPU voltage and frequency scaling driver for power optimization"
+              - "Developed CDE (Compression/Decompression Engine) driver"
+  
+  - name: "Cavium Networks"
+    start_date: "2011-05"
+    end_date: "2013-12"
+    location: "Bengaluru, India"
+    roles:
+      - title: "Tech Lead"
+        start_date: "2011-05"
+        end_date: "2013-12"
+        projects:
+          - name: "OCTEON III - Kexec/Kdump"
+            start_date: "2011-05"
+            end_date: "2013-12"
+            keywords: ["kexec", "kdump", "mips64", "kernel", "debugging"]
+            technologies:
+              languages: ["C"]
+              tools: ["Linux Kernel", "GDB"]
+              tech: ["MIPS64", "Kexec", "Kdump"]
+            summary: |
+              Kexec enables booting a secondary kernel from running Linux without full system reset. 
+              Kdump builds upon Kexec to preserve crashed kernel memory for offline debugging.
+            contributions:
+              - "Developed complete MIPS architecture port of Kexec and Kdump"
+              - "Debugged and resolved critical issues preventing Kexec functionality"
+              - "Submitted two patches to upstream Linux kernel, now part of mainline codebase"
+              - "Enabled seamless kernel upgrades without disrupting Hybrid SMP configurations"
+          
+          - name: "CavHv Hypervisor"
+            start_date: "2012-01"
+            end_date: "2013-12"
+            keywords: ["hypervisor", "virtualization", "mips64"]
+            technologies:
+              languages: ["C"]
+              tools: ["Compiler Toolchain"]
+              tech: ["MIPS64", "Hypervisor", "Virtualization"]
+            summary: |
+              CavHv is an experimental hypervisor for MIPS64 with hardware virtualization support, 
+              developed for Octeon-III series chips.
+            contributions:
+              - "Designed and implemented hypervisor based on draft MIPS virtualization specification"
+              - "Collaborated with compiler and hardware teams to validate virtualization extensions"
+              - "Successfully demonstrated concurrent execution of two Linux kernel instances"
+              - "Provided critical feedback for virtualization specification refinement"
+  
+  - name: "Cisco Systems"
+    start_date: "2010-10"
+    end_date: "2011-04"
+    location: "Bengaluru, India"
+    roles:
+      - title: "Software Engineer"
+        start_date: "2010-10"
+        end_date: "2011-04"
+        projects:
+          - name: "Garbage Detector for Linux"
+            start_date: "2010-10"
+            end_date: "2011-04"
+            keywords: ["memory", "debugging", "linux", "glibc"]
+            technologies:
+              languages: ["C"]
+              tools: ["Glibc", "Clearcase"]
+              tech: ["Memory Management", "Mark-Sweep"]
+            summary: |
+              Cisco IOS runs both as bare-metal and as Linux application, often executing for months 
+              or years before memory leak failures.
+            contributions:
+              - "Designed and implemented garbage detection system using custom C runtime"
+              - "Developed separate monitoring thread to intercept malloc() and free() calls"
+              - "Implemented intrusive mark-and-sweep algorithm"
+              - "Enabled proactive memory leak identification in long-running systems"
+  
+  - name: "B-Labs"
+    start_date: "2009-11"
+    end_date: "2010-09"
+    location: "London, UK (Remote)"
+    roles:
+      - title: "Sr. Engineer - Contractor"
+        start_date: "2009-11"
+        end_date: "2010-09"
+        projects:
+          - name: "CodeZero Hypervisor"
+            start_date: "2009-11"
+            end_date: "2010-09"
+            keywords: ["hypervisor", "arm", "virtualization", "smp"]
+            technologies:
+              languages: ["C", "ARM Assembly"]
+              tools: ["Git", "QEMU"]
+              tech: ["ARMv7", "ARMv6", "SMP"]
+            summary: |
+              CodeZero is a microkernel-based hypervisor for ARM Cortex-A9 running directly on hardware.
+            contributions:
+              - "Ported CodeZero hypervisor to ARM Cortex-A9 SMP systems"
+              - "Developed optimized fast memcpy implementation for ARM"
+              - "Extended QEMU with new device and platform support"
+              - "Ported Linux kernel to run under CodeZero hypervisor"
+  
+  - name: "Harman International"
+    start_date: "2009-07"
+    end_date: "2009-11"
+    location: "Bengaluru, India"
+    roles:
+      - title: "Engineer"
+        start_date: "2009-07"
+        end_date: "2009-11"
+        projects:
+          - name: "QNX BSP for PowerPC"
+            start_date: "2009-07"
+            end_date: "2009-11"
+            keywords: ["qnx", "powerpc", "bsp", "driver"]
+            technologies:
+              languages: ["C"]
+              tools: ["Make", "QNX"]
+              tech: ["PowerPC", "P4080", "P2020", "SMP"]
+            summary: |
+              Porting QNX microkernel to Freescale QorIQ P4080 and P2020 PowerPC processors.
+            contributions:
+              - "Debugged and resolved P4080 SMP booting issue"
+              - "Ported I2C driver to new PowerPC platform"
+              - "Developed base drivers including timer and interrupt controller"
+              - "Enabled early QNX boot on P2020 and P4080 platforms"
+  
+  - name: "ARM Ltd."
+    start_date: "2005-08"
+    end_date: "2009-06"
+    location: "Bengaluru, India"
+    roles:
+      - title: "Sr. Development Engineer"
+        start_date: "2005-08"
+        end_date: "2009-06"
+        projects:
+          - name: "OS Support for ARM Cores"
+            start_date: "2005-08"
+            end_date: "2009-06"
+            keywords: ["arm", "porting", "trustzone", "linux", "symbian"]
+            technologies:
+              languages: ["C", "ARM Assembly", "Python"]
+              tools: ["FastModels", "SoCDesigner"]
+              tech: ["ARM1176", "Cortex-A8", "TrustZone"]
+            summary: |
+              Platform team responsible for supporting new ARM cores across multiple operating systems.
+            contributions:
+              - "Developed touch-screen driver for Symbian OS with full gesture support"
+              - "Created Symbian OS test automation framework using Python"
+              - "Designed interrupt latency measurement driver for TrustZone analysis"
+              - "Ported L4Ka::pistachio microkernel to ARM"
+  
+  - name: "Sasken Ltd."
+    start_date: "2004-08"
+    end_date: "2005-08"
+    location: "Bengaluru, India"
+    roles:
+      - title: "Sr. Software Engineer"
+        start_date: "2004-08"
+        end_date: "2005-08"
+        projects:
+          - name: "EFFS Filesystem"
+            start_date: "2004-08"
+            end_date: "2005-08"
+            keywords: ["filesystem", "vxworks", "embedded", "flash"]
+            technologies:
+              languages: ["C"]
+              tools: ["VxWorks"]
+              tech: ["Flash Storage", "Wear-Leveling"]
+            summary: |
+              Developed specialized filesystem for UMTS BTS on VxWorks.
+            contributions:
+              - "Designed reset-proof filesystem with flat file tree structure"
+              - "Developed wear-leveling algorithm for Flash blocks"
+              - "Implemented atomic write operations"
+              - "Integrated with VxWorks APIs"
+  
+  - name: "Global Edge Software"
+    start_date: "2003-06"
+    end_date: "2004-08"
+    location: "Bengaluru, India"
+    roles:
+      - title: "Software Engineer"
+        start_date: "2003-06"
+        end_date: "2004-08"
+        projects:
+          - name: "Linux SDIO Driver"
+            start_date: "2003-06"
+            end_date: "2004-08"
+            keywords: ["driver", "sdio", "wifi", "linux"]
+            technologies:
+              languages: ["C"]
+              tools: ["Linux Kernel", "Make"]
+              tech: ["ARM", "SDIO", "WiFi 802.11g"]
+            summary: |
+              Developed high-performance SDIO driver for Marvell 802.11g WiFi chipset.
+            contributions:
+              - "Designed fast SDIO driver supporting 4-bit mode"
+              - "Developed 1-bit SDIO driver for legacy hardware"
+              - "Optimized data transfer protocols for maximum throughput"
+              - "Implemented robust error handling mechanisms"

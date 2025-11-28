@@ -1,0 +1,29 @@
+# Awards - Based on main.tex format
+# Format: Award name, description, date
+# The cvhonor command displays: date | name, description | location
+
+awards:
+  - name: "Spotlight"
+    description: "Helping Emulation team find design bug in data fabric"
+    date: "Q3 2018"
+    location: "AMD"
+  
+  - name: "Spotlight"
+    description: "Optimization of exp() and improving performance by 30%"
+    date: "Q2 2019"
+    location: "AMD"
+  
+  - name: "Director Spotlight"
+    description: "Supporting Arden Ubuntu emulation boot, fixing initramfs delayed mount"
+    date: "Q2 2019"
+    location: "AMD"
+  
+  - name: "Spotlight"
+    description: "Providing important patches to GLIBC to fix memcpy behaviour on AMD, open sourcing AMD LibM"
+    date: "Q4 2020"
+    location: "AMD"
+  
+  - name: "Spotlight"
+    description: "Delivering Cryptography PoC (CFB based parallel decrypting), increases performance by 3x"
+    date: "Q3 2021"
+    location: "AMD"
