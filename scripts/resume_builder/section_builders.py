@@ -67,7 +67,7 @@ class ResumeSectionBuilder:
                 ]
                 description = r'\begin{cvitems}' + '\n' + '\n'.join(desc_items) + '\n' + r'\end{cvitems}'
                 
-                latex.append(r'\cventry')
+                latex.append(r'\experienceentry')
                 latex.append(r'  {%s}' % self.fmt.escape_text(company['name']))
                 latex.append(r'  {%s}' % self.fmt.escape_text(company['location']))
                 latex.append(r'  {%s}' % self.fmt.escape_text(pos['title']))
@@ -100,7 +100,7 @@ class ResumeSectionBuilder:
                     ]
                     description = r'\begin{cvitems}' + '\n' + '\n'.join(desc_items) + '\n' + r'\end{cvitems}'
                     
-                    latex.append(r'\cvsubentry')
+                    latex.append(r'\experiencesubentry')
                     latex.append(r'  {%s}' % self.fmt.escape_text(pos['title']))
                     latex.append(r'  {%s -- %s}' % (
                         self.fmt.format_date(pos['start_date']),
@@ -119,7 +119,7 @@ class ResumeSectionBuilder:
                 positions = company.get('positions', [])
                 if positions:
                     pos = positions[0]
-                    latex.append(r'\cventry')
+                    latex.append(r'\shortstintentry')
                     latex.append(r'  {%s}' % self.fmt.escape_text(company['name']))
                     latex.append(r'  {%s}' % self.fmt.escape_text(company['location']))
                     latex.append(r'  {%s}' % self.fmt.escape_text(pos['title']))
@@ -157,7 +157,7 @@ class ResumeSectionBuilder:
         latex.append(r'\begin{cventries}')
         
         for edu in education_data.get('education', []):
-            latex.append(r'\cventry')
+            latex.append(r'\educationentry')
             latex.append(r'  {%s}' % self.fmt.escape_text(edu['degree']))
             latex.append(r'  {%s}' % self.fmt.escape_text(edu['institution']))
             latex.append(r'  {%s}' % self.fmt.escape_text(edu['location']))
@@ -341,10 +341,8 @@ class ResumeSectionBuilder:
                 else:
                     project_name = self.fmt.escape_text(contrib['project'])
                 
-                latex.append(r'\cventry')
+                latex.append(r'\opensourcesubentry')
                 latex.append(r'  {%s}' % project_name)
-                latex.append(r'  {}')  # Empty company field
-                latex.append(r'  {}')  # Empty location
                 latex.append(r'  {%s}' % contrib.get('date', ''))
                 latex.append(r'  {')
                 latex.append(description)
