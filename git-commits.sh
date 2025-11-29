@@ -111,5 +111,17 @@ git commit -m "Refine project section with definition-style formatting
 - Improved visual hierarchy and readability"
 
 echo ""
+echo "=== Commit 8: Fix footer centering for margin notes layout ==="
+git add assets/style/cv-layout.sty
+git status --short
+git commit -m "Adjust footer offsets to center text properly with margin notes
+
+- Changed left footer offset from 2.0cm to 0cm
+- Changed right footer offset from 3cm to 2.6cm
+- Footer center text now properly centered in main text area
+- Date and page number positioned away from paper edges
+- Accounts for asymmetric layout with right-side margin notes"
+
+echo ""
 echo "=== All Commits Complete ==="
 
