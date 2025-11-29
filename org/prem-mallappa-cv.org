@@ -1,0 +1,31 @@
+#+TITLE: Prem Mallappa - CV (2-page)
+#+AUTHOR: Prem Mallappa
+#+EMAIL: prem.mallappa@gmail.com
+
+# Include header with personal info and LaTeX configuration
+#+INCLUDE: "sections/00-header.org"
+
+# Include selected sections for 2-page CV
+* Skills
+:PROPERTIES:
+:CV_ENV: cvskills
+:END:
+#+INCLUDE: "sections/skills.org"
+
+* Education
+:PROPERTIES:
+:CV_ENV: cventries
+:END:
+#+INCLUDE: "sections/education.org"
+
+* Open Source
+:PROPERTIES:
+:CV_ENV: cventries
+:END:
+#+INCLUDE: "sections/open-source.org"
+
+* Experience
+:PROPERTIES:
+:CV_ENV: cventries
+:END:
+#+INCLUDE: "sections/experience.org"

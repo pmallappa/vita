@@ -1,0 +1,41 @@
+#+AUTHOR: Prem Mallappa
+#+EMAIL: prem.mallappa@gmail.com
+
+# Include header with personal info and LaTeX configuration
+#+INCLUDE: "sections/00-header.org"
+
+* Skills
+:PROPERTIES:
+:CV_ENV: cvskills
+:END:
+#+INCLUDE: "sections/skills.org"
+
+* Education
+:PROPERTIES:
+:CV_ENV: cventries
+:END:
+#+INCLUDE: "sections/education.org"
+
+* Experience
+:PROPERTIES:
+:CV_ENV: cventries
+:END:
+#+INCLUDE: "sections/experience.org"
+
+* Open Source
+:PROPERTIES:
+:CV_ENV: cventries
+:END:
+#+INCLUDE: "sections/open-source.org"
+
+* Projects
+:PROPERTIES:
+:CV_ENV: cventries
+:END:
+#+INCLUDE: "sections/projects.org"
+
+* Awards
+:PROPERTIES:
+:CV_ENV: cvhonors
+:END:
+#+INCLUDE: "sections/awards.org"

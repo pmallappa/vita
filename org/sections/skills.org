@@ -1,0 +1,9 @@
+- Leadership :: Over 22 years of multidisciplinary team and project leadership experience; Software Architecture and Design.
+- Communications :: Excellent written and spoken communication skills.
+- Technology :: Broad and deep IT expertise, including cloud computing, computer security, operating systems, embedded systems, software & services development, programming languages, etc.
+- Computer Security :: Cryptography; virtualization and cloud computing security architecture and implementation; risk management and compliance; intrusion detection and prevention; software security and secure software development.
+- Programming Languages :: C, Assembly (x86, ARM, MIPS), Rust, Python, C++, Go, BASH
+- Operating Systems :: Linux, FreeBSD, QNX, VxWorks, Symbian
+- Architecture :: x86, ARM - v6,v7,v8, MIPS64, PowerPC, RISC-V
+- Development Tools :: GCC, Clang, Git, Make, CMake, ARM Development Tools, Keil, JTAG, Docker,
+- Specialized Skills :: Linux Kernel Development, Device Drivers, Embedded Systems, System Software, Performance Optimization, Cryptography, Filesystem Development

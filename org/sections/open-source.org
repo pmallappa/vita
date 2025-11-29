@@ -1,0 +1,53 @@
+* QEMU
+:PROPERTIES:
+:CV_ENV: cvopensource
+:PROJECT: QEMU
+:DATE: 2014-2016
+:URL: https://www.qemu.org/
+:END:
+
+- SMMUv3 (IOMMU) emulation support for ARMv8
+- Designed and implemented SMMUv3 model merged into mainline
+- Added support for Stage1, Stage2, and nested virtualization
+- Implemented command queue processing and page table walk
+
+* Linux Kernel
+:PROPERTIES:
+:CV_ENV: cvopensource
+:PROJECT: Linux Kernel
+:DATE: 2011-2016
+:URL: https://kernel.org/
+:END:
+
+- MIPS Kexec/Kdump port and IOMMU subsystem
+- Developed MIPS64 port of Kexec and Kdump (merged upstream)
+- Fixed critical bugs in KEXEC for Cavium Octeon platforms
+- Contributed to IOMMU/SMMUv3 driver development
+
+* GLIBC
+:PROPERTIES:
+:CV_ENV: cvopensource
+:PROJECT: GLIBC
+:DATE: 2018-2020
+:URL: https://www.gnu.org/software/libc/
+:END:
+
+- Performance optimizations for AMD processors
+- Fixed memcpy behaviour on AMD processors
+- Optimized string functions for x86_64 architecture
+- Performance improvements for memory operations
+
+* AMD LibM
+:PROPERTIES:
+:CV_ENV: cvopensource
+:PROJECT: AMD LibM
+:DATE: 2018-Present
+:URL: https://github.com/amd/aocl-libm-ose
+:END:
+
+- Open source math library for AMD processors
+- Core contributor to open sourcing AMD Math Library
+- Optimized transcendental functions (exp, log, pow, trig)
+- Implemented SIMD/FMA optimizations for vector operations
+
+

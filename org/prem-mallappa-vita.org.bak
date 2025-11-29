@@ -1,0 +1,675 @@
+:CV_CONFIG:
+# AwesomeCV configuration options
+# #+photo: ./images/foto_diego_2020-3.jpg
+# #+photostyle: right,noedge
+#+options: num:1
+#+options: toc:nil
+
+#+cvcolor: awesome-skyblue
+#+cvhighlights: true
+#+cvcolorizelinks: awesome-skyblue
+#+cvunderlinelinks: false
+#+cvfooter_left: \today\\~
+#+cvfooter_middle: %a~~~·~~~Curriculum Vitæ\\\textup{\tiny Source at \href{https://github.com/pmallappa/vita}{github}}
+#+cvfooter_right: \thepage\\~
+#+latex_class: pawesome-cv
+
+# LaTeX options
+
+#+latex_class_options: [12pt,a4paper]
+
+# Macro for bibliographical citations
+#+macro: cvcite \cite{$1}
+
+# Some font and separator redefinitions for the AwesomeCV class
+#+latex_header: \renewcommand{\acvHeaderSocialSep}{\enskip\cdotp\enskip}
+#+latex_header: \renewcommand{\acvHeaderIconSep}{~}
+#+latex_header: \renewcommand*{\bodyfontlight}{\sourcesanspro}
+#+latex_header: \providecommand*{\bibfont}{}
+#+latex_header: \renewcommand*{\bibfont}{\paragraphstyle}
+# #+latex_header: \renewcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{awesome} ##1}}
+# #+latex_header: \renewcommand*{\subsectionstyle}{\entrytitlestyle}
+# #+latex_header: \renewcommand*{\headerquotestyle}[1]{{\fontsize{8pt}{1em}\bodyfont ##1}}
+
+:END:
+
+#+title: Software Architect  •  System & Embedded Software
+#+author: Prem Mallappa
+#+address: Bengaluru, India
+#+email: prem.mallappa@gmail.com
+#+mobile: +91-9448900326
+#+github: pmallappa
+#+linkedin: pmallappa
+#+homepage: pmallappa.github.io
+
+#+latex: \begin{cvparagraph}
+
+Seasoned Software Architect with extensive expertise in designing and developing high-performance embedded systems, system software, Linux kernel drivers, and virtualization technologies. Proficient in a wide range of programming and scripting languages, with a proven track record of delivering robust, scalable solutions in complex technical environments.
+
+A highly analytical and collaborative team player, recognized for strong problem-solving abilities, logical thinking, and a passion for mastering emerging technologies. Committed to driving innovation and excellence through clean architecture, optimized code, and best-in-class engineering practices.
+#+latex: \end{cvparagraph}
+
+
+* Skills
+:PROPERTIES:
+:CV_ENV:   cvskills
+:END:
+
+- Leadership :: Over 22 years of multidisciplinary team and project leadership experience; Software Architecture and Design.
+- Communications :: Excellent written and spoken communication skills.
+- Technology :: Broad and deep IT expertise, including cloud computing, computer security, operating systems, embedded systems, software & services development, programming languages, etc.
+- Computer Security :: Cryptography; virtualization and cloud computing security architecture and implementation; risk management and compliance; intrusion detection and prevention; software security and secure software development.
+- Programming Languages :: C, Assembly (x86, ARM, MIPS), Rust, Python, C++, Go, BASH
+- Operating Systems :: Linux, FreeBSD, QNX, VxWorks, Symbian
+- Architecture :: x86, ARM - v6,v7,v8, MIPS64, PowerPC, RISC-V
+- Development Tools :: GCC, Clang, Git, Make, CMake, ARM Development Tools, Keil, JTAG, Docker,
+- Specialized Skills :: Linux Kernel Development, Device Drivers, Embedded Systems, System Software, Performance Optimization, Cryptography, Filesystem Development
+
+
+* Education
+:PROPERTIES:
+:CV_ENV: cventries
+:END:
+
+** M.Tech (Computer Science)
+:PROPERTIES:
+:CV_ENV: cvschool
+:SCHOOL: BITS Pilani
+:LOCATION: Pilani, Rajasthan, India
+:DATE: 2016
+:END:
+
+** B.E (Computer Science)
+:PROPERTIES:
+:CV_ENV: cvschool
+:SCHOOL: Visvesvaraya Technological University (VTU)
+:LOCATION: AIT, Karnataka, India
+:DATE: 2002
+:END:
+
+
+* Experience
+:PROPERTIES:
+:CV_ENV: cventries
+:END:
+
+** Principal Engineer
+:PROPERTIES:
+:CV_ENV: cventry
+:EMPLOYER: AMD Ltd.
+:LOCATION: Bengaluru, India
+:FROM: Feb. 2018
+:TO: Present
+:END:
+
+- AMD Math Library: Optimizing exponential/power/logarithmic/trigonometric functions for latest AMD processors
+- Improved performance of exp() and log() by 30% using look-up-table, Estrin's method polynomial, and fast integer conversion
+- AMD Cryptographic Primitives Library: Optimizing AES/SHA/PKCS functions with AVX2 and AESNI/SHANI instruction sets
+- Developed dynamic dispatcher using cpuid instruction for runtime algorithm selection
+- Achieved 3x performance improvement in CFB-based parallel decrypting
+
+** Principal Engineer
+:PROPERTIES:
+:CV_ENV: cventry
+:EMPLOYER: Broadcom Ltd.
+:LOCATION: Bengaluru, India
+:FROM: Jan. 2014
+:TO: Oct. 2016
+:END:
+
+- Designed and developed initial software support for Broadcom Vulcan, a multicore-multithreaded ARMv8 64-bit processor
+- Handled SMMUv3 (IOMMU) related issues and software stack implementation
+- Developed SMMUv3 emulation model for QEMU which was merged into mainline codebase
+- Implemented Command queue, STE/CD parsing, pagetable walk, and Stage1/Stage2 virtualization support
+
+** Tech Lead
+:PROPERTIES:
+:CV_ENV: cventry
+:EMPLOYER: Cavium India Pvt. Ltd.
+:LOCATION: Bengaluru, India
+:FROM: May. 2011
+:TO: Dec. 2013
+:END:
+
+- Worked on Cavium's Octeon III (MIPS64) series of processors
+- Fixed major bug in KEXEC and developed MIPS port of Kexec and Kdump (patches merged upstream)
+- Developed baremetal core-file generating software with host-based daemon for GDB debugging
+- Designed and developed CavHv hypervisor for MIPS64 with experimental hardware virtualization
+
+** Sr. Development Engineer
+:PROPERTIES:
+:CV_ENV: cventry
+:EMPLOYER: ARM Ltd.
+:LOCATION: Bengaluru, India
+:FROM: Aug. 2005
+:TO: Jun. 2009
+:END:
+
+- Responsible for OS porting to latest ARM cores including ARM1176JZFS, TrustZone and Cortex-A8
+- Developed touch-screen driver for Symbian OS and automated testing using Python scripts
+- Designed interrupt latency measurement driver for TrustZone secure world overhead analysis
+- Ported L4Ka::pistachio microkernel to ARM for virtualization experiments
+
+** Sr. Software Engineer
+:PROPERTIES:
+:CV_ENV: cventry
+:EMPLOYER: Sasken Communications Pvt Ltd.
+:LOCATION: Bengaluru, India
+:FROM: Aug. 2004
+:TO: Aug. 2005
+:END:
+
+- Module owner for EFS (Extended File System) developed for VxWorks, used in UMTS/BTS
+- Developed reset-proof filesystem with wear-leveling and minimal data-loss features
+- Implemented flat file tree structure optimized for Flash devices with limited read/write cycles
+
+** Software Engineer
+:PROPERTIES:
+:CV_ENV: cventry
+:EMPLOYER: Global Edge Software Ltd.
+:LOCATION: Bengaluru, India
+:FROM: Jun. 2003
+:TO: Aug. 2004
+:END:
+
+- Designed and developed SDIO driver for Linux on Intel StrongARM boards
+- Developed fast SDIO driver supporting 4-bit mode for Marvell 802.11g WiFi chipset
+- Achieved maximum throughput for WiFi communication via SDIO interface
+
+** Short Stints
+:PROPERTIES:
+:CV_ENV: cvsubsection
+:END:
+
+*** Software Architect
+:PROPERTIES:
+:CV_ENV: cventryshort
+:EMPLOYER: VSPL Ltd.
+:LOCATION: Bengaluru, India
+:FROM: Nov. 2016
+:TO: Jan. 2018
+:END:
+
+*** Software Engineer
+:PROPERTIES:
+:CV_ENV: cventryshort
+:EMPLOYER: Cisco Ltd.
+:LOCATION: Bengaluru, India
+:FROM: Oct. 2010
+:TO: Apr. 2011
+:END:
+
+*** Sr. Engineer - Contractor
+:PROPERTIES:
+:CV_ENV: cventryshort
+:EMPLOYER: B-Labs, London UK
+:LOCATION: Bengaluru, India
+:FROM: Nov. 2009
+:TO: Sep. 2010
+:END:
+
+*** Engineer
+:PROPERTIES:
+:CV_ENV: cventryshort
+:EMPLOYER: Harman International
+:LOCATION: Bengaluru, India
+:FROM: Jul. 2009
+:TO: Nov. 2009
+:END:
+
+* Open Source
+:PROPERTIES:
+:CV_ENV: cventries
+:END:
+
+** QEMU
+:PROPERTIES:
+:CV_ENV: cvopensource
+:PROJECT: QEMU
+:DATE: 2014-2016
+:URL: https://www.qemu.org/
+:END:
+
+- SMMUv3 (IOMMU) emulation support for ARMv8
+- Designed and implemented SMMUv3 model merged into mainline
+- Added support for Stage1, Stage2, and nested virtualization
+- Implemented command queue processing and page table walk
+
+** Linux Kernel
+:PROPERTIES:
+:CV_ENV: cvopensource
+:PROJECT: Linux Kernel
+:DATE: 2011-2016
+:URL: https://kernel.org/
+:END:
+
+- MIPS Kexec/Kdump port and IOMMU subsystem
+- Developed MIPS64 port of Kexec and Kdump (merged upstream)
+- Fixed critical bugs in KEXEC for Cavium Octeon platforms
+- Contributed to IOMMU/SMMUv3 driver development
+
+** GLIBC
+:PROPERTIES:
+:CV_ENV: cvopensource
+:PROJECT: GLIBC
+:DATE: 2018-2020
+:URL: https://www.gnu.org/software/libc/
+:END:
+
+- Performance optimizations for AMD processors
+- Fixed memcpy behaviour on AMD processors
+- Optimized string functions for x86_64 architecture
+- Performance improvements for memory operations
+
+** AMD LibM
+:PROPERTIES:
+:CV_ENV: cvopensource
+:PROJECT: AMD LibM
+:DATE: 2018-Present
+:URL: https://github.com/amd/aocl-libm-ose
+:END:
+
+- Open source math library for AMD processors
+- Core contributor to open sourcing AMD Math Library
+- Optimized transcendental functions (exp, log, pow, trig)
+- Implemented SIMD/FMA optimizations for vector operations
+
+* Projects
+:PROPERTIES:
+:CV_ENV: cventries
+:END:
+
+** AMD Ltd.
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2018
+:TO: Present
+:LOCATION: Bengaluru, India
+:END:
+
+*** Principal Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+**** AMD Pensando SmartNIC
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: AMD Pensando SmartNIC
+:DATE: Jun. 2025 -- Present
+:LANGUAGES: C, ASM, P4, C++
+:TOOLS: Make, Git, P4, Qemu, Xen
+:TECH: SmartNIC, Storage
+:END:
+
+*Summary:* Developing Xen-based virtualization solution for SmartNIC platform with NVMe storage driver using P4 programmable data plane.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Developing Xen-based virtualization solution for SmartNIC platform
+- Implemented NVMe storage driver with P4 programmable data plane
+- Technologies: C, ASM, P4, C++, Xen, QEMU
+
+**** AMD Cryptography Library
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: AMD Cryptography Library
+:DATE: Jan. 2022 -- Jun. 2025
+:LANGUAGES: C++
+:TOOLS: Git, OpenSSL
+:TECH: AES, SHA2, AVX2, AESNI, SHANI
+:END:
+
+*Summary:* Initiated as a proof-of-concept for an ISV experiencing performance issues with AES-CFB on AMD-Milan servers. Evolved into a comprehensive cryptographic primitives library.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Designed parallel AES-CFB decryption algorithm achieving 3x performance improvement
+- Implemented cryptographic primitives library with AVX2 and AESNI/SHANI instruction sets
+**** AMD Math Library
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: AMD Math Library
+:DATE: Feb. 2018 -- Dec. 2021
+:LANGUAGES: C, Assembly, Python
+:TOOLS: CMake, GCC, AOCC
+:TECH: x86-64, SIMD, FMA
+:END:
+
+*Summary:* AMD Floating Point Math Library is a high-performance software library primarily written in Assembly (x86_64) to leverage SIMD and FMA instructions. Led architectural modernization and algorithmic improvements to enhance performance and maintainability.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Implemented advanced optimization techniques including look-up-tables, Estrin's method polynomial for parallel-FMA
+- Achieved 30% performance improvement for scalar operations and 2x improvement for vector operations
+- Developed dynamic dispatcher using cpuid instruction for runtime algorithm selection
+- Redesigned architecture with cache-aligned and interleaved tablesbles, Estrin's method polynomial for parallel-FMA
+- Achieved 30% performance improvement for scalar operations and 2x improvement for vector operations
+- Developed dynamic dispatcher using cpuid instruction for runtime algorithm selection
+- Redesigned architecture with cache-aligned and interleaved tables
+
+** Broadcom Ltd.
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2011
+:TO: 2016
+:LOCATION: Bengaluru, India
+:END:
+
+*** Principal Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+**** ARM IO Virtualization with SMMUv3
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: ARM IO Virtualization
+:DATE: Jan. 2014 -- Oct. 2016
+:LANGUAGES: C
+:TOOLS: QEMU, Git
+:TECH: ARMv8, SMMUv3, IOMMU
+:END:
+
+- Designed and developed complete SMMUv3 emulation model for QEMU (merged into mainline)
+- Implemented command queue processing, STE and CD parsing mechanisms
+- Developed ARMv8/LPAE pagetable walk supporting Stage1, Stage2, and nested translation
+- Implemented comprehensive event reporting and interrupt handling
+
+**** SMMUv3 Driver for Vulcan
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: SMMUv3 Driver
+:DATE: Jan. 2014 -- Oct. 2016
+:LANGUAGES: C
+:TOOLS: Git, Linux Kernel
+:TECH: ARMv8, SMMUv3, IOMMU
+:END:
+
+- Designed and developed initial Linux driver for SMMUv3 with minimal feature set
+- Collaborated with hardware team to identify and resolve design issues
+- Contributed bug fixes and enhancements to ARM's open-source SMMUv3 driver
+
+*** Tech Lead
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+**** XLP (MIPS64) SDK Development
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: XLP SDK
+:DATE: May. 2011 -- Dec. 2013
+:LANGUAGES: C
+:TOOLS: Linux Kernel, Git
+:TECH: MIPS64, RNG, CLK Framework
+:END:
+
+- Developed RNG (Hardware Random Number Generator) driver for cryptographic applications
+- Implemented Clock Framework driver for dynamic frequency management
+- Created CPU voltage and frequency scaling driver for power optimization
+- Developed CDE (Compression/Decompression Engine) driver
+
+** Cavium Networks
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2011
+:TO: 2013
+:LOCATION: Bengaluru, India
+:END:
+
+*** Tech Lead
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+**** OCTEON III - Kexec/Kdump
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: MIPS Kexec/Kdump
+:DATE: May. 2011 -- Dec. 2013
+:LANGUAGES: C
+:TOOLS: Linux Kernel, GDB
+:TECH: MIPS64, Kexec, Kdump
+:END:
+
+- Developed complete MIPS architecture port of Kexec and Kdump
+- Debugged and resolved critical issues preventing Kexec functionality
+- Submitted patches to upstream Linux kernel (merged into mainline)
+- Enabled seamless kernel upgrades without disrupting Hybrid SMP configurations
+
+**** CavHv Hypervisor
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: CavHv Hypervisor
+:DATE: Jan. 2012 -- Dec. 2013
+:LANGUAGES: C
+:TOOLS: Compiler Toolchain
+:TECH: MIPS64, Hypervisor, Virtualization
+:END:
+
+- Designed experimental hypervisor for MIPS64 with hardware virtualization support
+- Collaborated with compiler and hardware teams to validate virtualization extensions
+- Successfully demonstrated concurrent execution of two Linux kernel instances
+- Provided critical feedback for virtualization specification refinement
+
+** Cisco Systems
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2010
+:TO: 2011
+:LOCATION: Bengaluru, India
+:END:
+
+*** Software Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+**** Garbage Detector for Linux
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: Garbage Detector
+:DATE: Oct. 2010 -- Apr. 2011
+:LANGUAGES: C
+:TOOLS: Glibc, Clearcase
+:TECH: Memory Management, Mark-Sweep
+:END:
+
+- Designed and implemented garbage detection system using custom C runtime
+- Developed separate monitoring thread to intercept malloc() and free() calls
+- Implemented intrusive mark-and-sweep algorithm
+- Enabled proactive memory leak identification in long-running systems
+
+** B-Labs
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2009
+:TO: 2010
+:LOCATION: London, UK (Remote)
+:END:
+
+*** Sr. Engineer - Contractor
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+**** CodeZero Hypervisor
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: CodeZero Hypervisor
+:DATE: Nov. 2009 -- Sep. 2010
+:LANGUAGES: C, ARM Assembly
+:TOOLS: Git, QEMU
+:TECH: ARMv7, ARMv6, SMP
+:END:
+
+- Ported CodeZero hypervisor to ARM Cortex-A9 SMP systems
+- Developed optimized fast memcpy implementation for ARM
+- Extended QEMU with new device and platform support
+- Ported Linux kernel to run under CodeZero hypervisor
+
+** Harman International
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2009
+:TO: 2009
+:LOCATION: Bengaluru, India
+:END:
+
+*** Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+**** QNX BSP for PowerPC
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: QNX BSP
+:DATE: Jul. 2009 -- Nov. 2009
+:LANGUAGES: C
+:TOOLS: Make, QNX
+:TECH: PowerPC, P4080, P2020, SMP
+:END:
+
+- Debugged and resolved P4080 SMP booting issue
+- Ported I2C driver to new PowerPC platform
+- Developed base drivers including timer and interrupt controller
+- Enabled early QNX boot on P2020 and P4080 platforms
+
+** ARM Ltd.
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2005
+:TO: 2009
+:LOCATION: Bengaluru, India
+:END:
+
+*** Sr. Development Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+**** OS Support for ARM Cores
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: OS Support for ARM
+:DATE: Aug. 2005 -- Jun. 2009
+:LANGUAGES: C, ARM Assembly, Python
+:TOOLS: FastModels, SoCDesigner
+:TECH: ARM1176, Cortex-A8, TrustZone
+:END:
+
+- Developed touch-screen driver for Symbian OS with full gesture support
+- Created Symbian OS test automation framework using Python
+- Designed interrupt latency measurement driver for TrustZone analysis
+- Ported L4Ka::pistachio microkernel to ARM
+
+** Sasken Ltd.
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2004
+:TO: 2005
+:LOCATION: Bengaluru, India
+:END:
+
+*** Sr. Software Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+**** EFFS Filesystem
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: EFFS Filesystem
+:DATE: Aug. 2004 -- Aug. 2005
+:LANGUAGES: C
+:TOOLS: VxWorks
+:TECH: Flash Storage, Wear-Leveling
+:END:
+
+- Designed reset-proof filesystem with flat file tree structure
+- Developed wear-leveling algorithm for Flash blocks
+- Implemented atomic write operations
+- Integrated with VxWorks APIs
+
+** Global Edge Software
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2003
+:TO: 2004
+:LOCATION: Bengaluru, India
+:END:
+
+*** Software Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+**** Linux SDIO Driver
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: Linux SDIO Driver
+:DATE: Jun. 2003 -- Aug. 2004
+:LANGUAGES: C
+:TOOLS: Linux Kernel, Make
+:TECH: ARM, SDIO, WiFi 802.11g
+:END:
+
+- Designed fast SDIO driver supporting 4-bit mode
+- Developed 1-bit SDIO driver for legacy hardware
+- Optimized data transfer protocols for maximum throughput
+- Implemented robust error handling mechanisms
+
+* Awards
+:PROPERTIES:
+:CV_ENV: cvhonors
+:END:
+
+** Spotlight
+:PROPERTIES:
+:CV_ENV: cvhonor
+:ORGANIZATION: AMD
+:LOCATION: AMD
+:DATE: Q3 2018
+:END:
+Helping Emulation team find design bug in data fabric
+
+** Spotlight
+:PROPERTIES:
+:CV_ENV: cvhonor
+:ORGANIZATION: AMD
+:LOCATION: AMD
+:DATE: Q2 2019
+:END:
+Optimization of exp() and improving performance by 30%
+
+** Director Spotlight
+:PROPERTIES:
+:CV_ENV: cvhonor
+:ORGANIZATION: AMD
+:LOCATION: AMD
+:DATE: Q2 2019
+:END:
+Supporting Arden Ubuntu emulation boot, fixing initramfs delayed mount
+
+** Spotlight
+:PROPERTIES:
+:CV_ENV: cvhonor
+:ORGANIZATION: AMD
+:LOCATION: AMD
+:DATE: Q4 2020
+:END:
+Providing important patches to GLIBC to fix memcpy behaviour on AMD, open sourcing AMD LibM
+
+** Spotlight
+:PROPERTIES:
+:CV_ENV: cvhonor
+:ORGANIZATION: AMD
+:LOCATION: AMD
+:DATE: Q3 2021
+:END:
+Delivering Cryptography PoC (CFB based parallel decrypting), increases performance by 3x

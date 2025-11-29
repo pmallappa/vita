@@ -1,0 +1,401 @@
+* AMD Ltd.
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2018
+:TO: Present
+:LOCATION: Bengaluru, India
+:END:
+
+** Principal Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+*** AMD Pensando SmartNIC
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: AMD Pensando SmartNIC
+:DATE: Jun. 2025 -- Present
+:LANGUAGES: C, ASM, P4, C++
+:TOOLS: Make, Git, P4, Qemu, Xen
+:TECH: SmartNIC, Storage
+:END:
+
+*Summary:* Developing Xen-based virtualization solution for SmartNIC platform with NVMe storage driver using P4 programmable data plane.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Developing Xen-based virtualization solution for SmartNIC platform
+- Implemented NVMe storage driver with P4 programmable data plane
+- Technologies: C, ASM, P4, C++, Xen, QEMU
+
+*** AMD Cryptography Library
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: AMD Cryptography Library
+:DATE: Jan. 2022 -- Jun. 2025
+:LANGUAGES: C++
+:TOOLS: Git, OpenSSL
+:TECH: AES, SHA2, AVX2, AESNI, SHANI
+:END:
+
+*Summary:* Initiated as a proof-of-concept for an ISV experiencing performance issues with AES-CFB on AMD-Milan servers. Evolved into a comprehensive cryptographic primitives library.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Designed parallel AES-CFB decryption algorithm achieving 3x performance improvement
+- Implemented cryptographic primitives library with AVX2 and AESNI/SHANI instruction sets
+*** AMD Math Library
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: AMD Math Library
+:DATE: Feb. 2018 -- Dec. 2021
+:LANGUAGES: C, Assembly, Python
+:TOOLS: CMake, GCC, AOCC
+:TECH: x86-64, SIMD, FMA
+:END:
+
+*Summary:* AMD Floating Point Math Library is a high-performance software library primarily written in Assembly (x86_64) to leverage SIMD and FMA instructions. Led architectural modernization and algorithmic improvements to enhance performance and maintainability.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Implemented advanced optimization techniques including look-up-tables, Estrin's method polynomial for parallel-FMA
+- Achieved 30% performance improvement for scalar operations and 2x improvement for vector operations
+- Developed dynamic dispatcher using cpuid instruction for runtime algorithm selection
+- Redesigned architecture with cache-aligned and interleaved tablesbles, Estrin's method polynomial for parallel-FMA
+- Achieved 30% performance improvement for scalar operations and 2x improvement for vector operations
+- Developed dynamic dispatcher using cpuid instruction for runtime algorithm selection
+- Redesigned architecture with cache-aligned and interleaved tables
+
+* Broadcom Ltd.
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2011
+:TO: 2016
+:LOCATION: Bengaluru, India
+:END:
+
+** Principal Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+*** ARM IO Virtualization with SMMUv3
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: ARM IO Virtualization
+:DATE: Jan. 2014 -- Oct. 2016
+:LANGUAGES: C
+:TOOLS: QEMU, Git
+:TECH: ARMv8, SMMUv3, IOMMU
+:END:
+
+*Summary:* SMMUv3 is an IOMMU implementation for ARM based platforms. Developing a software emulation model to help driver development and provide an alternate platform for developers who need a SMMU environment to test their software.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Designed and developed complete SMMUv3 emulation model for QEMU (merged into mainline)
+- Implemented command queue processing, STE and CD parsing mechanisms
+- Developed ARMv8/LPAE pagetable walk supporting Stage1, Stage2, and nested translation
+- Implemented comprehensive event reporting and interrupt handling
+
+*** SMMUv3 Driver for Vulcan
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: SMMUv3 Driver
+:DATE: Jan. 2014 -- Oct. 2016
+:LANGUAGES: C
+:TOOLS: Git, Linux Kernel
+:TECH: ARMv8, SMMUv3, IOMMU
+:END:
+
+*Summary:* Vulcan is Broadcom's implementation of ARMv8 processor, designed from ground-up as multicore-multithreaded design with up to 32 cores and 4 threads each. The Vulcan SoC comes equipped with SMMUv3 alongside the controller stack.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Designed and developed initial Linux driver for SMMUv3 with minimal feature set for initial hardware testing
+- Collaborated with hardware team to identify and resolve design issues
+- Contributed bug fixes to ARM's open-source SMMUv3 driver posted to LKML
+
+** Tech Lead
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+*** XLP (MIPS64) SDK Development
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: XLP SDK
+:DATE: May. 2011 -- Dec. 2013
+:LANGUAGES: C
+:TOOLS: Linux Kernel, Git
+:TECH: MIPS64, RNG, CLK Framework
+:END:
+
+*Summary:* XLP is a multicore+multithreaded MIPS64 processor from Broadcom, featuring up to 80 execution cores with hardware accelerators for networking in a single silicon package. XLP SDK is a feature-rich development kit for customers to gain hands-on experience with the processor and hardware accelerators.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Developed RNG (Hardware Random Number Generator) driver for cryptographic applications
+- Implemented Clock Framework driver for dynamic frequency management
+- Created CPU voltage and frequency scaling driver for power optimization
+- Developed CDE (Compression/Decompression Engine) driver
+
+* Cavium Networks
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2011
+:TO: 2013
+:LOCATION: Bengaluru, India
+:END:
+
+** Tech Lead
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+*** OCTEON III - Kexec/Kdump
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: MIPS Kexec/Kdump
+:DATE: May. 2011 -- Dec. 2013
+:LANGUAGES: C
+:TOOLS: Linux Kernel, GDB
+:TECH: MIPS64, Kexec, Kdump
+:END:
+
+*Summary:* Kexec and Kdump are essential Linux kernel features for fast reboots and crash dump analysis. Porting these features to MIPS64 architecture to enable crash dump analysis and debugging capabilities for OCTEON III platform.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Developed complete MIPS architecture port of Kexec and Kdump
+- Debugged and resolved critical issues preventing Kexec functionality on MIPS platforms
+- Submitted patches to upstream Linux kernel (merged into mainline)
+- Enabled seamless kernel upgrades without disrupting Hybrid SMP configurations
+
+*** CavHv Hypervisor
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: CavHv Hypervisor
+:DATE: Jan. 2012 -- Dec. 2013
+:LANGUAGES: C
+:TOOLS: Compiler Toolchain
+:TECH: MIPS64, Hypervisor, Virtualization
+:END:
+
+*Summary:* Experimental hypervisor project to validate hardware virtualization extensions for MIPS64 architecture. Working closely with compiler and hardware teams to test and refine the virtualization specification.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Designed experimental hypervisor for MIPS64 with hardware virtualization support
+- Collaborated with compiler and hardware teams to validate virtualization extensions
+- Successfully demonstrated concurrent execution of two Linux kernel instances
+- Provided critical feedback for virtualization specification refinement
+
+* Cisco Systems
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2010
+:TO: 2011
+:LOCATION: Bengaluru, India
+:END:
+
+** Software Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+*** Garbage Detector for Linux
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: Garbage Detector
+:DATE: Oct. 2010 -- Apr. 2011
+:LANGUAGES: C
+:TOOLS: Glibc, Clearcase
+:TECH: Memory Management, Mark-Sweep
+:END:
+
+*Summary:* Custom memory leak detection system designed to identify and report memory leaks in long-running Linux systems. Implemented using a modified C runtime with intrusive mark-and-sweep garbage collection algorithm.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Designed and implemented garbage detection system using custom C runtime
+- Developed separate monitoring thread to intercept malloc() and free() calls
+- Implemented intrusive mark-and-sweep algorithm for memory leak detection
+- Enabled proactive memory leak identification in long-running systems
+
+* B-Labs
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2009
+:TO: 2010
+:LOCATION: London, UK (Remote)
+:END:
+
+** Sr. Engineer - Contractor
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+*** CodeZero Hypervisor
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: CodeZero Hypervisor
+:DATE: Nov. 2009 -- Sep. 2010
+:LANGUAGES: C, ARM Assembly
+:TOOLS: Git, QEMU
+:TECH: ARMv7, ARMv6, SMP
+:END:
+
+*Summary:* CodeZero is a lightweight hypervisor for embedded ARM systems. Porting and enhancing the hypervisor to support ARM Cortex-A9 SMP platforms, including QEMU emulation support and Linux kernel integration.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Ported CodeZero hypervisor to ARM Cortex-A9 SMP systems
+- Developed optimized fast memcpy implementation for ARM architecture
+- Extended QEMU with new device and platform support for CodeZero
+- Ported Linux kernel to run as guest under CodeZero hypervisor
+
+* Harman International
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2009
+:TO: 2009
+:LOCATION: Bengaluru, India
+:END:
+
+** Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+*** QNX BSP for PowerPC
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: QNX BSP
+:DATE: Jul. 2009 -- Nov. 2009
+:LANGUAGES: C
+:TOOLS: Make, QNX
+:TECH: PowerPC, P4080, P2020, SMP
+:END:
+
+*Summary:* Board Support Package development for QNX RTOS on PowerPC P4080 and P2020 platforms. Enabling early boot support and resolving critical SMP booting issues on multi-core PowerPC processors.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Debugged and resolved P4080 SMP booting issue preventing multi-core operation
+- Ported I2C driver to new PowerPC platform
+- Developed base drivers including timer and interrupt controller
+- Enabled early QNX boot on P2020 and P4080 platforms
+
+* ARM Ltd.
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2005
+:TO: 2009
+:LOCATION: Bengaluru, India
+:END:
+
+** Sr. Development Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+*** OS Support for ARM Cores
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: OS Support for ARM
+:DATE: Aug. 2005 -- Jun. 2009
+:LANGUAGES: C, ARM Assembly, Python
+:TOOLS: FastModels, SoCDesigner
+:TECH: ARM1176, Cortex-A8, TrustZone
+:END:
+
+*Summary:* Supporting multiple operating systems on ARM processor cores including Symbian OS, Linux, and L4Ka microkernel. Developing drivers, test frameworks, and analysis tools for new ARM architectures including TrustZone security extensions.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Developed touch-screen driver for Symbian OS with full gesture support
+- Created Symbian OS test automation framework using Python
+- Designed interrupt latency measurement driver for TrustZone security analysis
+- Ported L4Ka::pistachio microkernel to ARM architecture
+
+* Sasken Ltd.
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2004
+:TO: 2005
+:LOCATION: Bengaluru, India
+:END:
+
+** Sr. Software Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+*** EFFS Filesystem
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: EFFS Filesystem
+:DATE: Aug. 2004 -- Aug. 2005
+:LANGUAGES: C
+:TOOLS: VxWorks
+:TECH: Flash Storage, Wear-Leveling
+:END:
+
+*Summary:* Embedded Flash File System (EFFS) designed for VxWorks RTOS with focus on reliability and Flash memory longevity. Implementing wear-leveling and atomic operations to ensure data integrity in embedded systems.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Designed reset-proof filesystem with flat file tree structure for embedded systems
+- Developed wear-leveling algorithm to extend Flash memory block lifetime
+- Implemented atomic write operations to prevent data corruption
+- Integrated filesystem with VxWorks RTOS APIs
+
+* Global Edge Software
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2003
+:TO: 2004
+:LOCATION: Bengaluru, India
+:END:
+
+** Software Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+*** Linux SDIO Driver
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: Linux SDIO Driver
+:DATE: Jun. 2003 -- Aug. 2004
+:LANGUAGES: C
+:TOOLS: Linux Kernel, Make
+:TECH: ARM, SDIO, WiFi 802.11g
+:END:
+
+*Summary:* SDIO (Secure Digital Input Output) driver development for Linux kernel to enable WiFi 802.11g connectivity on embedded ARM platforms. Implementing both high-speed 4-bit mode and legacy 1-bit mode for hardware compatibility.
+
+#+latex: \par\vspace{2mm}
+
+*Contributions:*
+- Designed fast SDIO driver supporting 4-bit mode for high-speed data transfer
+- Developed 1-bit SDIO driver for legacy hardware compatibility
+- Optimized data transfer protocols for maximum throughput
+- Implemented robust error handling mechanisms for reliable operation
+
+

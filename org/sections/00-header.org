@@ -1,0 +1,50 @@
+:CV_CONFIG:
+# AwesomeCV configuration options
+# #+photo: ./images/foto_diego_2020-3.jpg
+# #+photostyle: right,noedge
+#+options: num:1
+#+options: toc:nil
+
+#+cvcolor: awesome-skyblue
+#+cvhighlights: true
+#+cvcolorizelinks: awesome-skyblue
+#+cvunderlinelinks: false
+#+cvfooter_left: \today\\~
+#+cvfooter_middle: Curriculum Vitæ\\\textup{\tiny Source at \href{https://github.com/pmallappa/vita}{github}}
+#+cvfooter_right: \thepage\\~
+#+latex_class: pawesome-cv
+
+# LaTeX options
+
+#+latex_class_options: [12pt,a4paper]
+
+# Macro for bibliographical citations
+#+macro: cvcite \cite{$1}
+
+# Some font and separator redefinitions for the AwesomeCV class
+#+latex_header: \renewcommand{\acvHeaderSocialSep}{\enskip\cdotp\enskip}
+#+latex_header: \renewcommand{\acvHeaderIconSep}{~}
+#+latex_header: \renewcommand*{\bodyfontlight}{\sourcesanspro}
+#+latex_header: \providecommand*{\bibfont}{}
+#+latex_header: \renewcommand*{\bibfont}{\paragraphstyle}
+# #+latex_header: \renewcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{awesome} ##1}}
+# #+latex_header: \renewcommand*{\subsectionstyle}{\entrytitlestyle}
+# #+latex_header: \renewcommand*{\headerquotestyle}[1]{{\fontsize{8pt}{1em}\bodyfont ##1}}
+
+:END:
+
+#+title: Software Architect  •  System & Embedded Software
+#+author: Prem Mallappa
+#+address: Bengaluru, India
+#+email: prem.mallappa@gmail.com
+#+mobile: +91-9448900326
+#+github: pmallappa
+#+linkedin: pmallappa
+#+homepage: pmallappa.github.io
+
+#+latex: \begin{cvparagraph}
+
+Seasoned Software Architect with extensive expertise in designing and developing high-performance embedded systems, system software, Linux kernel drivers, and virtualization technologies. Proficient in a wide range of programming and scripting languages, with a proven track record of delivering robust, scalable solutions in complex technical environments.
+
+A highly analytical and collaborative team player, recognized for strong problem-solving abilities, logical thinking, and a passion for mastering emerging technologies. Committed to driving innovation and excellence through clean architecture, optimized code, and best-in-class engineering practices.
+#+latex: \end{cvparagraph}

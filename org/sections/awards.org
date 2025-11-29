@@ -1,0 +1,45 @@
+* Spotlight
+:PROPERTIES:
+:CV_ENV: cvhonor
+:ORGANIZATION: AMD
+:LOCATION: AMD
+:DATE: Q3 2018
+:END:
+Helping Emulation team find design bug in data fabric
+
+* Spotlight
+:PROPERTIES:
+:CV_ENV: cvhonor
+:ORGANIZATION: AMD
+:LOCATION: AMD
+:DATE: Q2 2019
+:END:
+Optimization of exp() and improving performance by 30%
+
+* Director Spotlight
+:PROPERTIES:
+:CV_ENV: cvhonor
+:ORGANIZATION: AMD
+:LOCATION: AMD
+:DATE: Q2 2019
+:END:
+Supporting Arden Ubuntu emulation boot, fixing initramfs delayed mount
+
+* Spotlight
+:PROPERTIES:
+:CV_ENV: cvhonor
+:ORGANIZATION: AMD
+:LOCATION: AMD
+:DATE: Q4 2020
+:END:
+Providing important patches to GLIBC to fix memcpy behaviour on AMD, open sourcing AMD LibM
+
+* Spotlight
+:PROPERTIES:
+:CV_ENV: cvhonor
+:ORGANIZATION: AMD
+:LOCATION: AMD
+:DATE: Q3 2021
+:END:
+Delivering Cryptography PoC (CFB based parallel decrypting), increases performance by 3x
+

@@ -1,0 +1,125 @@
+* Principal Engineer
+:PROPERTIES:
+:CV_ENV: cventry
+:EMPLOYER: AMD Ltd.
+:LOCATION: Bengaluru, India
+:FROM: Feb. 2018
+:TO: Present
+:END:
+
+- AMD Math Library: Optimizing exponential/power/logarithmic/trigonometric functions for latest AMD processors
+- Improved performance of exp() and log() by 30% using look-up-table, Estrin's method polynomial, and fast integer conversion
+- AMD Cryptographic Primitives Library: Optimizing AES/SHA/PKCS functions with AVX2 and AESNI/SHANI instruction sets
+- Developed dynamic dispatcher using cpuid instruction for runtime algorithm selection
+- Achieved 3x performance improvement in CFB-based parallel decrypting
+
+* Principal Engineer
+:PROPERTIES:
+:CV_ENV: cventry
+:EMPLOYER: Broadcom Ltd.
+:LOCATION: Bengaluru, India
+:FROM: Jan. 2014
+:TO: Oct. 2016
+:END:
+
+- Designed and developed initial software support for Broadcom Vulcan, a multicore-multithreaded ARMv8 64-bit processor
+- Handled SMMUv3 (IOMMU) related issues and software stack implementation
+- Developed SMMUv3 emulation model for QEMU which was merged into mainline codebase
+- Implemented Command queue, STE/CD parsing, pagetable walk, and Stage1/Stage2 virtualization support
+
+* Tech Lead
+:PROPERTIES:
+:CV_ENV: cventry
+:EMPLOYER: Cavium India Pvt. Ltd.
+:LOCATION: Bengaluru, India
+:FROM: May. 2011
+:TO: Dec. 2013
+:END:
+
+- Worked on Cavium's Octeon III (MIPS64) series of processors
+- Fixed major bug in KEXEC and developed MIPS port of Kexec and Kdump (patches merged upstream)
+- Developed baremetal core-file generating software with host-based daemon for GDB debugging
+- Designed and developed CavHv hypervisor for MIPS64 with experimental hardware virtualization
+
+* Sr. Development Engineer
+:PROPERTIES:
+:CV_ENV: cventry
+:EMPLOYER: ARM Ltd.
+:LOCATION: Bengaluru, India
+:FROM: Aug. 2005
+:TO: Jun. 2009
+:END:
+
+- Responsible for OS porting to latest ARM cores including ARM1176JZFS, TrustZone and Cortex-A8
+- Developed touch-screen driver for Symbian OS and automated testing using Python scripts
+- Designed interrupt latency measurement driver for TrustZone secure world overhead analysis
+- Ported L4Ka::pistachio microkernel to ARM for virtualization experiments
+
+* Sr. Software Engineer
+:PROPERTIES:
+:CV_ENV: cventry
+:EMPLOYER: Sasken Communications Pvt Ltd.
+:LOCATION: Bengaluru, India
+:FROM: Aug. 2004
+:TO: Aug. 2005
+:END:
+
+- Module owner for EFS (Extended File System) developed for VxWorks, used in UMTS/BTS
+- Developed reset-proof filesystem with wear-leveling and minimal data-loss features
+- Implemented flat file tree structure optimized for Flash devices with limited read/write cycles
+
+* Software Engineer
+:PROPERTIES:
+:CV_ENV: cventry
+:EMPLOYER: Global Edge Software Ltd.
+:LOCATION: Bengaluru, India
+:FROM: Jun. 2003
+:TO: Aug. 2004
+:END:
+
+- Designed and developed SDIO driver for Linux on Intel StrongARM boards
+- Developed fast SDIO driver supporting 4-bit mode for Marvell 802.11g WiFi chipset
+- Achieved maximum throughput for WiFi communication via SDIO interface
+
+* Short Stints
+:PROPERTIES:
+:CV_ENV: cvsubsection
+:END:
+
+** Software Architect
+:PROPERTIES:
+:CV_ENV: cventryshort
+:EMPLOYER: VSPL Ltd.
+:LOCATION: Bengaluru, India
+:FROM: Nov. 2016
+:TO: Jan. 2018
+:END:
+
+** Software Engineer
+:PROPERTIES:
+:CV_ENV: cventryshort
+:EMPLOYER: Cisco Ltd.
+:LOCATION: Bengaluru, India
+:FROM: Oct. 2010
+:TO: Apr. 2011
+:END:
+
+** Sr. Engineer - Contractor
+:PROPERTIES:
+:CV_ENV: cventryshort
+:EMPLOYER: B-Labs, London UK
+:LOCATION: Bengaluru, India
+:FROM: Nov. 2009
+:TO: Sep. 2010
+:END:
+
+** Engineer
+:PROPERTIES:
+:CV_ENV: cventryshort
+:EMPLOYER: Harman International
+:LOCATION: Bengaluru, India
+:FROM: Jul. 2009
+:TO: Nov. 2009
+:END:
+
+
