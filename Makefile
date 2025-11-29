@@ -1,23 +1,19 @@
 .PHONY: all resume coverletter vita cv clean help
 
-# Default target
-all: resume
+# Default target - build all documents
+all: cv vita coverletter
 
 # Build resume
 resume:
 	@echo "Building resume..."
-	@python3 scripts/generate.py --type resume --output output/resume.tex
-	@cd output && TEXINPUTS=../assets/style//:$$TEXINPUTS xelatex resume.tex
-	@cd output && TEXINPUTS=../assets/style//:$$TEXINPUTS xelatex resume.tex
-	@echo "Resume built: output/resume.pdf"
+	@python3 scripts/generate.py --type resume --output outputs/resume.tex
+	@cd outputs && TEXINPUTS=../assets/style//:$$TEXINPUTS xelatex resume.tex
+	@cd outputs && TEXINPUTS=../assets/style//:$$TEXINPUTS xelatex resume.tex
+	@echo "Resume built: outputs/resume.pdf"
 
-# Build cover letter
+# Build cover letter (dummy target for now)
 coverletter:
-	@echo "Building cover letter..."
-	@python3 scripts/generate.py --type coverletter --output output/coverletter.tex
-	@cd output && TEXINPUTS=../assets/style//:$$TEXINPUTS pdflatex coverletter.tex
-	@cd output && TEXINPUTS=../assets/style//:$$TEXINPUTS pdflatex coverletter.tex
-	@echo "Cover letter built: output/coverletter.pdf"
+	@echo "Cover letter target - to be implemented later"
 
 # Build vita from org-mode file
 vita:
@@ -26,11 +22,11 @@ vita:
 			--load elisp/org-cv-init.el \
 			--eval "(setq debug-on-error nil inhibit-debug-on-quit t)" \
 		--visit=org/prem-mallappa-vita.org \
-		--eval "(org-export-to-file 'awesomecv \"$(CURDIR)/org/prem-mallappa-vita.tex\")"
-	@cd org && sed -i 's/\\n\[NO-DEFAULT-PACKAGES\]//g;/\\usepackage\[normalem]{ulem}/d;/\\usepackage{amssymb}/d' prem-mallappa-vita.tex
-	@cd org && TEXINPUTS=../assets/style//:$$TEXINPUTS xelatex prem-mallappa-vita.tex
-	@cd org && TEXINPUTS=../assets/style//:$$TEXINPUTS xelatex prem-mallappa-vita.tex
-	@echo "Vita built: org/prem-mallappa-vita.pdf"
+		--eval "(org-export-to-file 'awesomecv \"$(CURDIR)/outputs/prem-mallappa-vita.tex\")"
+	@cd outputs && sed -i 's/\\n\[NO-DEFAULT-PACKAGES\]//g;/\\usepackage\[normalem]{ulem}/d;/\\usepackage{amssymb}/d' prem-mallappa-vita.tex
+	@cd outputs && TEXINPUTS=../assets/style//:$$TEXINPUTS xelatex prem-mallappa-vita.tex
+	@cd outputs && TEXINPUTS=../assets/style//:$$TEXINPUTS xelatex prem-mallappa-vita.tex
+	@echo "Vita built: outputs/prem-mallappa-vita.pdf"
 
 # Build 2-page CV from org-mode file
 cv:
@@ -39,17 +35,16 @@ cv:
 			--load elisp/org-cv-init.el \
 			--eval "(setq debug-on-error nil inhibit-debug-on-quit t)" \
 		--visit=org/prem-mallappa-cv.org \
-		--eval "(org-export-to-file 'awesomecv \"$(CURDIR)/org/prem-mallappa-cv.tex\")"
-	@cd org && sed -i 's/\\n\[NO-DEFAULT-PACKAGES\]//g;/\\usepackage\[normalem]{ulem}/d;/\\usepackage{amssymb}/d' prem-mallappa-cv.tex
-	@cd org && TEXINPUTS=../assets/style//:$$TEXINPUTS xelatex prem-mallappa-cv.tex
-	@cd org && TEXINPUTS=../assets/style//:$$TEXINPUTS xelatex prem-mallappa-cv.tex
-	@echo "CV built: org/prem-mallappa-cv.pdf"
+		--eval "(org-export-to-file 'awesomecv \"$(CURDIR)/outputs/prem-mallappa-cv.tex\")"
+	@cd outputs && sed -i 's/\\n\[NO-DEFAULT-PACKAGES\]//g;/\\usepackage\[normalem]{ulem}/d;/\\usepackage{amssymb}/d' prem-mallappa-cv.tex
+	@cd outputs && TEXINPUTS=../assets/style//:$$TEXINPUTS xelatex prem-mallappa-cv.tex
+	@cd outputs && TEXINPUTS=../assets/style//:$$TEXINPUTS xelatex prem-mallappa-cv.tex
+	@echo "CV built: outputs/prem-mallappa-cv.pdf"
 
 # Clean build artifacts
 clean:
 	@echo "Cleaning build artifacts..."
-	@rm -f output/*.aux output/*.log output/*.out output/*.tex output/*.pdf
-	@rm -f org/*.aux org/*.log org/*.out org/*.tex org/*.pdf
+	@rm -f outputs/*.aux outputs/*.log outputs/*.out outputs/*.tex outputs/*.pdf
 	@echo "Clean complete"
 
 # Show help

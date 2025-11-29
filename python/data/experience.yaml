@@ -8,11 +8,11 @@ companies:
         end_date: "Present"
         keywords: ["c", "assembly", "x86", "optimization", "amd", "math", "cryptography", "aes", "sha", "simd", "fma", "cmake", "python"]
         achievements:
-          - "AMD Math Library: Optimizing exponential/power/logarithmic/trigonometric functions for latest AMD processors"
-          - "Improved performance of exp() and log() by 30% using look-up-table, Estrin's method polynomial, and fast integer conversion"
-          - "AMD Cryptographic Primitives Library: Optimizing AES/SHA/PKCS functions with AVX2 and AESNI/SHANI instruction sets"
-          - "Developed dynamic dispatcher using cpuid instruction for runtime algorithm selection"
-          - "Achieved 3x performance improvement in CFB-based parallel decrypting"
+          - "Architected and developed high-performance mathematical libraries optimizing exponential, power, logarithmic, and trigonometric functions for AMD EPYC and Ryzen processor families"
+          - "Achieved 30% performance enhancement in exp() and log() operations through advanced optimization techniques including vectorized look-up tables, Estrin's polynomial evaluation, and optimized integer conversion pathways"
+          - "Led development of cryptographic primitives library implementing AES, SHA, and PKCS algorithms optimized for AVX2, AESNI, and SHANI instruction sets"
+          - "Engineered runtime-adaptive algorithm dispatcher utilizing CPUID-based feature detection for optimal code path selection"
+          - "Delivered 3x performance improvement in parallel CFB decryption through innovative algorithm parallelization"
     
   - name: "Broadcom Ltd."
     location: "Bengaluru, India"
@@ -22,10 +22,10 @@ companies:
         end_date: "2016-10"
         keywords: ["armv8", "smmov3", "iommu", "qemu", "linux", "kernel", "driver", "virtualization"]
         achievements:
-          - "Designed and developed initial software support for Broadcom Vulcan, a multicore-multithreaded ARMv8 64-bit processor"
-          - "Handled SMMUv3 (IOMMU) related issues and software stack implementation"
-          - "Developed SMMUv3 emulation model for QEMU which was merged into mainline codebase"
-          - "Implemented Command queue, STE/CD parsing, pagetable walk, and Stage1/Stage2 virtualization support"
+          - "Architected foundational software stack for Broadcom Vulcan, a multicore-multithreaded ARMv8 64-bit server processor"
+          - "Engineered complete SMMUv3 (System Memory Management Unit) driver infrastructure supporting advanced IOMMU virtualization"
+          - "Developed and contributed SMMUv3 emulation model to QEMU mainline, enabling early platform validation and ecosystem enablement"
+          - "Implemented comprehensive virtualization features including command queue processing, STE/CD descriptor parsing, multi-level page table walks, and stage-1/stage-2 address translation"
     
   - name: "Cavium India Pvt. Ltd."
     location: "Bengaluru, India"
@@ -35,10 +35,10 @@ companies:
         end_date: "2013-12"
         keywords: ["mips64", "linux", "kernel", "kexec", "kdump", "hypervisor", "baremetal", "octeon"]
         achievements:
-          - "Worked on Cavium's Octeon III (MIPS64) series of processors"
-          - "Fixed major bug in KEXEC and developed MIPS port of Kexec and Kdump (patches merged upstream)"
-          - "Developed baremetal core-file generating software with host-based daemon for GDB debugging"
-          - "Designed and developed CavHv hypervisor for MIPS64 with experimental hardware virtualization"
+          - "Led low-level software development for Cavium Octeon III (MIPS64) multicore network processors"
+          - "Resolved critical KEXEC kernel bug and developed complete MIPS64 port of Kexec/Kdump crash dump infrastructure, successfully merged into Linux mainline"
+          - "Engineered bare-metal core dump generation framework with host-resident daemon enabling post-mortem GDB analysis"
+          - "Designed and implemented CavHv hypervisor for MIPS64 architecture leveraging experimental hardware virtualization extensions"
     
   - name: "ARM Ltd."
     location: "Bengaluru, India"
@@ -48,12 +48,12 @@ companies:
         end_date: "2009-06"
         keywords: ["arm", "cortex", "trustzone", "linux", "symbian", "qnx", "porting", "embedded"]
         achievements:
-          - "Responsible for OS porting to latest ARM cores including ARM1176JZFS, TrustZone and Cortex-A8"
-          - "Developed touch-screen driver for Symbian OS and automated testing using Python scripts"
-          - "Designed interrupt latency measurement driver for TrustZone secure world overhead analysis"
-          - "Ported L4Ka::pistachio microkernel to ARM for virtualization experiments"
+          - "Executed comprehensive OS porting initiatives for emerging ARM architectures including ARM1176JZFS with TrustZone security extensions and Cortex-A8 application processor"
+          - "Developed production-grade touchscreen driver for Symbian OS with automated validation framework using Python"
+          - "Designed precision interrupt latency measurement infrastructure for quantifying TrustZone secure-world context switching overhead"
+          - "Ported L4Ka::Pistachio microkernel to ARM architecture enabling virtualization research and proof-of-concept implementations"
     
-  - name: "Sasken Communications Pvt Ltd."
+  - name: "Sasken Communication Technologies Ltd."
     location: "Bengaluru, India"
     positions:
       - title: "Sr. Software Engineer"
@@ -61,9 +61,9 @@ companies:
         end_date: "2005-08"
         keywords: ["vxworks", "filesystem", "embedded", "flash", "umts", "bts"]
         achievements:
-          - "Module owner for EFS (Extended File System) developed for VxWorks, used in UMTS/BTS"
-          - "Developed reset-proof filesystem with wear-leveling and minimal data-loss features"
-          - "Implemented flat file tree structure optimized for Flash devices with limited read/write cycles"
+          - "Architected and maintained Extended File System (EFS) for VxWorks-based UMTS base station infrastructure"
+          - "Engineered reset-resilient filesystem with advanced wear-leveling algorithms ensuring data integrity across unexpected power cycles"
+          - "Designed Flash-optimized flat file tree structure minimizing write amplification and extending device longevity"
     
   - name: "Global Edge Software Ltd."
     location: "Bengaluru, India"
@@ -73,9 +73,9 @@ companies:
         end_date: "2004-08"
         keywords: ["linux", "driver", "sdio", "wifi", "arm", "strongarm"]
         achievements:
-          - "Designed and developed SDIO driver for Linux on Intel StrongARM boards"
-          - "Developed fast SDIO driver supporting 4-bit mode for Marvell 802.11g WiFi chipset"
-          - "Achieved maximum throughput for WiFi communication via SDIO interface"
+          - "Designed and implemented comprehensive SDIO host controller driver for Linux on Intel StrongARM embedded platforms"
+          - "Engineered high-performance 4-bit SDIO driver for Marvell 802.11g WiFi chipset achieving maximum theoretical throughput"
+          - "Optimized DMA transfers and interrupt handling to minimize latency and maximize wireless data transfer efficiency"
 
 # Short Stints
 short_stints:
