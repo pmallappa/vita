@@ -1,4 +1,4 @@
-﻿* M.Tech (Computer Science)
+﻿* Masters (Computer Science)
 :PROPERTIES:
 :CV_ENV: cvschool
 :SCHOOL: BITS Pilani
@@ -6,11 +6,11 @@
 :DATE: 2016
 :END:
 
-* B.E (Computer Science)
+* Bachelors (Computer Science)
 :PROPERTIES:
 :CV_ENV: cvschool
 :SCHOOL: Visvesvaraya Technological University (VTU)
-:LOCATION: AIT, Karnataka, India
+:LOCATION: Adichunchangiri Institute of Technology, Karnataka, India
 :DATE: 2002
 :END:
 

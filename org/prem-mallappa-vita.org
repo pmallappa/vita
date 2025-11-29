@@ -19,6 +19,7 @@
 * Experience
 :PROPERTIES:
 :CV_ENV: cventries
+:PAGEBREAK: t
 :END:
 #+INCLUDE: "sections/experience.org"
 
@@ -31,11 +32,13 @@
 * Projects
 :PROPERTIES:
 :CV_ENV: cventries
+:PAGEBREAK: t
 :END:
 #+INCLUDE: "sections/projects.org"
 
 * Awards
 :PROPERTIES:
 :CV_ENV: cvhonors
+:PAGEBREAK: t
 :END:
 #+INCLUDE: "sections/awards.org"

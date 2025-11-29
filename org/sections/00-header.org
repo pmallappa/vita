@@ -10,7 +10,7 @@
 #+cvcolorizelinks: awesome-skyblue
 #+cvunderlinelinks: false
 #+cvfooter_left: \today\\~
-#+cvfooter_middle: Curriculum Vitæ\\\textup{\tiny Source at \href{https://github.com/pmallappa/vita}{github}}
+#+cvfooter_middle: Prem Mallappa~~~·~~~Curriculum Vitæ\\\textup{\tiny Source at \href{https://github.com/pmallappa/vita}{github}}
 #+cvfooter_right: \thepage\\~
 #+latex_class: pawesome-cv
 
