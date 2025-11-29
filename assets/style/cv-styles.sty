@@ -58,7 +58,7 @@
 \newcommand*{\entrypositionstyle}[1]{{\fontsize{8pt}{1em}\nokiasans\upshape\color{graytext} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{black} #1}}
-\long\def\descriptionstyle#1{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}\setlength{\parindent}{0pt}\setlength{\parskip}{0pt}\setlength{\hangindent}{5em}#1}}
+\long\def\descriptionstyle#1{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}\parindent=0pt\parskip=0pt\justify#1}}
 
 % For elements of subentry
 \newcommand*{\subentrytitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1}}
@@ -71,6 +71,10 @@
 \newcommand*{\projectdatestyle}[1]{{\fontsize{7pt}{1em}\sourcesansprolight\slshape\color{lightgray} #1}}
 % For company dates - center-justified, Roboto, gray, slanted, larger
 \newcommand*{\companydatestyle}[1]{{\fontsize{10pt}{1em}\sourcesansprolight\slshape\color{lightgray} #1}}
+
+% For description list items in projects - match descriptionstyle font spec
+\newcommand*{\descriptionitemlabel}[1]{{\fontsize{9pt}{1em}\bodyfont\bfseries\color{black}#1}}
+\newcommand*{\descriptionitemcontent}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}\justify#1}}
 
 % For elements of honor
 \newcommand*{\honortitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{text} #1}}
