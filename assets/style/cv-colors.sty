@@ -1,0 +1,84 @@
+%% Start of file `cv-colors.sty'.
+% Color definitions for Awesome CV
+%
+% This file contains all color definitions used in the CV
+
+\ProvidesPackage{cv-colors}[2025/11/28 v2.0 Awesome CV Colors Package]
+
+%-------------------------------------------------------------------------------
+%                Configuration for colors
+%-------------------------------------------------------------------------------
+% Gray-scale colors
+\definecolor{white}{HTML}{FFFFFF}
+\definecolor{black}{HTML}{000000}
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{gray}{HTML}{5D5D5D}
+\definecolor{lightgray}{HTML}{999999}
+
+% Basic colors
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+\definecolor{blue}{HTML}{6CE0F1}
+
+% Text colors
+\definecolor{darktext}{HTML}{414141}
+\colorlet{text}{darkgray}
+\colorlet{graytext}{gray}
+\colorlet{lighttext}{lightgray}
+
+% Awesome colors
+\definecolor{awesome-emerald}{HTML}{00A388}
+\definecolor{awesome-skyblue}{HTML}{0395DE}
+\definecolor{awesome-red}{HTML}{DC3522}
+\definecolor{awesome-pink}{HTML}{EF4089}
+\definecolor{awesome-orange}{HTML}{FF6138}
+\definecolor{awesome-nephritis}{HTML}{27AE60}
+\definecolor{awesome-concrete}{HTML}{95A5A6}
+\definecolor{awesome-darknight}{HTML}{131A28}
+\colorlet{awesome}{awesome-skyblue}
+
+% Boolean value to switch section color highlighting
+\newbool{acvSectionColorHighlight}
+\setbool{acvSectionColorHighlight}{true}
+
+% Awesome section color
+\def\@sectioncolor#1{%
+  \ifbool{acvSectionColorHighlight}
+      {\expandafter\@sectioncolor@helper#1\@nil}
+      {#1}%
+}
+
+\def\@sectioncolor@helper#1#2\@nil{%
+  	\typeout{@@SECTION first=[#1] rest=[#2]}%
+  \ifx#1\@nil
+    {}%
+  \else
+    {\color{awesome}#1}{\color{text}#2}%
+  \fi
+}
+
+
+%-------------------------------------------------------------------------------
+%                Configuration for links
+%-------------------------------------------------------------------------------
+
+% The \colorizelinks command enables URL colorization. Optional
+% argument specifies the color.
+\newcommand*{\colorizelinks}[1][awesome-skyblue]{%
+  \hypersetup{%
+    colorlinks=true,
+    urlcolor=#1,
+    linkcolor=#1,
+    citecolor=#1
+}}{}
+
+% The \underlinelinks command enables URL underlining. Optional
+% argument specifies the underline color.
+\newcommand*{\underlinelinks}[1][awesome-skyblue]{%
+  \LetLtxMacro{\savedhref}{\href}%
+  \renewcommand{\href}[2]{\savedhref{##1}{\setulcolor{#1}\ul{##2}}}}
+
+\endinput
+%% End of file `cv-colors.sty'.

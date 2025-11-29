@@ -1,0 +1,47 @@
+%% Start of file `cv-projects.sty'.
+% Project-specific commands for Awesome CV
+%
+% This file contains commands for the projects section with company/role hierarchy
+
+\ProvidesPackage{cv-projects}[2025/11/28 v2.0 Awesome CV Projects Package]
+
+%-------------------------------------------------------------------------------
+%                Commands for Projects Section
+%-------------------------------------------------------------------------------
+% Project company header - displays company name with dates and location
+% Usage: \projectcompany{<company name>}{<start year>}{<end year>}{<location>}
+\newcommand*{\projectcompany}[4]{%
+  \vspace{0.5mm}
+  \needspace{2\baselineskip}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.55\textwidth} R{0.22\textwidth} R{0.23\textwidth}}
+    \entrytitlestyle{#1} & \companydatestyle{#2 -- #3} & \entrylocationstyle{#4}
+  \end{tabular*}%
+}
+
+% Project role - displays role title
+% Usage: \projectrole{<role title>}
+\newcommand*{\projectrole}[1]{%
+  \vspace{3mm}
+  \setlength\tabcolsep{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.7\textwidth} R{0.3\textwidth}}
+    {\sourcesanspro\bfseries\scshape #1} &
+  \end{tabular*}%
+  \vspace{2mm}
+}
+
+% Project entry - displays project name with dates and description
+% Usage: \projectentry{<project name>}{<start date>}{<end date>}{<description>}
+\newcommand*{\projectentry}[4]{%
+  \vspace{0.5mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.7\textwidth} C{0.3\textwidth}}
+    \subentrytitlestyle{#1} & \projectdatestyle{#2 -- #3} \\
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#4}}
+  \end{tabular*}%
+}
+
+\endinput
+%% End of file `cv-projects.sty'.

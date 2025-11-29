@@ -157,13 +157,25 @@
   \phantomsection
 }
 
+% Define a role title for CV (used in Projects section)
+% Usage: \cvrole{<role-title>}
+\newcommand{\cvrole}[1]{%
+  \end{center}
+  \vspace{-2mm}
+  \noindent{\fontsize{10pt}{1em}\sourcesanspro\bfseries\color{awesome}\MakeUppercase{#1}}
+  \vspace{-1mm}
+  \par
+  \begin{center}
+}
+
 % Define a paragraph for CV
 \newenvironment{cvparagraph}{%
-  \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
+  \vspace{-2mm}
+  \begingroup
   \paragraphstyle
 }{%
   \par
+  \endgroup
   \vspace{2mm}
 }
 
@@ -205,8 +217,8 @@
     \ifempty{#1#2}
     {\entrypositionstyle{#3} & \entrydatestyle{#4} }
     {\ifempty{#3#4}
-    {{\fontsize{10pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} }
-    {{\fontsize{10pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} \\
+    {{\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} }
+    {{\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} \\
       \entrypositionstyle{#3} & \entrydatestyle{#4} }}
     \ifempty{#5}{}{ \\
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
@@ -220,7 +232,7 @@
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.7cm} C{5.7cm}}
-    {\fontsize{11pt}{1em}\bodyfont\bfseries\color{awesome}#1} & \projectdatestyle{#2} \\
+    {\fontsize{10pt}{1em}\bodyfont\bfseries\color{black}#1} & \projectdatestyle{#2} \\
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#3}}
   \end{tabular*}%
   \needspace{0.5\baselineskip}
@@ -237,8 +249,8 @@
     \ifempty{#1#2}
     {\entrypositionstyle{#3} & \entrydatestyle{#4} }
     {\ifempty{#3#4}
-    {{\fontsize{10pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} }
-    {{\fontsize{10pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} \\
+    {{\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} }
+    {{\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} \\
       \entrypositionstyle{#3} & \entrydatestyle{#4} }}
     \ifempty{#5}{}{ \\
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
@@ -275,8 +287,8 @@
     \ifempty{#1#2}
     {\entrypositionstyle{#3} & \entrydatestyle{#4} }
     {\ifempty{#3#4}
-    {{\fontsize{10pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} }
-    {{\fontsize{10pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} \\
+    {{\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} }
+    {{\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} \\
       \entrypositionstyle{#3} & \entrydatestyle{#4} }}
     \ifempty{#5}{}{ \\
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
@@ -284,34 +296,49 @@
 }
 
 % Project entry for Projects section - specifically for project names
-% Usage: \projectsubentry{<project name>}{<date>}{<description>}
-\long\def\projectsubentry#1#2#3{%
-  \vspace{0.5mm}
+% Usage: \projectsubentry{<project name>}{<date>}{<description>}{<margin notes>}
+\long\def\projectsubentry#1#2#3#4{%
+  \vspace{-2.5mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
+  % Add margin notes if provided
+  \ifx&#4&%
+    % No margin notes
+  \else
+    \marginnote{{\fontsize{7pt}{1em}\bodyfontlight\raggedright#4}}[0.2cm]
+  \fi
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.7cm} C{5.7cm}}
-    {\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \projectdatestyle{#2} \\
+    {\fontsize{10pt}{1em}\bodyfont\bfseries\hypersetup{urlcolor=black,linkcolor=black}\color{black}#1} & \projectdatestyle{#2} \\
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#3}}
   \end{tabular*}%
+  \vspace{-2.5mm}
   \needspace{0.5\baselineskip}
 }
 
 % Open source subentry - for open source contributions (title and year on same line)
-% Usage: \opensourcesubentry{<project name>}{<date>}{<description>}
-\long\def\opensourcesubentry#1#2#3{%
+% Usage: \opensourcesubentry{<project name>}{<date>}{<description>}{<margin notes>}
+\long\def\opensourcesubentry#1#2#3#4{%
+  \vspace{-2.5mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
+  % Add margin notes if provided
+  \ifx&#4&%
+    % No margin notes
+  \else
+    \marginnote{{\fontsize{7pt}{1em}\bodyfontlight\raggedright#4}}[0.2cm]
+  \fi
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.7cm} C{5.7cm}}
-    {\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \projectdatestyle{#2} \\
+    {\fontsize{10pt}{1em}\bodyfont\bfseries\hypersetup{urlcolor=black,linkcolor=black}\color{black}#1} & \projectdatestyle{#2} \\
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#3}}
   \end{tabular*}%
+  \vspace{-2.5mm}
   \needspace{0.5\baselineskip}
 }
 
 % Keep original cvsubentry for backward compatibility
 \let\cvsubentry\experiencesubentry
 
-% Define an environment for cvhonor
+% Define an environment for cvhonors
 \newenvironment{cvhonors}{%
   \vspace{\acvSectionContentTopSkip}
   \vspace{-2mm}
@@ -325,9 +352,57 @@
 }
 
 % Define a line of cv information(honor, award or something else)
-% Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}
-\newcommand*{\cvhonor}[4]{%
-  \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+% Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}{<description>}
+\newcommand*{\cvhonor}[5]{%
+  \honordatestyle{#4} & \honorpositionstyle{#1} & \honorlocationstyle{#3} \\[-5mm]
+  \ifx&#5&%
+    % No description
+  \else
+    \multicolumn{3}{@{}p{\dimexpr\textwidth-\tabcolsep}@{}}{\honortitlestyle{#5}} \\[5mm]
+  \fi
+}
+
+%-------------------------------------------------------------------------------
+%                Section-specific environments
+%-------------------------------------------------------------------------------
+% Education environment
+\newenvironment{cveducation}{%
+  \vspace{\acvSectionContentTopSkip}
+  \begin{center}
+}{%
+  \end{center}
+}
+
+% Experience environment
+\newenvironment{cvexperience}{%
+  \vspace{\acvSectionContentTopSkip}
+  \begin{center}
+}{%
+  \end{center}
+}
+
+% Projects environment
+\newenvironment{cvprojects}{%
+  \vspace{\acvSectionContentTopSkip}
+  \begin{center}
+}{%
+  \end{center}
+}
+
+% Publications environment
+\newenvironment{cvpublications}{%
+  \vspace{\acvSectionContentTopSkip}
+  \begin{center}
+}{%
+  \end{center}
+}
+
+% Open Source environment
+\newenvironment{cvopensource}{%
+  \vspace{\acvSectionContentTopSkip}
+  \begin{center}
+}{%
+  \end{center}
 }
 
 % Define an environment for cvskill

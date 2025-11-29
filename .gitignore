@@ -1,0 +1,55 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# Output directory - all temporary build files
+output/
+
+# Org build artifacts
+org/*.tex
+org/*.pdf
+org/*.aux
+org/*.log
+org/*.out
+
+# Cline storage
+.cline_storage/
+
+# Temporary files
+tmp-something/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Personal data (uncomment if you want to keep your data private)
+# data/personal.yaml
+# data/experience.yaml
+# data/education.yaml
+# data/skills.yaml
