@@ -96,5 +96,20 @@ git commit -m "Add documentation and git workflow script
 - Added git-commits.sh for containerized git workflow"
 
 echo ""
+echo "=== Commit 7: Improve project section formatting ==="
+git add assets/style/cv-commands.sty assets/style/cv-styles.sty org/sections/projects.org
+git status --short
+git commit -m "Refine project section with definition-style formatting
+
+- Increased spacing between projects (from -2mm to 1mm)
+- Changed Summary -> Synopsis, Contributions -> Details
+- Implemented definition-list style with LaTeX description environment
+- Synopsis/Details labels at left margin with content aligned below
+- Swapped font sizes: project titles 9pt (larger), labels 8pt (smaller)
+- Added consistent font styling: labels bold, content light
+- All 14 projects updated with new format
+- Improved visual hierarchy and readability"
+
+echo ""
 echo "=== All Commits Complete ==="
 

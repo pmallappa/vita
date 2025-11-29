@@ -17,11 +17,11 @@ org/sections/*.org (source content)
      ↓
 elisp/org-cv-init.el (export configuration)
      ↓
-output/*.tex (generated LaTeX)
+outputs/*.tex (generated LaTeX)
      ↓
 assets/style/*.sty (styling)
      ↓
-output/*.pdf (final documents)
+outputs/*.pdf (final documents)
 ```
 
 ### Critical Files and Their Roles
