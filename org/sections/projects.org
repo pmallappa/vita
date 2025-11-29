@@ -16,62 +16,44 @@
 :CV_ENV: cvproject
 :PROJECT: AMD Pensando SmartNIC Platform
 :DATE: Jun. 2025 -- Present
-:LANGUAGES: C, C++, P4
-:TOOLS: Git, Make, Qemu, Xen
-:TECH: SmartNIC, DPU, NVMe, Storage Offload
+:LANGUAGES: C, C++, P4, Python
+:TOOLS: Git, GDB, Qemu, Xen Hypervisor, DPDK
+:TECH: NVMe-oF, RDMA, SmartNIC, DPU, Hardware Offload, Packet Processing Pipelines
 :END:
 
-*Summary:* Leading development of storage acceleration solutions on AMD Pensando Data Processing Units (DPUs). Architecting high-performance offload engines for NVMe-oF and storage virtualization leveraging programmable P4 pipelines and hardware acceleration.
-
-#+latex: \par\vspace{2mm}
-
-*Contributions:*
-- Architecting NVMe-over-Fabrics offload engine on Pensando DPU achieving sub-10μs latency
-- Developing P4-based packet processing pipelines for storage protocol acceleration
-- Implementing Xen-based virtualization stack for secure multi-tenant storage isolation
-- Designing hardware-accelerated compression and encryption for in-line data protection
+#+latex: \begin{description}[leftmargin=7.5em,labelwidth=7em,labelsep=0.5em,style=nextline,itemsep=0pt,parsep=0pt,font=\fontsize{8pt}{1em}\bodyfont\bfseries,before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}]
+#+latex: \item[Synopsis:] Leading development of storage acceleration solutions on AMD Pensando Data Processing Units (DPUs). Architecting high-performance offload engines for NVMe-oF and storage virtualization leveraging programmable P4 pipelines and hardware acceleration.
+#+latex: \item[Details:] Architecting NVMe-over-Fabrics offload engine on Pensando DPU achieving sub-10μs latency. Developing P4-based packet processing pipelines for storage protocol acceleration. Implementing Xen-based virtualization stack for secure multi-tenant storage isolation. Designing hardware-accelerated compression and encryption for in-line data protection.
+#+latex: \end{description}
 
 *** AMD Cryptography Library
 :PROPERTIES:
 :CV_ENV: cvproject
 :PROJECT: AMD Cryptography Library
 :DATE: Jan. 2022 -- Jun. 2025
-:LANGUAGES: C++, Assembly
-:TOOLS: Git, CMake, OpenSSL
-:TECH: AES-CFB, SHA2, AVX2, AESNI, SHANI
+:LANGUAGES: C++, x86-64 Assembly
+:TOOLS: Git, CMake, GCC, Clang, OpenSSL Provider API
+:TECH: AES-CFB, AES-GCM, SHA256, SHA512, AVX2, AVX-512, AESNI, SHANI, VAES
 :END:
 
-*Summary:* Initiated as proof-of-concept to address ISV performance bottlenecks with AES-CFB cryptography on AMD EPYC Milan servers. Evolved into comprehensive cryptographic primitives library delivering production-grade implementations of AES and SHA algorithms optimized for AMD processor architectures.
-
-#+latex: \par\vspace{2mm}
-
-*Contributions:*
-- Engineered parallel AES-CFB decryption algorithm delivering 3x performance improvement over standard OpenSSL implementation
-- Developed multi-algorithm cryptographic library supporting AVX2, AESNI, and SHANI instruction set extensions
-- Implemented CPUID-based runtime dispatcher for automatic selection of optimal algorithm variant per processor generation
-- Integrated library as OpenSSL provider enabling transparent drop-in replacement for existing applications
+#+latex: \begin{description}[leftmargin=7.5em,labelwidth=7em,labelsep=0.5em,style=nextline,itemsep=0pt,parsep=0pt,font=\fontsize{8pt}{1em}\bodyfont\bfseries,before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}]
+#+latex: \item[Synopsis:] Initiated as proof-of-concept to address ISV performance bottlenecks with AES-CFB cryptography on AMD EPYC Milan servers. Evolved into comprehensive cryptographic primitives library delivering production-grade implementations of AES and SHA algorithms optimized for AMD processor architectures.
+#+latex: \item[Details:] Engineered parallel AES-CFB decryption algorithm delivering 3x performance improvement over standard OpenSSL implementation. Developed multi-algorithm cryptographic library supporting AVX2, AESNI, and SHANI instruction set extensions. Implemented CPUID-based runtime dispatcher for automatic selection of optimal algorithm variant per processor generation. Integrated library as OpenSSL provider enabling transparent drop-in replacement for existing applications.
+#+latex: \end{description}
 *** AMD Math Library (AOCL-libm)
 :PROPERTIES:
 :CV_ENV: cvproject
 :PROJECT: AMD Math Library (AOCL-libm)
 :DATE: Feb. 2018 -- Dec. 2021
-:LANGUAGES: C, x86 Assembly, Python
-:TOOLS: CMake, GCC, AOCC, Git
-:TECH: SIMD, FMA3, AVX2, AVX-512
+:LANGUAGES: C, x86-64 Assembly, Python
+:TOOLS: CMake, GCC, Clang, AOCC, Git, Perf, VTune
+:TECH: AVX2, AVX-512, FMA3, FMA4, Estrin Polynomial, SIMD Vectorization, Cache Optimization
 :END:
 
-*Summary:* High-performance mathematical library providing optimized implementations of transcendental functions (exp, log, pow, trigonometric) for AMD EPYC and Ryzen processors. Led comprehensive modernization initiative to enhance performance through advanced algorithmic techniques and microarchitecture-aware optimizations.
-
-#+latex: \par\vspace{2mm}
-
-*Contributions:*
-- Implemented Estrin's polynomial evaluation method enabling parallel FMA instruction utilization for reduced latency
-- Developed vectorized lookup table architecture with cache-line alignment and interleaving for optimal memory bandwidth
-- Achieved 30% performance improvement in scalar operations and 2x improvement in vector operations across function portfolio
-- Engineered CPUID-based dynamic dispatcher selecting optimal code paths based on processor generation and feature flagsbles, Estrin's method polynomial for parallel-FMA
-- Achieved 30% performance improvement for scalar operations and 2x improvement for vector operations
-- Developed dynamic dispatcher using cpuid instruction for runtime algorithm selection
-- Redesigned architecture with cache-aligned and interleaved tables
+#+latex: \begin{description}[leftmargin=7.5em,labelwidth=7em,labelsep=0.5em,style=nextline,itemsep=0pt,parsep=0pt,font=\fontsize{8pt}{1em}\bodyfont\bfseries,before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}]
+#+latex: \item[Synopsis:] High-performance mathematical library providing optimized implementations of transcendental functions (exp, log, pow, trigonometric) for AMD EPYC and Ryzen processors. Led comprehensive modernization initiative to enhance performance through advanced algorithmic techniques and microarchitecture-aware optimizations.
+#+latex: \item[Details:] Implemented Estrin's polynomial evaluation method enabling parallel FMA instruction utilization for reduced latency. Developed vectorized lookup table architecture with cache-line alignment and interleaving for optimal memory bandwidth. Achieved 30% performance improvement in scalar operations and 2x improvement in vector operations across function portfolio. Engineered CPUID-based dynamic dispatcher selecting optimal code paths based on processor generation and feature flags.
+#+latex: \end{description}
 
 * Broadcom Ltd.
 :PROPERTIES:
@@ -92,19 +74,14 @@
 :PROJECT: ARM IO Virtualization
 :DATE: Jan. 2014 -- Oct. 2016
 :LANGUAGES: C
-:TOOLS: QEMU, Git, GDB
-:TECH: ARMv8, SMMUv3, IOMMU, Virtualization
+:TOOLS: QEMU Device Model, Git, GDB, ARM Fast Models
+:TECH: ARMv8, SMMUv3, IOMMU, 2-Stage Translation, Command Queue, Event Records
 :END:
 
-*Summary:* Developed comprehensive SMMUv3 (ARM System Memory Management Unit) emulation infrastructure enabling early software development and validation for Broadcom Vulcan ARMv8 server platform. SMMUv3 provides hardware-based IO virtualization with multi-stage address translation and device isolation capabilities.
-
-#+latex: \par\vspace{2mm}
-
-*Contributions:*
-- Architected and implemented complete SMMUv3 device model for QEMU, successfully upstreamed to mainline repository
-- Developed command queue processing engine supporting asynchronous invalidation and event notification
-- Implemented ARMv8 LPAE page table walker supporting Stage-1, Stage-2, and nested translation modes
-- Designed comprehensive event reporting mechanism with configurable interrupt generation and fault handling
+#+latex: \begin{description}[leftmargin=7.5em,labelwidth=7em,labelsep=0.5em,style=nextline,itemsep=0pt,parsep=0pt,font=\fontsize{8pt}{1em}\bodyfont\bfseries,before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}]
+#+latex: \item[Synopsis:] Developed comprehensive SMMUv3 (ARM System Memory Management Unit) emulation infrastructure enabling early software development and validation for Broadcom Vulcan ARMv8 server platform. SMMUv3 provides hardware-based IO virtualization with multi-stage address translation and device isolation capabilities.
+#+latex: \item[Details:] Architected and implemented complete SMMUv3 device model for QEMU, successfully upstreamed to mainline repository. Developed command queue processing engine supporting asynchronous invalidation and event notification. Implemented ARMv8 LPAE page table walker supporting Stage-1, Stage-2, and nested translation modes. Designed comprehensive event reporting mechanism with configurable interrupt generation and fault handling.
+#+latex: \end{description}
 
 *** SMMUv3 Driver for Broadcom Vulcan
 :PROPERTIES:
@@ -112,19 +89,14 @@
 :PROJECT: SMMUv3 Driver
 :DATE: Jan. 2014 -- Oct. 2016
 :LANGUAGES: C
-:TOOLS: Git, GCC
-:TECH: Linux Kernel, SMMUv3, DMA API
+:TOOLS: Git, GCC, ARM Cross Compiler, Kernel Build System
+:TECH: Linux Kernel Driver, IOMMU Framework, DMA API, Device Tree, MSI Interrupts
 :END:
 
-*Summary:* Broadcom Vulcan represents ground-up ARMv8 server processor design featuring 32 cores with simultaneous multithreading (4 threads per core). Engineered production Linux driver for integrated SMMUv3 enabling secure IO virtualization and DMA protection for datacenter workloads.
-
-#+latex: \par\vspace{2mm}
-
-*Contributions:*
-- Developed initial Linux kernel driver implementing SMMUv3 core functionality including StreamID-based device isolation
-- Collaborated cross-functionally with hardware design team to identify and resolve silicon errata and performance bottlenecks
-- Contributed bug fixes and feature enhancements to ARM's reference SMMUv3 driver implementation
-- Designed and executed comprehensive validation suite covering multi-stage translation and fault handling scenarios
+#+latex: \begin{description}[leftmargin=7.5em,labelwidth=7em,labelsep=0.5em,style=nextline,itemsep=0pt,parsep=0pt,font=\fontsize{8pt}{1em}\bodyfont\bfseries,before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}]
+#+latex: \item[Synopsis:] Broadcom Vulcan represents ground-up ARMv8 server processor design featuring 32 cores with simultaneous multithreading (4 threads per core). Engineered production Linux driver for integrated SMMUv3 enabling secure IO virtualization and DMA protection for datacenter workloads.
+#+latex: \item[Details:] Developed initial Linux kernel driver implementing SMMUv3 core functionality including StreamID-based device isolation. Collaborated cross-functionally with hardware design team to identify and resolve silicon errata and performance bottlenecks. Contributed bug fixes and feature enhancements to ARM's reference SMMUv3 driver implementation. Designed and executed comprehensive validation suite covering multi-stage translation and fault handling scenarios.
+#+latex: \end{description}
 
 ** Tech Lead
 :PROPERTIES:
@@ -136,20 +108,15 @@
 :CV_ENV: cvproject
 :PROJECT: XLP SDK
 :DATE: May. 2011 -- Dec. 2013
-:LANGUAGES: C
-:TOOLS: Git, GCC
-:TECH: MIPS64, Linux Kernel, RNG, DVFS
+:LANGUAGES: C, MIPS Assembly
+:TOOLS: Git, GCC, MIPS Cross Compiler, Device Tree Compiler
+:TECH: MIPS64 Octeon, Common Clock Framework, DVFS, Hardware RNG, CDE Engine
 :END:
 
-*Summary:* Broadcom XLP represents high-performance multicore MIPS64 processor architecture featuring up to 32 cores with 2-way multithreading and integrated hardware acceleration engines for networking and security workloads. Led Linux kernel enablement delivering production-grade device drivers and power management infrastructure.
-
-#+latex: \par\vspace{2mm}
-
-*Contributions:*
-- Developed hardware random number generator driver providing high-entropy source for cryptographic applications
-- Implemented Common Clock Framework driver enabling dynamic frequency scaling across processor domains
-- Engineered DVFS (Dynamic Voltage and Frequency Scaling) driver reducing power consumption by 40% under variable workloads
-- Created CDE (Compression/Decompression Engine) driver offloading network packet processing to hardware accelerators
+#+latex: \begin{description}[leftmargin=7.5em,labelwidth=7em,labelsep=0.5em,style=nextline,itemsep=0pt,parsep=0pt,font=\fontsize{8pt}{1em}\bodyfont\bfseries,before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}]
+#+latex: \item[Synopsis:] Broadcom XLP represents high-performance multicore MIPS64 processor architecture featuring up to 32 cores with 2-way multithreading and integrated hardware acceleration engines for networking and security workloads. Led Linux kernel enablement delivering production-grade device drivers and power management infrastructure.
+#+latex: \item[Details:] Developed hardware random number generator driver providing high-entropy source for cryptographic applications. Implemented Common Clock Framework driver enabling dynamic frequency scaling across processor domains. Engineered DVFS (Dynamic Voltage and Frequency Scaling) driver reducing power consumption by 40% under variable workloads. Created CDE (Compression/Decompression Engine) driver offloading network packet processing to hardware accelerators.
+#+latex: \end{description}
 
 * Cavium Networks
 :PROPERTIES:
@@ -169,40 +136,30 @@
 :CV_ENV: cvproject
 :PROJECT: MIPS Kexec/Kdump
 :DATE: May. 2011 -- Dec. 2013
-:LANGUAGES: C, MIPS Assembly
-:TOOLS: Git, GDB
-:TECH: Linux Kernel, Kexec, Crash Dump
+:LANGUAGES: C, MIPS64 Assembly
+:TOOLS: Git, GDB, Crash Analysis, Kernel Build System
+:TECH: Kexec, Kdump, ELF Boot Protocol, Hybrid SMP, Memory Reservation, Crash Kernel
 :END:
 
-*Summary:* Kexec enables fast kernel reboot without firmware re-initialization, while Kdump leverages this mechanism for capturing crash dumps. Developed complete MIPS64 architecture port enabling zero-downtime kernel updates and comprehensive crash analysis for Cavium OCTEON network processors.
-
-#+latex: \par\vspace{2mm}
-
-*Contributions:*
-- Architected and implemented complete MIPS64 port of Kexec/Kdump infrastructure supporting OCTEON's Hybrid SMP topology
-- Resolved critical architectural bug preventing Kexec functionality on MIPS platforms
-- Successfully upstreamed two kernel patches to Linux mainline, now universally deployed across MIPS64 systems
-- Enabled seamless kernel hot-patching without disrupting Hybrid SMP core configurations or network traffic
+#+latex: \begin{description}[leftmargin=7.5em,labelwidth=7em,labelsep=0.5em,style=nextline,itemsep=0pt,parsep=0pt,font=\fontsize{8pt}{1em}\bodyfont\bfseries,before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}]
+#+latex: \item[Synopsis:] Kexec enables fast kernel reboot without firmware re-initialization, while Kdump leverages this mechanism for capturing crash dumps. Developed complete MIPS64 architecture port enabling zero-downtime kernel updates and comprehensive crash analysis for Cavium OCTEON network processors.
+#+latex: \item[Details:] Architected and implemented complete MIPS64 port of Kexec/Kdump infrastructure supporting OCTEON's Hybrid SMP topology. Resolved critical architectural bug preventing Kexec functionality on MIPS platforms. Successfully upstreamed two kernel patches to Linux mainline, now universally deployed across MIPS64 systems. Enabled seamless kernel hot-patching without disrupting Hybrid SMP core configurations or network traffic.
+#+latex: \end{description}
 
 *** CavHv Hypervisor for MIPS64
 :PROPERTIES:
 :CV_ENV: cvproject
 :PROJECT: CavHv Hypervisor
 :DATE: Jan. 2012 -- Dec. 2013
-:LANGUAGES: C, MIPS Assembly
-:TOOLS: GCC, MIPS Toolchain
-:TECH: MIPS VZ Extensions, Type-1 Hypervisor
+:LANGUAGES: C, MIPS64 Assembly
+:TOOLS: GCC, MIPS Toolchain, GDB, QEMU
+:TECH: MIPS VZ Extensions, Type-1 Hypervisor, CP0 Virtualization, Root/Guest Mode
 :END:
 
-*Summary:* Experimental Type-1 hypervisor leveraging MIPS Virtualization (VZ) hardware extensions for Cavium OCTEON-III processors. Collaborated with MIPS architecture team and Cavium hardware designers to validate draft virtualization specification through practical implementation.
-
-#+latex: \par\vspace{2mm}
-
-*Contributions:*
-- Designed and implemented bare-metal Type-1 hypervisor based on MIPS Virtualization Extensions draft specification
-- Developed guest context management supporting CP0 register virtualization and root/guest mode transitions
-- Successfully demonstrated concurrent execution of two independent Linux kernel instances with isolated address spaces
-- Provided critical architectural feedback influencing finalization of MIPS VZ specification
+#+latex: \begin{description}[leftmargin=7.5em,labelwidth=7em,labelsep=0.5em,style=nextline,itemsep=0pt,parsep=0pt,font=\fontsize{8pt}{1em}\bodyfont\bfseries,before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}]
+#+latex: \item[Synopsis:] Experimental Type-1 hypervisor leveraging MIPS Virtualization (VZ) hardware extensions for Cavium OCTEON-III processors. Collaborated with MIPS architecture team and Cavium hardware designers to validate draft virtualization specification through practical implementation.
+#+latex: \item[Details:] Designed and implemented bare-metal Type-1 hypervisor based on MIPS Virtualization Extensions draft specification. Developed guest context management supporting CP0 register virtualization and root/guest mode transitions. Successfully demonstrated concurrent execution of two independent Linux kernel instances with isolated address spaces. Provided critical architectural feedback influencing finalization of MIPS VZ specification.
+#+latex: \end{description}
 
 * Cisco Systems
 :PROPERTIES:
@@ -223,19 +180,14 @@
 :PROJECT: Garbage Detector
 :DATE: Oct. 2010 -- Apr. 2011
 :LANGUAGES: C
-:TOOLS: Glibc, Clearcase
-:TECH: Mark-Sweep GC, Runtime Instrumentation
+:TOOLS: GCC, Glibc Hooks, Clearcase, Runtime Analysis
+:TECH: Mark-Sweep Algorithm, Malloc Interposition, Conservative GC, Graph Traversal
 :END:
 
-*Summary:* Cisco IOS operates in both bare-metal and Linux environments with multi-month uptimes, making memory leak detection critical. Developed non-intrusive garbage detection system enabling proactive identification of unreachable memory in long-running network infrastructure.
-
-#+latex: \par\vspace{2mm}
-
-*Contributions:*
-- Architected custom C runtime wrapper intercepting malloc/free operations without application source modifications
-- Implemented concurrent monitoring thread executing intrusive mark-and-sweep algorithm during idle periods
-- Designed reporting mechanism distinguishing legitimate long-lived allocations from leaked memory
-- Enabled field deployment teams to diagnose memory leaks before service-impacting failures occurred
+#+latex: \begin{description}[leftmargin=7.5em,labelwidth=7em,labelsep=0.5em,style=nextline,itemsep=0pt,parsep=0pt,font=\fontsize{8pt}{1em}\bodyfont\bfseries,before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}]
+#+latex: \item[Synopsis:] Cisco IOS operates in both bare-metal and Linux environments with multi-month uptimes, making memory leak detection critical. Developed non-intrusive garbage detection system enabling proactive identification of unreachable memory in long-running network infrastructure.
+#+latex: \item[Details:] Architected custom C runtime wrapper intercepting malloc/free operations without application source modifications. Implemented concurrent monitoring thread executing intrusive mark-and-sweep algorithm during idle periods. Designed reporting mechanism distinguishing legitimate long-lived allocations from leaked memory. Enabled field deployment teams to diagnose memory leaks before service-impacting failures occurred.
+#+latex: \end{description}
 
 * B-Labs
 :PROPERTIES:
@@ -255,20 +207,15 @@
 :CV_ENV: cvproject
 :PROJECT: CodeZero Hypervisor
 :DATE: Nov. 2009 -- Sep. 2010
-:LANGUAGES: C, ARM Assembly
-:TOOLS: Git, QEMU
-:TECH: Cortex-A9, SMP, Microkernel
+:LANGUAGES: C, ARMv7 Assembly
+:TOOLS: Git, QEMU, ARM GCC, JTAG Debugger
+:TECH: ARM Cortex-A9 MPCore, SMP, Cache Coherency, NEON SIMD, Microkernel IPC
 :END:
 
-*Summary:* CodeZero represents microkernel-based hypervisor architecture targeting ARM Cortex-A9 multicore processors. Executed comprehensive platform bring-up enabling bare-metal execution on emerging ARMv7 SMP hardware.
-
-#+latex: \par\vspace{2mm}
-
-*Contributions:*
-- Ported complete CodeZero hypervisor infrastructure to ARM Cortex-A9 SMP platforms including cache coherency management
-- Developed ARM-optimized memcpy implementation leveraging NEON SIMD instructions for enhanced performance
-- Extended QEMU device models supporting CodeZero-specific platform requirements
-- Ported Linux kernel as guest OS executing under CodeZero hypervisor supervision
+#+latex: \begin{description}[leftmargin=7.5em,labelwidth=7em,labelsep=0.5em,style=nextline,itemsep=0pt,parsep=0pt,font=\fontsize{8pt}{1em}\bodyfont\bfseries,before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}]
+#+latex: \item[Synopsis:] CodeZero represents microkernel-based hypervisor architecture targeting ARM Cortex-A9 multicore processors. Executed comprehensive platform bring-up enabling bare-metal execution on emerging ARMv7 SMP hardware.
+#+latex: \item[Details:] Ported complete CodeZero hypervisor infrastructure to ARM Cortex-A9 SMP platforms including cache coherency management. Developed ARM-optimized memcpy implementation leveraging NEON SIMD instructions for enhanced performance. Extended QEMU device models supporting CodeZero-specific platform requirements. Ported Linux kernel as guest OS executing under CodeZero hypervisor supervision.
+#+latex: \end{description}
 
 * Harman International
 :PROPERTIES:
@@ -288,20 +235,15 @@
 :CV_ENV: cvproject
 :PROJECT: QNX BSP
 :DATE: Jul. 2009 -- Nov. 2009
-:LANGUAGES: C, PowerPC Assembly
-:TOOLS: QNX Momentics, Make
-:TECH: P4080, P2020, e500mc, SMP
+:LANGUAGES: C, PowerPC e500 Assembly
+:TOOLS: QNX Momentics IDE, Make, PowerPC Cross Compiler
+:TECH: QorIQ P4080, P2020, e500mc Core, AltiVec, SMP Spinlocks, I2C Protocol
 :END:
 
-*Summary:* Board Support Package development for QNX real-time operating system on Freescale QorIQ P4080 (8-core) and P2020 (dual-core) PowerPC processors targeting automotive infotainment systems. Enabled QNX deployment on next-generation multicore embedded platforms.
-
-#+latex: \par\vspace{2mm}
-
-*Contributions:*
-- Resolved critical SMP initialization bug preventing P4080 8-core bring-up on QNX RTOS
-- Ported I2C controller driver enabling communication with touchscreen, audio codecs, and sensor peripherals
-- Developed foundational BSP infrastructure including timer subsystem and interrupt controller drivers
-- Successfully achieved early boot milestones on both P2020 and P4080 reference platforms
+#+latex: \begin{description}[leftmargin=7.5em,labelwidth=7em,labelsep=0.5em,style=nextline,itemsep=0pt,parsep=0pt,font=\fontsize{8pt}{1em}\bodyfont\bfseries,before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}]
+#+latex: \item[Synopsis:] Board Support Package development for QNX real-time operating system on Freescale QorIQ P4080 (8-core) and P2020 (dual-core) PowerPC processors targeting automotive infotainment systems. Enabled QNX deployment on next-generation multicore embedded platforms.
+#+latex: \item[Details:] Resolved critical SMP initialization bug preventing P4080 8-core bring-up on QNX RTOS. Ported I2C controller driver enabling communication with touchscreen, audio codecs, and sensor peripherals. Developed foundational BSP infrastructure including timer subsystem and interrupt controller drivers. Successfully achieved early boot milestones on both P2020 and P4080 reference platforms.
+#+latex: \end{description}
 
 * ARM Ltd.
 :PROPERTIES:
@@ -321,20 +263,15 @@
 :CV_ENV: cvproject
 :PROJECT: OS Support for ARM
 :DATE: Aug. 2005 -- Jun. 2009
-:LANGUAGES: C, ARM Assembly, Python
-:TOOLS: ARM FastModels, SoCDesigner, DS-5
-:TECH: ARM1176JZF-S, Cortex-A8, TrustZone
+:LANGUAGES: C, ARMv6/v7 Assembly, Python
+:TOOLS: ARM Fast Models, DS-5 Debugger, RealView Compiler, SoCDesigner
+:TECH: ARM1176JZF-S, Cortex-A8, TrustZone, Symbian OS, L4 Microkernel, VFP
 :END:
 
-*Summary:* Platform engineering team responsible for enabling diverse operating systems on emerging ARM processor cores. Supported major OS ecosystems including Linux, Symbian, and QNX across ARM11 (ARM1176JZF-S with TrustZone) and Cortex-A8 architectures, facilitating early partner evaluation and ecosystem development.
-
-#+latex: \par\vspace{2mm}
-
-*Contributions:*
-- Developed production-grade resistive touchscreen driver for Symbian OS with multi-touch gesture recognition
-- Architected Python-based test automation framework reducing Symbian OS validation cycle time by 60%
-- Designed precision interrupt latency measurement infrastructure quantifying TrustZone secure-world context switch overhead
-- Ported L4Ka::Pistachio microkernel to ARM architecture enabling virtualization research and proof-of-concepts
+#+latex: \begin{description}[leftmargin=7.5em,labelwidth=7em,labelsep=0.5em,style=nextline,itemsep=0pt,parsep=0pt,font=\fontsize{8pt}{1em}\bodyfont\bfseries,before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}]
+#+latex: \item[Synopsis:] Platform engineering team responsible for enabling diverse operating systems on emerging ARM processor cores. Supported major OS ecosystems including Linux, Symbian, and QNX across ARM11 (ARM1176JZF-S with TrustZone) and Cortex-A8 architectures, facilitating early partner evaluation and ecosystem development.
+#+latex: \item[Details:] Developed production-grade resistive touchscreen driver for Symbian OS with multi-touch gesture recognition. Architected Python-based test automation framework reducing Symbian OS validation cycle time by 60%. Designed precision interrupt latency measurement infrastructure quantifying TrustZone secure-world context switch overhead. Ported L4Ka::Pistachio microkernel to ARM architecture enabling virtualization research and proof-of-concepts.
+#+latex: \end{description}
 
 * Sasken Ltd.
 :PROPERTIES:
@@ -355,19 +292,14 @@
 :PROJECT: EFFS Filesystem
 :DATE: Aug. 2004 -- Aug. 2005
 :LANGUAGES: C
-:TOOLS: VxWorks IDE, Tornado
-:TECH: NOR Flash, Wear-Leveling, RTOS
+:TOOLS: Tornado IDE, Wind River Compiler, VxWorks RTOS
+:TECH: NOR Flash, Wear Leveling, Erase Block Management, Power-Fail Safe, POSIX I/O
 :END:
 
-*Summary:* Designed and maintained Extended Flash File System (EFFS) for VxWorks-based UMTS base station controllers. Addressed unique constraints of Flash storage including limited erase cycles, asymmetric read/write performance, and power-failure resilience requirements for telecom infrastructure.
-
-#+latex: \par\vspace{2mm}
-
-*Contributions:*
-- Architected power-failure-resilient filesystem ensuring data integrity across unexpected resets in field deployments
-- Developed wear-leveling algorithm distributing write operations across Flash blocks extending device lifespan by 3x
-- Implemented atomic transaction mechanism with flat file tree optimized for Flash characteristics
-- Integrated filesystem with VxWorks I/O subsystem maintaining POSIX-like API compatibility
+#+latex: \begin{description}[leftmargin=7.5em,labelwidth=7em,labelsep=0.5em,style=nextline,itemsep=0pt,parsep=0pt,font=\fontsize{8pt}{1em}\bodyfont\bfseries,before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}]
+#+latex: \item[Synopsis:] Designed and maintained Extended Flash File System (EFFS) for VxWorks-based UMTS base station controllers. Addressed unique constraints of Flash storage including limited erase cycles, asymmetric read/write performance, and power-failure resilience requirements for telecom infrastructure.
+#+latex: \item[Details:] Architected power-failure-resilient filesystem ensuring data integrity across unexpected resets in field deployments. Developed wear-leveling algorithm distributing write operations across Flash blocks extending device lifespan by 3x. Implemented atomic transaction mechanism with flat file tree optimized for Flash characteristics. Integrated filesystem with VxWorks I/O subsystem maintaining POSIX-like API compatibility.
+#+latex: \end{description}
 
 * Global Edge Software
 :PROPERTIES:
@@ -388,21 +320,20 @@
 :PROJECT: Linux SDIO Driver
 :DATE: Jun. 2003 -- Aug. 2004
 :LANGUAGES: C
-:TOOLS: Git, GCC, GDB
-:TECH: StrongARM, SDIO, 802.11g, DMA
+:TOOLS: Git, GCC, GDB, ARM Cross Compiler, Logic Analyzer
+:TECH: Intel StrongARM SA-1110, SDIO Protocol, 802.11g WiFi, DMA Engine, IRQ Handling
 :END:
 
-*Summary:* Developed high-performance SDIO host controller driver for Intel StrongARM embedded platforms enabling wireless connectivity through Marvell 802.11g WiFi chipsets. Optimized for maximum throughput on resource-constrained ARM processors targeting portable and embedded applications.
+#+latex: \begin{description}[leftmargin=7.5em,labelwidth=7em,labelsep=0.5em,style=nextline,itemsep=0pt,parsep=0pt,font=\fontsize{8pt}{1em}\bodyfont\bfseries,before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}]
+#+latex: \item[Synopsis:] Developed high-performance SDIO host controller driver for Intel StrongARM embedded platforms enabling wireless connectivity through Marvell 802.11g WiFi chipsets. Optimized for maximum throughput on resource-constrained ARM processors targeting portable and embedded applications.
+#+latex: \item[Details:] Architected and implemented complete SDIO host controller driver supporting 4-bit wide bus mode and clock management. Engineered DMA-based transfer mechanism achieving maximum theoretical 802.11g throughput (54 Mbps) on StrongARM platform. Optimized interrupt handling and data transfer pathways minimizing CPU overhead and latency. Developed comprehensive integration with Marvell WiFi chipset firmware achieving production-grade wireless connectivity.
+#+latex: \end{description}
 
-#+latex: \par\vspace{2mm}
 
-*Contributions:*
-- Architected and implemented complete SDIO host controller driver supporting 4-bit wide bus mode and clock management
-- Engineered DMA-based transfer mechanism achieving maximum theoretical 802.11g throughput (54 Mbps) on StrongARM platform
-- Optimized interrupt handling and data transfer pathways minimizing CPU overhead and latency
-- Developed comprehensive integration with Marvell WiFi chipset firmware achieving production-grade wireless connectivity
-- Developed 1-bit SDIO driver for legacy hardware compatibility
-- Optimized data transfer protocols for maximum throughput
-- Implemented robust error handling mechanisms for reliable operation
+
+
+
+
+
 
 
