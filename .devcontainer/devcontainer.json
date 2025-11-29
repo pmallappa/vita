@@ -1,0 +1,16 @@
+{
+  "name": "LaTeX Resume Builder",
+  "build": {
+    "dockerfile": "Containerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop",
+        "ms-python.python"
+      ]
+    }
+  },
+  "postCreateCommand": "make resume",
+  "remoteUser": "root"
+}

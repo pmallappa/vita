@@ -1,0 +1,37 @@
+# Education
+education:
+  - institution: "BITS Pilani"
+    degree: "M.Tech (Computer Science)"
+    location: "Pilani, Rajasthan, India"
+    graduation_date: "2016"
+    gpa: ""
+    honors: ""
+    
+  - institution: "Visvesvaraya Technological University (VTU)"
+    degree: "B.E (Computer Science)"
+    location: "AIT, Karnataka, India"
+    graduation_date: "2002"
+    gpa: ""
+    honors: ""
+
+# Awards and Recognition
+awards:
+  - name: "Spotlight Award"
+    date: "2020-Q4"
+    description: "Providing important patches to GLIBC to fix memcpy behaviour on AMD, open sourcing AMD LibM"
+    
+  - name: "Spotlight Award"
+    date: "2021-Q3"
+    description: "Delivering Cryptography PoC (CFB based parallel decrypting), increases performance by 3x"
+    
+  - name: "Spotlight Award"
+    date: "2019-05"
+    description: "Supporting Arden Ubuntu emulation boot, fixing initramfs delayed mount"
+    
+  - name: "Spotlight Award"
+    date: "2019-04"
+    description: "Optimization of exp() and improving performance by 30%"
+    
+  - name: "Spotlight Award"
+    date: "2018-10"
+    description: "Helping Emulation team find design bug in data fabric"

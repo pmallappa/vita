@@ -1,0 +1,7 @@
+publications:
+  - title: "Example Publication Title"
+    authors: "Author Name, Co-Author Name"
+    venue: "Conference/Journal Name"
+    date: "2024"
+    url: "https://example.com/publication"
+    description: "Brief description of the publication"

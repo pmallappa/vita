@@ -1,0 +1,37 @@
+# Open Source Contributions
+opensource:
+  - project: "QEMU"
+    url: "https://www.qemu.org/"
+    description: "SMMUv3 (IOMMU) emulation support for ARMv8"
+    contributions:
+      - "Designed and implemented SMMUv3 model merged into mainline"
+      - "Added support for Stage1, Stage2, and nested virtualization"
+      - "Implemented command queue processing and page table walk"
+    date: "2014-2016"
+    
+  - project: "Linux Kernel"
+    url: "https://kernel.org/"
+    description: "MIPS Kexec/Kdump port and IOMMU subsystem"
+    contributions:
+      - "Developed MIPS64 port of Kexec and Kdump (merged upstream)"
+      - "Fixed critical bugs in KEXEC for Cavium Octeon platforms"
+      - "Contributed to IOMMU/SMMUv3 driver development"
+    date: "2011-2016"
+    
+  - project: "GLIBC"
+    url: "https://www.gnu.org/software/libc/"
+    description: "Performance optimizations for AMD processors"
+    contributions:
+      - "Fixed memcpy behaviour on AMD processors"
+      - "Optimized string functions for x86_64 architecture"
+      - "Performance improvements for memory operations"
+    date: "2018-2020"
+    
+  - project: "AMD LibM"
+    url: "https://github.com/amd/aocl-libm-ose"
+    description: "Open source math library for AMD processors"
+    contributions:
+      - "Core contributor to open sourcing AMD Math Library"
+      - "Optimized transcendental functions (exp, log, pow, trig)"
+      - "Implemented SIMD/FMA optimizations for vector operations"
+    date: "2018-Present"

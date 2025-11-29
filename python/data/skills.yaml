@@ -1,0 +1,89 @@
+# Skills
+skills:
+  - category: "Programming Languages"
+    items: ["C", "Assembly (x86, ARM, MIPS)", "Rust", "Python", "C++", "Go", "Shell", "Haskell"]
+    proficiency:
+      proficient: ["C", "Assembly (x86, ARM, MIPS)"]
+      experienced: ["Rust", "Python", "C++"]
+      familiar: ["Go", "Shell", "Haskell", "LaTeX", "CSS", "HTML"]
+    
+  - category: "Libraries & Frameworks"
+    items: ["GoogleTest", "GoogleBench", "Hugo", "Qt"]
+    
+  - category: "Operating Systems"
+    items: ["Linux", "FreeBSD", "QNX", "VxWorks", "Symbian"]
+    
+  - category: "Architecture & Platforms"
+    items: ["x86/x86_64", "ARM (ARMv6, ARMv7, ARMv8)", "MIPS64", "PowerPC"]
+    
+  - category: "Virtualization & Hypervisors"
+    items: ["QEMU", "KVM", "Xen", "Custom Hypervisors", "TrustZone"]
+    
+  - category: "Development Tools"
+    items: ["Git", "Make", "CMake", "ARM Development Tools", "Keil", "Macraigor", "RealView Trace/JTAG", "Docker", "Wordpress"]
+    
+  - category: "Specialized Skills"
+    items: ["Linux Kernel Development", "Device Drivers", "IOMMU/SMMUv3", "Embedded Systems", "System Software", "Performance Optimization", "SIMD/FMA Instructions", "Cryptography (AES, SHA)", "Filesystem Development"]
+
+# Key Projects (Major Contributions)
+projects:
+  - name: "AMD Math Library"
+    date: "2018-Present"
+    keywords: ["c", "assembly", "x86", "optimization", "simd", "fma"]
+    description:
+      - "Optimized transcendental functions (exp, log, pow) using look-up-tables and Estrin's method"
+      - "Achieved 30% performance improvement for scalar and 2x for vector operations"
+      - "Developed dynamic dispatcher using cpuid for runtime algorithm selection"
+    
+  - name: "AMD Cryptographic Primitives Library"
+    date: "2020-Present"
+    keywords: ["c++", "aes", "sha", "cryptography", "avx2", "aesni"]
+    description:
+      - "Developed AES-CFB parallel decrypt algorithm achieving 3x performance improvement"
+      - "Implemented OpenSSL provider for interoperability"
+      - "Optimized using AVX2 and AESNI/SHANI instruction sets"
+    
+  - name: "SMMUv3 QEMU Emulation"
+    date: "2014-2016"
+    keywords: ["qemu", "armv8", "iommu", "virtualization"]
+    description:
+      - "Designed and developed SMMUv3 model for QEMU (merged into mainline)"
+      - "Implemented command queue, STE/CD parsing, and pagetable walk"
+      - "Supported Stage1, Stage2, and nested virtualization"
+    
+  - name: "MIPS Kexec/Kdump Port"
+    date: "2011-2013"
+    keywords: ["mips64", "linux", "kernel", "kexec", "kdump"]
+    description:
+      - "Developed MIPS port of Kexec and Kdump (patches merged upstream)"
+      - "Fixed major bugs in KEXEC for Cavium Octeon platforms"
+      - "Enabled kernel debugging without full system reset"
+    
+  - name: "CavHv Hypervisor"
+    date: "2012-2013"
+    keywords: ["hypervisor", "mips64", "virtualization"]
+    description:
+      - "Designed and developed hypervisor for MIPS64 with hardware virtualization"
+      - "Enabled running multiple Linux instances side-by-side on Octeon-III"
+      - "Collaborative effort with compiler and SDK teams"
+    
+  - name: "CodeZero Hypervisor for ARM"
+    date: "2009-2010"
+    keywords: ["arm", "cortex-a9", "hypervisor", "smp"]
+    description:
+      - "Ported CodeZero hypervisor to ARM Cortex-A9 SMP systems"
+      - "Developed fast memcpy for ARM architecture"
+      - "Added new device/platform support to QEMU for early development"
+
+# Languages
+languages:
+  - language: "Kannada"
+    proficiency: "Native"
+  - language: "English"
+    proficiency: "Professional"
+  - language: "Hindi"
+    proficiency: "Professional"
+  - language: "Telugu"
+    proficiency: "Basic Understanding"
+  - language: "Tamil"
+    proficiency: "Basic Understanding"

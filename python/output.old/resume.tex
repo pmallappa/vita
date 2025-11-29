@@ -1,0 +1,640 @@
+\documentclass[11pt,a4paper]{awesome-cv}
+
+\fontdir[assets/fonts/]
+\colorlet{awesome}{awesome-skyblue}
+
+\begin{document}
+
+\makecvfooter{\today}{Prem Mallappa}{\thepage}
+
+\name{Prem}{Mallappa}
+\position{Software Architect • System \& Embedded Software}
+\address{Bengaluru, India}
+\mobile{+91-9448900326}
+\email{prem.mallappa@gmail.com}
+\github{pmallappa}
+\linkedin{pmallappa}
+
+\makecvheader
+
+\begin{cvparagraph}
+Seasoned Software Architect with extensive expertise in designing and developing high-performance embedded systems, system software, Linux kernel drivers, and virtualization technologies. Proficient in a wide range of programming and scripting languages, with a proven track record of delivering robust, scalable solutions in complex technical environments.
+
+A highly analytical and collaborative team player, recognized for strong problem-solving abilities, logical thinking, and a passion for mastering emerging technologies. Committed to driving innovation and excellence through clean architecture, optimized code, and best-in-class engineering practices.
+\end{cvparagraph}
+
+\cvsection{Experience}
+\begin{cventries}
+\experienceentry
+  {AMD Ltd.}
+  {Bengaluru, India}
+  {Principal Engineer}
+  {Feb. 2018 -- Present}
+  {
+\begin{cvitems}
+  \item AMD Math Library: Optimizing exponential/power/logarithmic/trigonometric functions for latest AMD processors
+  \item Improved performance of exp() and log() by 30\% using look-up-table, Estrin's method polynomial, and fast integer conversion
+  \item AMD Cryptographic Primitives Library: Optimizing AES/SHA/PKCS functions with AVX2 and AESNI/SHANI instruction sets
+  \item Developed dynamic dispatcher using cpuid instruction for runtime algorithm selection
+  \item Achieved 3x performance improvement in CFB-based parallel decrypting
+\end{cvitems}
+  }
+\experienceentry
+  {Broadcom Ltd.}
+  {Bengaluru, India}
+  {Principal Engineer}
+  {Jan. 2014 -- Oct. 2016}
+  {
+\begin{cvitems}
+  \item Designed and developed initial software support for Broadcom Vulcan, a multicore-multithreaded ARMv8 64-bit processor
+  \item Handled SMMUv3 (IOMMU) related issues and software stack implementation
+  \item Developed SMMUv3 emulation model for QEMU which was merged into mainline codebase
+  \item Implemented Command queue, STE/CD parsing, pagetable walk, and Stage1/Stage2 virtualization support
+\end{cvitems}
+  }
+\experienceentry
+  {Cavium India Pvt. Ltd.}
+  {Bengaluru, India}
+  {Tech Lead}
+  {May. 2011 -- Dec. 2013}
+  {
+\begin{cvitems}
+  \item Worked on Cavium's Octeon III (MIPS64) series of processors
+  \item Fixed major bug in KEXEC and developed MIPS port of Kexec and Kdump (patches merged upstream)
+  \item Developed baremetal core-file generating software with host-based daemon for GDB debugging
+  \item Designed and developed CavHv hypervisor for MIPS64 with experimental hardware virtualization
+\end{cvitems}
+  }
+\experienceentry
+  {ARM Ltd.}
+  {Bengaluru, India}
+  {Sr. Development Engineer}
+  {Aug. 2005 -- Jun. 2009}
+  {
+\begin{cvitems}
+  \item Responsible for OS porting to latest ARM cores including ARM1176JZFS, TrustZone and Cortex-A8
+  \item Developed touch-screen driver for Symbian OS and automated testing using Python scripts
+  \item Designed interrupt latency measurement driver for TrustZone secure world overhead analysis
+  \item Ported L4Ka::pistachio microkernel to ARM for virtualization experiments
+\end{cvitems}
+  }
+\experienceentry
+  {Sasken Communications Pvt Ltd.}
+  {Bengaluru, India}
+  {Sr. Software Engineer}
+  {Aug. 2004 -- Aug. 2005}
+  {
+\begin{cvitems}
+  \item Module owner for EFS (Extended File System) developed for VxWorks, used in UMTS/BTS
+  \item Developed reset-proof filesystem with wear-leveling and minimal data-loss features
+  \item Implemented flat file tree structure optimized for Flash devices with limited read/write cycles
+\end{cvitems}
+  }
+\experienceentry
+  {Global Edge Software Ltd.}
+  {Bengaluru, India}
+  {Software Engineer}
+  {Jun. 2003 -- Aug. 2004}
+  {
+\begin{cvitems}
+  \item Designed and developed SDIO driver for Linux on Intel StrongARM boards
+  \item Developed fast SDIO driver supporting 4-bit mode for Marvell 802.11g WiFi chipset
+  \item Achieved maximum throughput for WiFi communication via SDIO interface
+\end{cvitems}
+  }
+\vspace{5mm}
+\cvsubsection{Short Stints}
+\shortstintentry
+  {VSPL Ltd.}
+  {Bengaluru, India}
+  {Software Architect}
+  {Nov. 2016 -- Jan. 2018}
+  {}
+\shortstintentry
+  {Cisco Ltd.}
+  {Bengaluru, India}
+  {Software Engineer}
+  {Oct. 2010 -- Apr. 2011}
+  {}
+\shortstintentry
+  {B-Labs, London UK}
+  {Bengaluru, India}
+  {Sr. Engineer - Contractor}
+  {Nov. 2009 -- Sep. 2010}
+  {}
+\shortstintentry
+  {Harman International}
+  {Bengaluru, India}
+  {Engineer}
+  {Jul. 2009 -- Nov. 2009}
+  {}
+\end{cventries}
+
+\cvsection{Open Source Contributions}
+\begin{cventries}
+\opensourcesubentry
+  {\href{https://www.qemu.org/}{QEMU}}
+  {2014-2016}
+  {
+\begin{cvitems}
+  \item SMMUv3 (IOMMU) emulation support for ARMv8
+  \item Designed and implemented SMMUv3 model merged into mainline
+  \item Added support for Stage1, Stage2, and nested virtualization
+  \item Implemented command queue processing and page table walk
+\end{cvitems}
+  }
+\opensourcesubentry
+  {\href{https://kernel.org/}{Linux Kernel}}
+  {2011-2016}
+  {
+\begin{cvitems}
+  \item MIPS Kexec/Kdump port and IOMMU subsystem
+  \item Developed MIPS64 port of Kexec and Kdump (merged upstream)
+  \item Fixed critical bugs in KEXEC for Cavium Octeon platforms
+  \item Contributed to IOMMU/SMMUv3 driver development
+\end{cvitems}
+  }
+\opensourcesubentry
+  {\href{https://www.gnu.org/software/libc/}{GLIBC}}
+  {2018-2020}
+  {
+\begin{cvitems}
+  \item Performance optimizations for AMD processors
+  \item Fixed memcpy behaviour on AMD processors
+  \item Optimized string functions for x86\_64 architecture
+  \item Performance improvements for memory operations
+\end{cvitems}
+  }
+\opensourcesubentry
+  {\href{https://github.com/amd/aocl-libm-ose}{AMD LibM}}
+  {2018-Present}
+  {
+\begin{cvitems}
+  \item Open source math library for AMD processors
+  \item Core contributor to open sourcing AMD Math Library
+  \item Optimized transcendental functions (exp, log, pow, trig)
+  \item Implemented SIMD/FMA optimizations for vector operations
+\end{cvitems}
+  }
+\end{cventries}
+
+\cvsection{Skills}
+\begin{cvskills}
+\cvskill{Programming Languages}{C, Assembly (x86, ARM, MIPS), Rust, Python, C++, Go, Shell, Haskell}
+\cvskill{Libraries \& Frameworks}{GoogleTest, GoogleBench, Hugo, Qt}
+\cvskill{Operating Systems}{Linux, FreeBSD, QNX, VxWorks, Symbian}
+\cvskill{Architecture \& Platforms}{x86/x86\_64, ARM (ARMv6, ARMv7, ARMv8), MIPS64, PowerPC}
+\cvskill{Virtualization \& Hypervisors}{QEMU, KVM, Xen, Custom Hypervisors, TrustZone}
+\cvskill{Development Tools}{Git, Make, CMake, ARM Development Tools, Keil, Macraigor, RealView Trace/JTAG, Docker, Wordpress}
+\cvskill{Specialized Skills}{Linux Kernel Development, Device Drivers, IOMMU/SMMUv3, Embedded Systems, System Software, Performance Optimization, SIMD/FMA Instructions, Cryptography (AES, SHA), Filesystem Development}
+\end{cvskills}
+
+\cvsection{Education}
+\begin{cventries}
+\educationentry
+  {M.Tech (Computer Science)}
+  {BITS Pilani}
+  {Pilani, Rajasthan, India}
+  {2016}
+  {}
+\educationentry
+  {B.E (Computer Science)}
+  {Visvesvaraya Technological University (VTU)}
+  {AIT, Karnataka, India}
+  {2002}
+  {}
+\end{cventries}
+
+\cvsection{Awards}
+\begin{cvhonors}
+\cvhonor
+  {Spotlight}
+  {Helping Emulation team find design bug in data fabric}
+  {AMD}
+  {Q3 2018}
+\cvhonor
+  {Spotlight}
+  {Optimization of exp() and improving performance by 30\%}
+  {AMD}
+  {Q2 2019}
+\cvhonor
+  {Director Spotlight}
+  {Supporting Arden Ubuntu emulation boot, fixing initramfs delayed mount}
+  {AMD}
+  {Q2 2019}
+\cvhonor
+  {Spotlight}
+  {Providing important patches to GLIBC to fix memcpy behaviour on AMD, open sourcing AMD LibM}
+  {AMD}
+  {Q4 2020}
+\cvhonor
+  {Spotlight}
+  {Delivering Cryptography PoC (CFB based parallel decrypting), increases performance by 3x}
+  {AMD}
+  {Q3 2021}
+\end{cvhonors}
+
+\cvsection{Publications}
+\begin{cventries}
+\cventry
+  {Example Publication Title}
+  {}
+  {}
+  {2024}
+  {
+\begin{cvitems}
+  \item \textit{Authors:} Author Name, Co-Author Name
+  \item \textit{Venue:} Conference/Journal Name
+  \item Brief description of the publication
+\end{cvitems}
+  }
+\end{cventries}
+
+\newpage
+\cvsection{Projects}
+\begin{cventries}
+\projectcompany
+  {AMD Ltd.}
+  {2018}
+  {Present}
+  {Bengaluru, India}
+\projectrole{Principal Engineer}
+\projectsubentry
+  {AMD Pensando SmartNIC}
+  {Jun. 2025 -- Present}
+  {
+\marginnote{{\scriptsize\color{graytext} \textbf{Languages:} C, ASM, P4, C++ \\ \textbf{Tools:} Make, Git, P4, Qemu, Xen \\ \textbf{Tech:} SmartNIC, Storage}}[0pt]
+\textbf{Summary:} Initiated as a proof-of-concept for an ISV experiencing performance issues with AES-CFB on 
+AMD-Milan servers. Evolved into a comprehensive cryptographic primitives library.
+
+\textbf{Contributions:}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Designed and developed parallel AES-CFB decryption algorithm achieving 3x performance improvement
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Implemented cryptographic primitives library utilizing both AVX2 and AESNI/SHANI instruction sets
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Developed dynamic dispatcher for runtime selection of most efficient algorithm
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Created OpenSSL provider to enable seamless interoperability
+\end{itemize}
+  }
+\projectsubentry
+  {AMD Cryptography Library}
+  {Jan. 2022 -- Jun. 2025}
+  {
+\marginnote{{\scriptsize\color{graytext} \textbf{Languages:} C++ \\ \textbf{Tools:} Git, OpenSSL \\ \textbf{Tech:} AES, SHA2, AVX2, AESNI, SHANI}}[0pt]
+\textbf{Summary:} Initiated as a proof-of-concept for an ISV experiencing performance issues with AES-CFB on 
+AMD-Milan servers. Evolved into a comprehensive cryptographic primitives library.
+
+\textbf{Contributions:}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Designed and developed parallel AES-CFB decryption algorithm achieving 3x performance improvement
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Implemented cryptographic primitives library utilizing both AVX2 and AESNI/SHANI instruction sets
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Developed dynamic dispatcher for runtime selection of most efficient algorithm
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Created OpenSSL provider to enable seamless interoperability
+\end{itemize}
+  }
+\projectsubentry
+  {AMD Math Library}
+  {Feb. 2018 -- Dec. 2021}
+  {
+\marginnote{{\scriptsize\color{graytext} \textbf{Languages:} C, Assembly, Python \\ \textbf{Tools:} CMake, GCC, AOCC \\ \textbf{Tech:} x86\_64, SIMD, FMA}}[0pt]
+\textbf{Summary:} AMD Floating Point Math Library is a high-performance software library primarily written in 
+Assembly (x86\_64) to leverage SIMD and FMA instructions. Led architectural modernization and 
+algorithmic improvements to enhance performance and maintainability.
+
+\textbf{Contributions:}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Implemented advanced optimization techniques including look-up-tables, Estrin's method polynomial for parallel-FMA, and fast integer conversion
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Achieved 30\% performance improvement for scalar operations and approximately 2x improvement for vector operations
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Developed dynamic dispatcher using cpuid instruction for runtime algorithm selection
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Redesigned architecture with cache-aligned and interleaved tables
+\end{itemize}
+  }
+\projectrole{Sr. Member of Technical Staff}
+\projectsubentry
+  {Model0}
+  {Feb. 2018 -- May. 2021}
+  {
+\marginnote{{\scriptsize\color{graytext} \textbf{Languages:} C, ASM, P4, C++ \\ \textbf{Tools:} Make, Git, P4, Qemu, Xen \\ \textbf{Tech:} SmartNIC, Storage}}[0pt]
+\textbf{Summary:} Initiated as a proof-of-concept for an ISV experiencing performance issues with AES-CFB on 
+AMD-Milan servers. Evolved into a comprehensive cryptographic primitives library.
+
+\textbf{Contributions:}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Designed and developed parallel AES-CFB decryption algorithm achieving 3x performance improvement
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Implemented cryptographic primitives library utilizing both AVX2 and AESNI/SHANI instruction sets
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Developed dynamic dispatcher for runtime selection of most efficient algorithm
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Created OpenSSL provider to enable seamless interoperability
+\end{itemize}
+  }
+\projectcompany
+  {Broadcom Ltd.}
+  {2011}
+  {2016}
+  {Bengaluru, India}
+\projectrole{Principal Engineer}
+\projectsubentry
+  {ARM IO Virtualization with SMMUv3}
+  {Jan. 2014 -- Oct. 2016}
+  {
+\marginnote{{\scriptsize\color{graytext} \textbf{Languages:} C \\ \textbf{Tools:} QEMU, Git \\ \textbf{Tech:} ARMv8, SMMUv3, IOMMU}}[0pt]
+\textbf{Summary:} SMMUv3 is ARM's IOMMU implementation for ARMv8 platforms. Developed comprehensive emulation 
+environment and software model to facilitate driver development.
+
+\textbf{Contributions:}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Designed and developed complete SMMUv3 emulation model for QEMU (merged into QEMU mainline)
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Implemented command queue processing, STE and CD parsing mechanisms
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Developed ARMv8/LPAE pagetable walk implementation supporting Stage1, Stage2, and nested translation
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Implemented comprehensive event reporting and interrupt handling mechanisms
+\end{itemize}
+  }
+\projectsubentry
+  {SMMUv3 Driver for Vulcan}
+  {Jan. 2014 -- Oct. 2016}
+  {
+\marginnote{{\scriptsize\color{graytext} \textbf{Languages:} C \\ \textbf{Tools:} Git, Linux Kernel \\ \textbf{Tech:} ARMv8, SMMUv3, IOMMU}}[0pt]
+\textbf{Summary:} Vulcan is Broadcom's ground-up ARMv8 processor design featuring up to 32 cores with 4 threads 
+each. The SoC integrates SMMUv3 requiring comprehensive software support.
+
+\textbf{Contributions:}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Designed and developed initial Linux driver for SMMUv3 with minimal feature set
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Collaborated with hardware team to identify and resolve design issues
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Contributed bug fixes and enhancements to ARM's open-source SMMUv3 driver
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Developed comprehensive test suite for validating SMMU functionality
+\end{itemize}
+  }
+\projectrole{Tech Lead}
+\projectsubentry
+  {XLP (MIPS64) SDK Development}
+  {May. 2011 -- Dec. 2013}
+  {
+\marginnote{{\scriptsize\color{graytext} \textbf{Languages:} C \\ \textbf{Tools:} Linux Kernel, Git \\ \textbf{Tech:} MIPS64, RNG, CLK Framework}}[0pt]
+\textbf{Summary:} XLP is Broadcom's multicore+multithreaded MIPS64 processor featuring up to 80 execution cores 
+with integrated hardware accelerators for networking.
+
+\textbf{Contributions:}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Developed RNG (Hardware Random Number Generator) driver for cryptographic applications
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Implemented Clock Framework driver for dynamic frequency management
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Created CPU voltage and frequency scaling driver for power optimization
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Developed CDE (Compression/Decompression Engine) driver
+\end{itemize}
+  }
+\projectcompany
+  {Cavium Networks}
+  {2011}
+  {2013}
+  {Bengaluru, India}
+\projectrole{Tech Lead}
+\projectsubentry
+  {OCTEON III - Kexec/Kdump}
+  {May. 2011 -- Dec. 2013}
+  {
+\marginnote{{\scriptsize\color{graytext} \textbf{Languages:} C \\ \textbf{Tools:} Linux Kernel, GDB \\ \textbf{Tech:} MIPS64, Kexec, Kdump}}[0pt]
+\textbf{Summary:} Kexec enables booting a secondary kernel from running Linux without full system reset. 
+Kdump builds upon Kexec to preserve crashed kernel memory for offline debugging.
+
+\textbf{Contributions:}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Developed complete MIPS architecture port of Kexec and Kdump
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Debugged and resolved critical issues preventing Kexec functionality
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Submitted two patches to upstream Linux kernel, now part of mainline codebase
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Enabled seamless kernel upgrades without disrupting Hybrid SMP configurations
+\end{itemize}
+  }
+\projectsubentry
+  {CavHv Hypervisor}
+  {Jan. 2012 -- Dec. 2013}
+  {
+\marginnote{{\scriptsize\color{graytext} \textbf{Languages:} C \\ \textbf{Tools:} Compiler Toolchain \\ \textbf{Tech:} MIPS64, Hypervisor, Virtualization}}[0pt]
+\textbf{Summary:} CavHv is an experimental hypervisor for MIPS64 with hardware virtualization support, 
+developed for Octeon-III series chips.
+
+\textbf{Contributions:}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Designed and implemented hypervisor based on draft MIPS virtualization specification
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Collaborated with compiler and hardware teams to validate virtualization extensions
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Successfully demonstrated concurrent execution of two Linux kernel instances
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Provided critical feedback for virtualization specification refinement
+\end{itemize}
+  }
+\projectcompany
+  {Cisco Systems}
+  {2010}
+  {2011}
+  {Bengaluru, India}
+\projectrole{Software Engineer}
+\projectsubentry
+  {Garbage Detector for Linux}
+  {Oct. 2010 -- Apr. 2011}
+  {
+\marginnote{{\scriptsize\color{graytext} \textbf{Languages:} C \\ \textbf{Tools:} Glibc, Clearcase \\ \textbf{Tech:} Memory Management, Mark-Sweep}}[0pt]
+\textbf{Summary:} Cisco IOS runs both as bare-metal and as Linux application, often executing for months 
+or years before memory leak failures.
+
+\textbf{Contributions:}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Designed and implemented garbage detection system using custom C runtime
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Developed separate monitoring thread to intercept malloc() and free() calls
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Implemented intrusive mark-and-sweep algorithm
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Enabled proactive memory leak identification in long-running systems
+\end{itemize}
+  }
+\projectcompany
+  {B-Labs}
+  {2009}
+  {2010}
+  {London, UK (Remote)}
+\projectrole{Sr. Engineer - Contractor}
+\projectsubentry
+  {CodeZero Hypervisor}
+  {Nov. 2009 -- Sep. 2010}
+  {
+\marginnote{{\scriptsize\color{graytext} \textbf{Languages:} C, ARM Assembly \\ \textbf{Tools:} Git, QEMU \\ \textbf{Tech:} ARMv7, ARMv6, SMP}}[0pt]
+\textbf{Summary:} CodeZero is a microkernel-based hypervisor for ARM Cortex-A9 running directly on hardware.
+
+\textbf{Contributions:}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Ported CodeZero hypervisor to ARM Cortex-A9 SMP systems
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Developed optimized fast memcpy implementation for ARM
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Extended QEMU with new device and platform support
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Ported Linux kernel to run under CodeZero hypervisor
+\end{itemize}
+  }
+\projectcompany
+  {Harman International}
+  {2009}
+  {2009}
+  {Bengaluru, India}
+\projectrole{Engineer}
+\projectsubentry
+  {QNX BSP for PowerPC}
+  {Jul. 2009 -- Nov. 2009}
+  {
+\marginnote{{\scriptsize\color{graytext} \textbf{Languages:} C \\ \textbf{Tools:} Make, QNX \\ \textbf{Tech:} PowerPC, P4080, P2020, SMP}}[0pt]
+\textbf{Summary:} Porting QNX microkernel to Freescale QorIQ P4080 and P2020 PowerPC processors.
+
+\textbf{Contributions:}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Debugged and resolved P4080 SMP booting issue
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Ported I2C driver to new PowerPC platform
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Developed base drivers including timer and interrupt controller
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Enabled early QNX boot on P2020 and P4080 platforms
+\end{itemize}
+  }
+\projectcompany
+  {ARM Ltd.}
+  {2005}
+  {2009}
+  {Bengaluru, India}
+\projectrole{Sr. Development Engineer}
+\projectsubentry
+  {OS Support for ARM Cores}
+  {Aug. 2005 -- Jun. 2009}
+  {
+\marginnote{{\scriptsize\color{graytext} \textbf{Languages:} C, ARM Assembly, Python \\ \textbf{Tools:} FastModels, SoCDesigner \\ \textbf{Tech:} ARM1176, Cortex-A8, TrustZone}}[0pt]
+\textbf{Summary:} Platform team responsible for supporting new ARM cores across multiple operating systems.
+
+\textbf{Contributions:}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Developed touch-screen driver for Symbian OS with full gesture support
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Created Symbian OS test automation framework using Python
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Designed interrupt latency measurement driver for TrustZone analysis
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Ported L4Ka::pistachio microkernel to ARM
+\end{itemize}
+  }
+\projectcompany
+  {Sasken Ltd.}
+  {2004}
+  {2005}
+  {Bengaluru, India}
+\projectrole{Sr. Software Engineer}
+\projectsubentry
+  {EFFS Filesystem}
+  {Aug. 2004 -- Aug. 2005}
+  {
+\marginnote{{\scriptsize\color{graytext} \textbf{Languages:} C \\ \textbf{Tools:} VxWorks \\ \textbf{Tech:} Flash Storage, Wear-Leveling}}[0pt]
+\textbf{Summary:} Developed specialized filesystem for UMTS BTS on VxWorks.
+
+\textbf{Contributions:}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Designed reset-proof filesystem with flat file tree structure
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Developed wear-leveling algorithm for Flash blocks
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Implemented atomic write operations
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Integrated with VxWorks APIs
+\end{itemize}
+  }
+\projectcompany
+  {Global Edge Software}
+  {2003}
+  {2004}
+  {Bengaluru, India}
+\projectrole{Software Engineer}
+\projectsubentry
+  {Linux SDIO Driver}
+  {Jun. 2003 -- Aug. 2004}
+  {
+\marginnote{{\scriptsize\color{graytext} \textbf{Languages:} C \\ \textbf{Tools:} Linux Kernel, Make \\ \textbf{Tech:} ARM, SDIO, WiFi 802.11g}}[0pt]
+\textbf{Summary:} Developed high-performance SDIO driver for Marvell 802.11g WiFi chipset.
+
+\textbf{Contributions:}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Designed fast SDIO driver supporting 4-bit mode
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Developed 1-bit SDIO driver for legacy hardware
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Optimized data transfer protocols for maximum throughput
+\end{itemize}
+\begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \item Implemented robust error handling mechanisms
+\end{itemize}
+  }
+\end{cventries}
+
+\end{document}

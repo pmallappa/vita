@@ -17,8 +17,32 @@ RUN apk add --progress \
     bash \
     git \
     fontconfig \
-    ttf-dejavu && \
+    ttf-dejavu \
+    emacs-nox && \
     apk add --progress texmf-dist-fontsrecommended || true
+
+# Create site-lisp directory for Emacs packages
+RUN mkdir -p /usr/share/emacs/site-lisp/org-cv
+
+# Clone org-cv package from GitLab
+RUN git clone https://gitlab.com/Titan-C/org-cv.git /usr/share/emacs/site-lisp/org-cv
+
+# Create Emacs init file for org-cv configuration
+RUN echo ';;; Emacs configuration for org-cv' > /root/.emacs && \
+    echo '(add-to-list '"'"'load-path "/usr/share/emacs/site-lisp/org-cv")' >> /root/.emacs && \
+    echo '(require '"'"'ox-awesomecv)' >> /root/.emacs && \
+    echo '(setq org-latex-pdf-process' >> /root/.emacs && \
+    echo '      '"'"'("xelatex -interaction nonstopmode -output-directory %o %f"' >> /root/.emacs && \
+    echo '        "xelatex -interaction nonstopmode -output-directory %o %f"' >> /root/.emacs && \
+    echo '        "xelatex -interaction nonstopmode -output-directory %o %f"))' >> /root/.emacs && \
+    echo '(add-to-list '"'"'org-latex-classes' >> /root/.emacs && \
+    echo '             '"'"'("awesome-cv"' >> /root/.emacs && \
+    echo '               "\\documentclass{awesome-cv}\\n[NO-DEFAULT-PACKAGES]"' >> /root/.emacs && \
+    echo '               ("\\cvsection{%s}" . "\\cvsection{%s}")' >> /root/.emacs && \
+    echo '               ("\\cvsubsection{%s}" . "\\cvsubsection{%s}")' >> /root/.emacs && \
+    echo '               ("\\subsection{%s}" . "\\subsection*{%s}")' >> /root/.emacs && \
+    echo '               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")' >> /root/.emacs && \
+    echo '               ("\\cvparagraph{%s}" . "\\cvparagraph{%s}")))' >> /root/.emacs
 
 # Python packages installed via apk
 # py3-yaml - YAML parsing

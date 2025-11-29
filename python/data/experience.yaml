@@ -1,0 +1,108 @@
+# Work Experience - Grouped by Company
+companies:
+  - name: "AMD Ltd."
+    location: "Bengaluru, India"
+    positions:
+      - title: "Principal Engineer"
+        start_date: "2018-02"
+        end_date: "Present"
+        keywords: ["c", "assembly", "x86", "optimization", "amd", "math", "cryptography", "aes", "sha", "simd", "fma", "cmake", "python"]
+        achievements:
+          - "AMD Math Library: Optimizing exponential/power/logarithmic/trigonometric functions for latest AMD processors"
+          - "Improved performance of exp() and log() by 30% using look-up-table, Estrin's method polynomial, and fast integer conversion"
+          - "AMD Cryptographic Primitives Library: Optimizing AES/SHA/PKCS functions with AVX2 and AESNI/SHANI instruction sets"
+          - "Developed dynamic dispatcher using cpuid instruction for runtime algorithm selection"
+          - "Achieved 3x performance improvement in CFB-based parallel decrypting"
+    
+  - name: "Broadcom Ltd."
+    location: "Bengaluru, India"
+    positions:
+      - title: "Principal Engineer"
+        start_date: "2014-01"
+        end_date: "2016-10"
+        keywords: ["armv8", "smmov3", "iommu", "qemu", "linux", "kernel", "driver", "virtualization"]
+        achievements:
+          - "Designed and developed initial software support for Broadcom Vulcan, a multicore-multithreaded ARMv8 64-bit processor"
+          - "Handled SMMUv3 (IOMMU) related issues and software stack implementation"
+          - "Developed SMMUv3 emulation model for QEMU which was merged into mainline codebase"
+          - "Implemented Command queue, STE/CD parsing, pagetable walk, and Stage1/Stage2 virtualization support"
+    
+  - name: "Cavium India Pvt. Ltd."
+    location: "Bengaluru, India"
+    positions:
+      - title: "Tech Lead"
+        start_date: "2011-05"
+        end_date: "2013-12"
+        keywords: ["mips64", "linux", "kernel", "kexec", "kdump", "hypervisor", "baremetal", "octeon"]
+        achievements:
+          - "Worked on Cavium's Octeon III (MIPS64) series of processors"
+          - "Fixed major bug in KEXEC and developed MIPS port of Kexec and Kdump (patches merged upstream)"
+          - "Developed baremetal core-file generating software with host-based daemon for GDB debugging"
+          - "Designed and developed CavHv hypervisor for MIPS64 with experimental hardware virtualization"
+    
+  - name: "ARM Ltd."
+    location: "Bengaluru, India"
+    positions:
+      - title: "Sr. Development Engineer"
+        start_date: "2005-08"
+        end_date: "2009-06"
+        keywords: ["arm", "cortex", "trustzone", "linux", "symbian", "qnx", "porting", "embedded"]
+        achievements:
+          - "Responsible for OS porting to latest ARM cores including ARM1176JZFS, TrustZone and Cortex-A8"
+          - "Developed touch-screen driver for Symbian OS and automated testing using Python scripts"
+          - "Designed interrupt latency measurement driver for TrustZone secure world overhead analysis"
+          - "Ported L4Ka::pistachio microkernel to ARM for virtualization experiments"
+    
+  - name: "Sasken Communications Pvt Ltd."
+    location: "Bengaluru, India"
+    positions:
+      - title: "Sr. Software Engineer"
+        start_date: "2004-08"
+        end_date: "2005-08"
+        keywords: ["vxworks", "filesystem", "embedded", "flash", "umts", "bts"]
+        achievements:
+          - "Module owner for EFS (Extended File System) developed for VxWorks, used in UMTS/BTS"
+          - "Developed reset-proof filesystem with wear-leveling and minimal data-loss features"
+          - "Implemented flat file tree structure optimized for Flash devices with limited read/write cycles"
+    
+  - name: "Global Edge Software Ltd."
+    location: "Bengaluru, India"
+    positions:
+      - title: "Software Engineer"
+        start_date: "2003-06"
+        end_date: "2004-08"
+        keywords: ["linux", "driver", "sdio", "wifi", "arm", "strongarm"]
+        achievements:
+          - "Designed and developed SDIO driver for Linux on Intel StrongARM boards"
+          - "Developed fast SDIO driver supporting 4-bit mode for Marvell 802.11g WiFi chipset"
+          - "Achieved maximum throughput for WiFi communication via SDIO interface"
+
+# Short Stints
+short_stints:
+  - name: "VSPL Ltd."
+    location: "Bengaluru, India"
+    positions:
+      - title: "Software Architect"
+        start_date: "2016-11"
+        end_date: "2018-01"
+    
+  - name: "Cisco Ltd."
+    location: "Bengaluru, India"
+    positions:
+      - title: "Software Engineer"
+        start_date: "2010-10"
+        end_date: "2011-04"
+    
+  - name: "B-Labs, London UK"
+    location: "Bengaluru, India"
+    positions:
+      - title: "Sr. Engineer - Contractor"
+        start_date: "2009-11"
+        end_date: "2010-09"
+    
+  - name: "Harman International"
+    location: "Bengaluru, India"
+    positions:
+      - title: "Engineer"
+        start_date: "2009-07"
+        end_date: "2009-11"
