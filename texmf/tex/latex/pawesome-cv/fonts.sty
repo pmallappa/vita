@@ -1,0 +1,153 @@
+%% fonts.sty
+% Font definitions for all available fonts in assets/fonts/
+% This file provides easy access to all Nokia Sans and Roboto font variants
+
+\ProvidesPackage{fonts}[2025/11/28 Font Definitions Package]
+
+% Require fontspec for font management
+\RequirePackage{fontspec}
+
+%-------------------------------------------------------------------------------
+%                Nokia Sans Font Family Definitions
+%-------------------------------------------------------------------------------
+
+% Nokia Sans - Regular variants
+\newfontfamily\nokiasansregular[
+  Path=\@fontdir,
+  Extension=.ttf,
+  UprightFont=*-Regular,
+  ItalicFont=*-Italic,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldItalic
+]{NokiaSans}
+
+% Nokia Sans - Light variants
+\newfontfamily\nokiasanslight[
+  Path=\@fontdir,
+  Extension=.ttf,
+  UprightFont=*-Light,
+  ItalicFont=*-LightItalic,
+  BoldFont=*-SemiBold,
+  BoldItalicFont=*-SemiBoldItalic
+]{NokiaSans}
+
+% Nokia Sans - SemiBold variants
+\newfontfamily\nokiasanssemibold[
+  Path=\@fontdir,
+  Extension=.ttf,
+  UprightFont=*-SemiBold,
+  ItalicFont=*-SemiBoldItalic
+]{NokiaSans}
+
+% Nokia Sans - Condensed variants
+\newfontfamily\nokiasanscondensed[
+  Path=\@fontdir,
+  Extension=.ttf,
+  UprightFont=*-CondensedRegular,
+  BoldFont=*-CondensedBold
+]{NokiaSans}
+
+\newfontfamily\nokiasanscondensedmedium[
+  Path=\@fontdir,
+  Extension=.ttf,
+  UprightFont=*-CondensedMedium
+]{NokiaSans}
+
+% Nokia Sans - Wide variant
+\newfontfamily\nokiasanswide[
+  Path=\@fontdir,
+  Extension=.ttf,
+  UprightFont=*-Wide
+]{NokiaSans}
+
+% Nokia Sans - Maps variant
+\newfontfamily\nokiasansmaps[
+  Path=\@fontdir,
+  Extension=.ttf,
+  UprightFont=*-Maps
+]{NokiaSans}
+
+%-------------------------------------------------------------------------------
+%                Roboto Font Family Definitions
+%-------------------------------------------------------------------------------
+
+% Roboto - Regular variants
+\newfontfamily\robotoregular[
+  Path=\@fontdir,
+  Extension=.ttf,
+  UprightFont=*-Regular,
+  ItalicFont=*-Italic,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldItalic
+]{Roboto}
+
+% Roboto - Thin variants
+\newfontfamily\robotothin[
+  Path=\@fontdir,
+  Extension=.ttf,
+  UprightFont=*-Thin,
+  ItalicFont=*-ThinItalic
+]{Roboto}
+
+% Roboto - Light variants
+\newfontfamily\robotolight[
+  Path=\@fontdir,
+  Extension=.ttf,
+  UprightFont=*-Light,
+  ItalicFont=*-LightItalic
+]{Roboto}
+
+% Roboto - Medium variants
+\newfontfamily\robotomedium[
+  Path=\@fontdir,
+  Extension=.ttf,
+  UprightFont=*-Medium,
+  ItalicFont=*-MediumItalic
+]{Roboto}
+
+%-------------------------------------------------------------------------------
+%                Font Awesome
+%-------------------------------------------------------------------------------
+
+% FontAwesome icon font
+\newfontfamily\fontawesomefont[
+  Path=\@fontdir,
+  Extension=.ttf
+]{FontAwesome}
+
+%-------------------------------------------------------------------------------
+%                Convenience Aliases
+%-------------------------------------------------------------------------------
+
+% Short aliases for commonly used fonts
+\newcommand*{\nokiasans}{\nokiasansregular}
+\newcommand*{\roboto}{\robotoregular}
+
+% Style-specific aliases
+\newcommand*{\nokiabold}{\nokiasansregular\bfseries}
+\newcommand*{\nokiaitalic}{\nokiasansregular\itshape}
+\newcommand*{\nokialightfont}{\nokiasanslight}
+\newcommand*{\nokiasemiboldfont}{\nokiasanssemibold}
+
+\newcommand*{\robotobold}{\robotoregular\bfseries}
+\newcommand*{\robotoitalic}{\robotoregular\itshape}
+\newcommand*{\robotolightfont}{\robotolight}
+\newcommand*{\robotomediumfont}{\robotomedium}
+
+%-------------------------------------------------------------------------------
+%                Font Selection Commands
+%-------------------------------------------------------------------------------
+
+% Commands to switch to specific font families
+\newcommand*{\usenokiasans}{\nokiasansregular}
+\newcommand*{\usenokiasanslight}{\nokiasanslight}
+\newcommand*{\usenokiasanssemibold}{\nokiasanssemibold}
+\newcommand*{\usenokiasanscondensed}{\nokiasanscondensed}
+\newcommand*{\usenokiasanswide}{\nokiasanswide}
+
+\newcommand*{\useroboto}{\robotoregular}
+\newcommand*{\userobotothin}{\robotothin}
+\newcommand*{\userobotolight}{\robotolight}
+\newcommand*{\userobotomedium}{\robotomedium}
+
+\endinput

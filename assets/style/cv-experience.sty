@@ -1,0 +1,44 @@
+%% Start of file `cv-experience.sty'.
+% Experience-specific commands for Awesome CV
+%
+% This file contains commands for the experience section with employer/role hierarchy
+
+\ProvidesPackage{cv-experience}[2025/11/28 v2.0 Awesome CV Experience Package]
+
+%-------------------------------------------------------------------------------
+%                Commands for Experience Section
+%-------------------------------------------------------------------------------
+% Experience employer header - displays company name with dates and location
+% Usage: \experienceemployer{<company name>}{<start date>}{<end date>}{<location>}
+\newcommand*{\experienceemployer}[4]{%
+  \vspace{-1mm}
+  \needspace{2\baselineskip}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.55\textwidth} R{0.22\textwidth} R{0.23\textwidth}}
+    \exptitlestyle{#1} & \companydatestyle{#2 -- #3} & \explocationstyle{#4}
+  \end{tabular*}%
+}
+
+% Experience role - displays role title
+% Usage: \experiencerole{<role title>}
+\newcommand*{\experiencerole}[1]{%
+  \vspace{2mm}
+  \setlength\tabcolsep{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.7\textwidth} R{0.3\textwidth}}
+    {\sourcesanspro\bfseries\scshape #1} &
+  \end{tabular*}%
+  \vspace{1mm}
+}
+
+% Experience entry - displays description items
+% Usage: \experienceentry{<description>}
+\newcommand*{\experienceentry}[1]{%
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \expdescriptionstyle{#1}
+  \par\vspace{1mm}
+}
+
+\endinput
+%% End of file `cv-experience.sty'.

@@ -1,85 +1,116 @@
-* Principal Engineer
+* AMD Ltd.
 :PROPERTIES:
-:CV_ENV: cventry
-:EMPLOYER: AMD Ltd.
-:LOCATION: Bengaluru, India
-:FROM: Feb. 2018
+:CV_ENV: cvemployer
+:FROM: 2018
 :TO: Present
-:END:
-
-- Architected and developed high-performance mathematical libraries optimizing exponential, power, logarithmic, and trigonometric functions for AMD EPYC and Ryzen processor families
-- Achieved 30% performance enhancement in exp() and log() operations through advanced optimization techniques including vectorized look-up tables, Estrin's polynomial evaluation, and optimized integer conversion pathways
-- Led development of cryptographic primitives library implementing AES, SHA, and PKCS algorithms optimized for AVX2, AESNI, and SHANI instruction sets
-- Engineered runtime-adaptive algorithm dispatcher utilizing CPUID-based feature detection for optimal code path selection
-- Delivered 3x performance improvement in parallel CFB decryption through innovative algorithm parallelization
-
-* Principal Engineer
-:PROPERTIES:
-:CV_ENV: cventry
-:EMPLOYER: Broadcom Ltd.
 :LOCATION: Bengaluru, India
-:FROM: Jan. 2014
-:TO: Oct. 2016
 :END:
 
-- Architected foundational software stack for Broadcom Vulcan, a multicore-multithreaded ARMv8 64-bit server processor
-- Engineered complete SMMUv3 (System Memory Management Unit) driver infrastructure supporting advanced IOMMU virtualization
-- Developed and contributed SMMUv3 emulation model to QEMU mainline, enabling early platform validation and ecosystem enablement
-- Implemented comprehensive virtualization features including command queue processing, STE/CD descriptor parsing, multi-level page table walks, and stage-1/stage-2 address translation
-
-* Tech Lead
+** Principal Engineer
 :PROPERTIES:
-:CV_ENV: cventry
-:EMPLOYER: Cavium India Pvt. Ltd.
-:LOCATION: Bengaluru, India
-:FROM: May. 2011
-:TO: Dec. 2013
+:CV_ENV: cvrole
 :END:
 
-- Led low-level software development for Cavium Octeon III (MIPS64) multicore network processors
-- Resolved critical KEXEC kernel bug and developed complete MIPS64 port of Kexec/Kdump crash dump infrastructure, successfully merged into Linux mainline
-- Engineered bare-metal core dump generation framework with host-resident daemon enabling post-mortem GDB analysis
-- Designed and implemented CavHv hypervisor for MIPS64 architecture leveraging experimental hardware virtualization extensions
+Worked in multiple teams within AMD including *AMD LibM*, *AOCL Cryptography*, *BSP*, and *NVMe* in *Pensando* BU.
+Every project was different, requiring quick learning and adaptation to new domains. The role also involved leading a team of four-to-six 
+engineers in various projects. I was also part of the leadership team where I mentored engineers from across AOCL and Pensando BU.
 
-* Sr. Development Engineer
+** Sr. Member of Technical Staff 
 :PROPERTIES:
-:CV_ENV: cventry
-:EMPLOYER: ARM Ltd.
-:LOCATION: Bengaluru, India
-:FROM: Aug. 2005
-:TO: Jun. 2009
+:CV_ENV: cvrole
 :END:
 
-- Executed comprehensive OS porting initiatives for emerging ARM architectures including ARM1176JZFS with TrustZone security extensions and Cortex-A8 application processor
-- Developed production-grade touchscreen driver for Symbian OS with automated validation framework using Python
-- Designed precision interrupt latency measurement infrastructure for quantifying TrustZone secure-world context switching overhead
-- Ported L4Ka::Pistachio microkernel to ARM architecture enabling virtualization research and proof-of-concept implementations
+Worked on Model0 project which was pre-silicon validation of next generation AMD cores, including Zen2 and Zen3. The role involved working with 
+hardware team to bring up bare-minimum processor configuration with just core and memory controller, and run Linux, stressors and benchmarks.
+This involved working on low-level firmware, bootloaders, Linux kernel and performance analysis tools.
 
-* Sr. Software Engineer
+* Broadcom Ltd.
 :PROPERTIES:
-:CV_ENV: cventry
-:EMPLOYER: Sasken Communication Technologies Ltd.
+:CV_ENV: cvemployer
+:FROM: 2014
+:TO: 2016
 :LOCATION: Bengaluru, India
-:FROM: Aug. 2004
-:TO: Aug. 2005
 :END:
 
-- Architected and maintained Extended File System (EFS) for VxWorks-based UMTS base station infrastructure
-- Engineered reset-resilient filesystem with advanced wear-leveling algorithms ensuring data integrity across unexpected power cycles
-- Designed Flash-optimized flat file tree structure minimizing write amplification and extending device longevity
-
-* Software Engineer
+** Principal Engineer
 :PROPERTIES:
-:CV_ENV: cventry
-:EMPLOYER: Global Edge Software Ltd.
-:LOCATION: Bengaluru, India
-:FROM: Jun. 2003
-:TO: Aug. 2004
+:CV_ENV: cvrole
 :END:
 
-- Designed and implemented comprehensive SDIO host controller driver for Linux on Intel StrongARM embedded platforms
-- Engineered high-performance 4-bit SDIO driver for Marvell 802.11g WiFi chipset achieving maximum theoretical throughput
-- Optimized DMA transfers and interrupt handling to minimize latency and maximize wireless data transfer efficiency
+Architected foundational software stack for Broadcom Vulcan, a multicore-multithreaded ARMv8 64-bit server processor.
+Engineered complete SMMUv3 (System Memory Management Unit) driver infrastructure supporting advanced IOMMU virtualization.
+Developed and contributed SMMUv3 emulation model to QEMU mainline, enabling early platform validation and ecosystem enablement.
+Implemented comprehensive virtualization features including command queue processing, STE/CD descriptor parsing, multi-level page table walks, and stage-1/stage-2 address translation.
+
+* Cavium India Pvt. Ltd.
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2011
+:TO: 2013
+:LOCATION: Bengaluru, India
+:END:
+
+** Tech Lead
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+Led low-level software development for Cavium Octeon III (MIPS64) multicore network processors, delivering stable platform firmware for networking customers.
+Resolved a critical KEXEC kernel bug and authored the full MIPS64 port of the Kexec/Kdump crash dump infrastructure, ultimately merged into Linux mainline.
+Engineered a bare-metal core dump generation framework with a host-resident daemon that enabled detailed post-mortem GDB analysis during bring-up.
+Designed and implemented the CavHv hypervisor for MIPS64 architecture using experimental hardware virtualization extensions to validate next-generation features.
+
+* ARM Ltd.
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2005
+:TO: 2009
+:LOCATION: Bengaluru, India
+:END:
+
+** Sr. Development Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+Executed comprehensive OS porting initiatives for emerging ARM architectures including ARM1176JZFS with TrustZone security extensions and the Cortex-A8 application processor.
+Developed a production-grade touchscreen driver for Symbian OS along with a Python-based automated validation framework used across multiple programs.
+Designed a precision interrupt latency measurement infrastructure that quantified TrustZone secure-world context switching overhead for silicon partners.
+Ported the L4Ka::Pistachio microkernel to ARM architecture, enabling virtualization research and multiple proof-of-concept implementations.
+
+* Sasken Communication Technologies Ltd.
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2004
+:TO: 2005
+:LOCATION: Bengaluru, India
+:END:
+
+** Sr. Software Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+Architected and maintained the Extended File System (EFS) for VxWorks-based UMTS base station infrastructure, balancing throughput with resiliency requirements.
+Engineered a reset-resilient filesystem with advanced wear-leveling algorithms so data integrity held across unexpected power cycles in the field.
+Designed a flash-optimized flat file tree structure that minimized write amplification and significantly extended device longevity.
+
+* Global Edge Software Ltd.
+:PROPERTIES:
+:CV_ENV: cvemployer
+:FROM: 2003
+:TO: 2004
+:LOCATION: Bengaluru, India
+:END:
+
+** Software Engineer
+:PROPERTIES:
+:CV_ENV: cvrole
+:END:
+
+Designed and implemented a comprehensive SDIO host controller driver for Linux on Intel StrongARM embedded platforms used in consumer devices.
+Engineered a high-performance 4-bit SDIO driver for Marvell 802.11g WiFi chipsets that consistently achieved maximum theoretical throughput.
+Optimized DMA transfers and interrupt handling paths to minimize latency and maximize wireless data transfer efficiency under heavy load.
 
 * Short Stints
 :PROPERTIES:
@@ -121,5 +152,7 @@
 :FROM: Jul. 2009
 :TO: Nov. 2009
 :END:
+
+
 
 

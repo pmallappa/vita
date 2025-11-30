@@ -1,0 +1,35 @@
+%% Start of file `cv-opensource.sty'.
+% Open Source-specific commands for Awesome CV
+%
+% This file contains commands for the open source section with project hierarchy
+
+\ProvidesPackage{cv-opensource}[2025/11/28 v2.0 Awesome CV Open Source Package]
+
+%-------------------------------------------------------------------------------
+%                Commands for Open Source Section
+%-------------------------------------------------------------------------------
+% Open source project header - displays project name with dates
+% Usage: \opensourceproject{<project name>}{<start year>}{<end year>}{<url>}
+\newcommand*{\opensourceproject}[4]{%
+  \vspace{-1mm}
+  \needspace{2\baselineskip}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.7\textwidth} C{0.3\textwidth}}
+    \ostitlestyle{#1} & \osdatestyle{#2 -- #3} \\[-1mm]
+    \multicolumn{2}{L{\textwidth}}{\osdescriptionstyle{#4}}
+  \end{tabular*}%
+  \par\vspace{1mm}
+}
+
+% Open source contribution entry - displays contribution description
+% Usage: \opensourceentry{<description>}
+\newcommand*{\opensourceentry}[1]{%
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \osdescriptionstyle{#1}
+  \par\vspace{-1mm}
+}
+
+\endinput
+%% End of file `cv-opensource.sty'.

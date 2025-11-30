@@ -157,7 +157,7 @@
   \phantomsection
 }
 
-% Define a role title for CV (used in Projects and Experience sections)
+% Define a role title for CV (used in Projects section)
 % Usage: \cvrole{<role-title>}
 \newcommand{\cvrole}[1]{%
   \needspace{6\baselineskip}
@@ -166,8 +166,6 @@
   {\fontsize{10pt}{1em}\sourcesanspro\bfseries\color{awesome}\MakeUppercase{#1}}
   \vspace{-1mm}
   \par
-  \fontsize{9pt}{1.2em}\bodyfontlight\selectfont
-  % \justify
   % \begin{center}
 }
 
@@ -183,27 +181,46 @@
 }
 
 % Define an environment for cventries
+% Keep the content width anchored to the page margins instead of centering so
+% that downstream tabular blocks (experience/project rows) line up exactly with
+% the section heading. The grouping ensures we do not leak the alignment tweaks.
 \newenvironment{cventries}{%
-  \vspace{\acvSectionContentTopSkip}
-  \begin{center}
+  \vspace{\acvSectionContentTopSkip}%
+  \par\begingroup
+  \setlength{\leftskip}{0pt}%
+  \setlength{\rightskip}{0pt}%
+  \setlength{\parindent}{0pt}%
+  \ignorespaces
 }{%
-  \end{center}
+  \par\endgroup
 }
 
 % Define an environment for experience entries
+% Mirrors cventries semantics in case sections choose to nest inside the custom
+% experience wrapper; maintained separately to avoid a breaking change to public
+% macros.
 \newenvironment{experienceentries}{%
-  \vspace{\acvSectionContentTopSkip}
-  \begin{center}
+  \vspace{\acvSectionContentTopSkip}%
+  \par\begingroup
+  \setlength{\leftskip}{0pt}%
+  \setlength{\rightskip}{0pt}%
+  \setlength{\parindent}{0pt}%
+  \ignorespaces
 }{%
-  \end{center}
+  \par\endgroup
 }
 
-% Define an environment for open source entries
+% Define an environment for open source entries using the same alignment rules
+% so that the section contents stay vertically consistent across the document.
 \newenvironment{opensourceentries}{%
-  \vspace{\acvSectionContentTopSkip}
-  \begin{center}
+  \vspace{\acvSectionContentTopSkip}%
+  \par\begingroup
+  \setlength{\leftskip}{0pt}%
+  \setlength{\rightskip}{0pt}%
+  \setlength{\parindent}{0pt}%
+  \ignorespaces
 }{%
-  \end{center}
+  \par\endgroup
 }
 
 % Define a top-level entry of cv information
@@ -263,23 +280,53 @@
   \end{tabular*}%
 }
 
-% Project entry for Projects section - specifically for project names
-% Usage: \projectsubentry{<project name>}{<date>}{<description>}{<margin notes>}
+% Reserve horizontal padding between the main content block and the margin so
+% that margin notes (Languages/Tools/Tech) have breathing room. Adjust
+% \acvProjectMarginGap if future layouts need more or less whitespace.
+\newlength{\acvProjectMarginGap}
+\setlength{\acvProjectMarginGap}{.12cm}
+% Keep the margin note separation tight so the sidebar hugs the main content
+% without colliding. This length is reused by \marginnote for all sections.
+\setlength{\marginparsep}{0.12cm}
+
+% Helper to confine the rich project description (often a description list) so
+% it does not encroach into the reserved gap for margin notes.
+\newcommand*{\projectbodyblock}[1]{%
+  \begin{minipage}[t]{\dimexpr\textwidth - \acvProjectMarginGap - \marginparsep\relax}%
+    \vspace{0pt}% Keep top aligned with the sidebar note
+    #1%
+  \end{minipage}%
+}
+
+% Helper to typeset the margin note content using the standard \marginnote flow
+% while ensuring a consistent font treatment and spacing between rows.
+\newcommand*{\projectsidebarblock}[1]{%
+  \marginnote{%
+    \begin{minipage}[t]{\marginparwidth}%
+      \vspace{0pt}%
+      \fontsize{7pt}{1.05em}\bodyfontlight\color{text}%
+      \setlength{\parskip}{0.25em}%
+      #1%
+    \end{minipage}%
+  }[0pt]%
+}
+
+% Project entry for Projects section - specifically for project names plus the
+% descriptive body and sidebar metadata.
+% Usage: \projectsubentry{<project name>}{<date>}{<description>}{<sidebar>}
 \long\def\projectsubentry#1#2#3#4{%
-  \needspace{4\baselineskip}
-  \vspace{-1mm}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.7cm} C{5.7cm}}
-    \ifx&#4&%
-      {\fontsize{9pt}{1em}\bodyfont\bfseries\hypersetup{urlcolor=black,linkcolor=black}\color{black}#1}%
-    \else
-      \marginnote{{\fontsize{7pt}{1em}\bodyfontlight\raggedright#4}}[-0.5em]{\fontsize{9pt}{1em}\bodyfont\bfseries\hypersetup{urlcolor=black,linkcolor=black}\color{black}#1}%
-    \fi
-     & \projectdatestyle{#2} \\[-1mm]
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#3}}
+  \Needspace{10\baselineskip}%
+  \vspace{-3mm}%
+  \setlength\tabcolsep{0pt}%
+  \setlength{\extrarowheight}{0pt}%
+  \noindent\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.7cm} R{5.7cm}}
+    {\fontsize{9pt}{1em}\bodyfont\bfseries\hypersetup{urlcolor=black,linkcolor=black}\color{black}#1} & \projectdatestyle{#2} \\
   \end{tabular*}%
-  \vspace{1mm}
+  \par\noindent
+  \ifx&#4&\else\projectsidebarblock{#4}\fi
+  \noindent\projectbodyblock{#3}%
+  \par
+  \vspace{3mm}%
 }
 
 % Open source subentry - for open source contributions (title and year on same line)

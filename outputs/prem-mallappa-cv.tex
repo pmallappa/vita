@@ -1,0 +1,202 @@
+% Created 2025-11-29 Sat 11:37
+% Intended LaTeX compiler: pdflatex
+\documentclass[12pt,a4paper]{pawesome-cv}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+% Package longtable omitted
+% Package wrapfig omitted
+% Package rotating omitted
+\usepackage{amsmath}
+% Package capt-of omitted
+% Package hyperref omitted
+\renewcommand{\acvHeaderSocialSep}{\enskip\cdotp\enskip}
+\renewcommand{\acvHeaderIconSep}{~}
+\renewcommand*{\bodyfontlight}{\sourcesanspro}
+\providecommand*{\bibfont}{}
+\renewcommand*{\bibfont}{\paragraphstyle}
+\setcounter{secnumdepth}{1}
+\fontdir[fonts/]
+\colorlet{awesome}{awesome-skyblue}
+\setbool{acvSectionColorHighlight}{true}
+\colorizelinks[awesome-skyblue]
+\name{Prem}{Mallappa}
+\position{Prem Mallappa - CV (2-page) Software Architect  •  System \& Embedded Software}
+\address{Bengaluru, India}
+\email{prem.mallappa@gmail.com}
+\mobile{+91-9448900326}
+\homepage{pmallappa.github.io}
+\github{pmallappa}
+\linkedin{pmallappa}
+\hypersetup{
+ pdfauthor={Prem Mallappa Prem Mallappa},
+ pdftitle={Prem Mallappa - CV (2-page) Software Architect  •  System \& Embedded Software},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 30.1 (Org mode 9.7.11)}, 
+ pdflang={English}}
+\begin{document}
+
+\makecvheader
+\makecvfooter{\today\\~}{Prem Mallappa~~~·~~~Curriculum Vitæ\\\textup{\tiny Source at \href{https://github.com/pmallappa/vita}{github}}}{\thepage\\~}
+
+\begin{cvparagraph}
+
+Seasoned Software Architect with extensive expertise in designing and developing high-performance embedded systems, system software, Linux kernel drivers, and virtualization technologies. Proficient in a wide range of programming and scripting languages, with a proven track record of delivering robust, scalable solutions in complex technical environments.
+
+A highly analytical and collaborative team player, recognized for strong problem-solving abilities, logical thinking, and a passion for mastering emerging technologies. Committed to driving innovation and excellence through clean architecture, optimized code, and best-in-class engineering practices.
+\end{cvparagraph}
+\cvsection{Skills}
+\label{sec:orgde2e79a}
+\begin{cvskills}
+\cvskill{Leadership}{Over 22 years of multidisciplinary team and project leadership experience; Software Architecture and Design.}
+\cvskill{Communications}{Excellent written and spoken communication skills.}
+\cvskill{Technology}{Broad and deep IT expertise, including cloud computing, computer security, operating systems, embedded systems, software \& services development, programming languages, etc.}
+\cvskill{Computer Security}{Cryptography; virtualization and cloud computing security architecture and implementation; risk management and compliance; intrusion detection and prevention; software security and secure software development.}
+\cvskill{Programming Languages}{C, Assembly (x86, ARM, MIPS), Rust, Python, C++, Go, BASH}
+\cvskill{Operating Systems}{Linux, FreeBSD, QNX, VxWorks, Symbian}
+\cvskill{Architecture}{x86, ARM - v6,v7,v8, MIPS64, PowerPC, RISC-V}
+\cvskill{Development Tools}{GCC, Clang, Git, Make, CMake, ARM Development Tools, Keil, JTAG, Docker,}
+\cvskill{Specialized Skills}{Linux Kernel Development, Device Drivers, Embedded Systems, System Software, Performance Optimization, Cryptography, Filesystem Development}
+\end{cvskills}
+\cvsection{Education}
+\label{sec:orgda86c75}
+
+\begin{cventries}
+
+\cventry
+{Masters (Computer Science)}
+{Pilani, Rajasthan, India}
+{BITS Pilani}
+{2016}
+{}
+
+\cventry
+{Bachelors (Computer Science)}
+{Adichunchangiri Institute of Technology, Karnataka, India}
+{Visvesvaraya Technological University (VTU)}
+{2002}
+{}
+\end{cventries}
+\cvsection{Open Source}
+\label{sec:org1419cb4}
+
+\begin{cventries}
+\opensourcesubentry{QEMU}{2014-2016}{\begin{itemize}
+\item SMMUv3 (IOMMU) emulation support for ARMv8
+\item Designed and implemented SMMUv3 model merged into mainline
+\item Added support for Stage1, Stage2, and nested virtualization
+\item Implemented command queue processing and page table walk
+\end{itemize}
+}{\marginnotelabel{Link:} \marginnotevalue{\href{https://www.qemu.org/}{Project}}}
+\opensourcesubentry{Linux Kernel}{2011-2016}{\begin{itemize}
+\item MIPS Kexec/Kdump port and IOMMU subsystem
+\item Developed MIPS64 port of Kexec and Kdump (merged upstream)
+\item Fixed critical bugs in KEXEC for Cavium Octeon platforms
+\item Contributed to IOMMU/SMMUv3 driver development
+\end{itemize}
+}{\marginnotelabel{Link:} \marginnotevalue{\href{https://kernel.org/}{Project}}}
+\opensourcesubentry{GLIBC}{2018-2020}{\begin{itemize}
+\item Performance optimizations for AMD processors
+\item Fixed memcpy behaviour on AMD processors
+\item Optimized string functions for x86\textsubscript{64} architecture
+\item Performance improvements for memory operations
+\end{itemize}
+}{\marginnotelabel{Link:} \marginnotevalue{\href{https://www.gnu.org/software/libc/}{Project}}}
+\opensourcesubentry{AMD LibM}{2018-Present}{\begin{itemize}
+\item Open source math library for AMD processors
+\item Core contributor to open sourcing AMD Math Library
+\item Optimized transcendental functions (exp, log, pow, trig)
+\item Implemented SIMD/FMA optimizations for vector operations
+\end{itemize}
+}{\marginnotelabel{Link:} \marginnotevalue{\href{https://github.com/amd/aocl-libm-ose}{Project}}}
+\end{cventries}
+\cvsection{Experience}
+\label{sec:org0961f56}
+
+\begin{cventries}
+
+\cventry
+{Principal Engineer}
+{AMD Ltd.}
+{Bengaluru, India}
+{Feb. 2018 -- Present}
+{\begin{cvitems}
+\item Architected and developed high-performance mathematical libraries optimizing exponential, power, logarithmic, and trigonometric functions for AMD EPYC and Ryzen processor families
+\item Achieved 30\% performance enhancement in exp() and log() operations through advanced optimization techniques including vectorized look-up tables, Estrin's polynomial evaluation, and optimized integer conversion pathways
+\item Led development of cryptographic primitives library implementing AES, SHA, and PKCS algorithms optimized for AVX2, AESNI, and SHANI instruction sets
+\item Engineered runtime-adaptive algorithm dispatcher utilizing CPUID-based feature detection for optimal code path selection
+\item Delivered 3x performance improvement in parallel CFB decryption through innovative algorithm parallelization
+\end{cvitems}
+}
+
+\cventry
+{Principal Engineer}
+{Broadcom Ltd.}
+{Bengaluru, India}
+{Jan. 2014 -- Oct. 2016}
+{\begin{cvitems}
+\item Architected foundational software stack for Broadcom Vulcan, a multicore-multithreaded ARMv8 64-bit server processor
+\item Engineered complete SMMUv3 (System Memory Management Unit) driver infrastructure supporting advanced IOMMU virtualization
+\item Developed and contributed SMMUv3 emulation model to QEMU mainline, enabling early platform validation and ecosystem enablement
+\item Implemented comprehensive virtualization features including command queue processing, STE/CD descriptor parsing, multi-level page table walks, and stage-1/stage-2 address translation
+\end{cvitems}
+}
+
+\cventry
+{Tech Lead}
+{Cavium India Pvt. Ltd.}
+{Bengaluru, India}
+{May. 2011 -- Dec. 2013}
+{\begin{cvitems}
+\item Led low-level software development for Cavium Octeon III (MIPS64) multicore network processors
+\item Resolved critical KEXEC kernel bug and developed complete MIPS64 port of Kexec/Kdump crash dump infrastructure, successfully merged into Linux mainline
+\item Engineered bare-metal core dump generation framework with host-resident daemon enabling post-mortem GDB analysis
+\item Designed and implemented CavHv hypervisor for MIPS64 architecture leveraging experimental hardware virtualization extensions
+\end{cvitems}
+}
+
+\cventry
+{Sr. Development Engineer}
+{ARM Ltd.}
+{Bengaluru, India}
+{Aug. 2005 -- Jun. 2009}
+{\begin{cvitems}
+\item Executed comprehensive OS porting initiatives for emerging ARM architectures including ARM1176JZFS with TrustZone security extensions and Cortex-A8 application processor
+\item Developed production-grade touchscreen driver for Symbian OS with automated validation framework using Python
+\item Designed precision interrupt latency measurement infrastructure for quantifying TrustZone secure-world context switching overhead
+\item Ported L4Ka::Pistachio microkernel to ARM architecture enabling virtualization research and proof-of-concept implementations
+\end{cvitems}
+}
+
+\cventry
+{Sr. Software Engineer}
+{Sasken Communication Technologies Ltd.}
+{Bengaluru, India}
+{Aug. 2004 -- Aug. 2005}
+{\begin{cvitems}
+\item Architected and maintained Extended File System (EFS) for VxWorks-based UMTS base station infrastructure
+\item Engineered reset-resilient filesystem with advanced wear-leveling algorithms ensuring data integrity across unexpected power cycles
+\item Designed Flash-optimized flat file tree structure minimizing write amplification and extending device longevity
+\end{cvitems}
+}
+
+\cventry
+{Software Engineer}
+{Global Edge Software Ltd.}
+{Bengaluru, India}
+{Jun. 2003 -- Aug. 2004}
+{\begin{cvitems}
+\item Designed and implemented comprehensive SDIO host controller driver for Linux on Intel StrongARM embedded platforms
+\item Engineered high-performance 4-bit SDIO driver for Marvell 802.11g WiFi chipset achieving maximum theoretical throughput
+\item Optimized DMA transfers and interrupt handling to minimize latency and maximize wireless data transfer efficiency
+\end{cvitems}
+}
+\cvsubsection{Short Stints}
+\shortstintentry{VSPL Ltd.}{Bengaluru, India}{Software Architect}{Nov. 2016 -- Jan. 2018}{}
+\shortstintentry{Cisco Ltd.}{Bengaluru, India}{Software Engineer}{Oct. 2010 -- Apr. 2011}{}
+\shortstintentry{B-Labs, London UK}{Bengaluru, India}{Sr. Engineer - Contractor}{Nov. 2009 -- Sep. 2010}{}
+\shortstintentry{Harman International}{Bengaluru, India}{Engineer}{Jul. 2009 -- Nov. 2009}{}
+\end{cventries}
+\end{document}
