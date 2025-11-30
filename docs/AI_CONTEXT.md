@@ -648,14 +648,17 @@ When resuming after context loss, an AI assistant should:
 ## Quick Reference Commands
 
 ```bash
-# Build vita
-make vita
+# Build vita (inside container)
+podman run --rm -v ${PWD}:/workspace -w /workspace localhost/resume-builder make vita
 
-# Build and view
-make vita && start output/prem-mallappa-vita.pdf
+# Build CV (inside container)
+podman run --rm -v ${PWD}:/workspace -w /workspace localhost/resume-builder make cv
 
 # Clean build
-make clean && make vita
+podman run --rm -v ${PWD}:/workspace -w /workspace localhost/resume-builder make clean
+
+# Build and view (PowerShell)
+podman run --rm -v ${PWD}:/workspace -w /workspace localhost/resume-builder make vita; start output/prem-mallappa-vita.pdf
 
 # Check for LaTeX errors
 grep -i "error\|warning" output/prem-mallappa-vita.log

@@ -296,6 +296,17 @@
 \newcommand*{\projectbodyblock}[1]{%
   \begin{minipage}[t]{\dimexpr\textwidth - \acvProjectMarginGap - \marginparsep - 3pt\relax}%
     \vspace{0pt}% Keep top aligned with the sidebar note
+    % Customize description list for Synopsis/Details formatting
+    \setlist[description]{
+      leftmargin=6.2em,
+      labelwidth=5.6em,
+      labelsep=0.3em,
+      style=nextline,
+      itemsep=0pt,
+      parsep=0pt,
+      font=\fontsize{8pt}{1em}\bodyfont\bfseries,
+      before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}
+    }%
     #1%
   \end{minipage}%
 }
