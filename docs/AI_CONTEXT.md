@@ -385,6 +385,29 @@ These appear as small text in the right margin showing technologies used.
 
 ## Recent Changes History
 
+### 2025-11-30: Projects Section Refactoring
+
+**What Changed:**
+- Converted all 14 projects from raw LaTeX to org-mode native description lists
+- Changed from `#+latex: \begin{description}...\end{description}` to `- Synopsis :: ...` syntax
+- Added description list styling to `cv-commands.sty` projectbodyblock
+- Configured enumitem package for proper Synopsis/Details formatting
+- Updated AI_CONTEXT.md with podman build commands using `localhost/resume-builder`
+
+**Technical Details:**
+- **Old format**: Raw `#+latex:` blocks with complex LaTeX description list parameters
+- **New format**: Org-mode native `- Synopsis :: text` and `- Details :: text`
+- **LaTeX styling**: Added `\setlist[description]` configuration in projectbodyblock
+  - Labels: 8pt bold font (leftmargin=6.2em, labelwidth=5.6em)
+  - Body text: 9pt light font
+  - Style: nextline (label on own line, text below)
+- **Benefits**: Cleaner org-mode authoring, same PDF output quality
+
+**Files Modified:**
+- `org/sections/projects.org` - All 14 project descriptions
+- `texmf/tex/latex/pawesome-cv/cv-commands.sty` - Added description list styling
+- `docs/AI_CONTEXT.md` - Updated build commands
+
 ### 2025-11-29: Professional Content Rewrite
 
 **What Changed:**
@@ -405,20 +428,34 @@ These appear as small text in the right margin showing technologies used.
 
 ### Layout Fixes (Previous Sessions)
 
-1. **Spacing Issues Resolved:**
+1. **Awards Section (2025-11-30):**
+   - Moved location to margin notes to prevent text overlap
+   - Added `\acvHonorEntryGap` (1.8mm) vertical spacing between entries
+   - Changed from centered tabular to flushleft layout
+   - Awards description now uses sloppypar for better line breaking
+
+2. **Spacing Issues Resolved:**
    - Reduced spacing between role headers and details: `\\[-2mm]`
    - Added gap between project title and summary: `\\[1mm]`
    - Fixed vertical spacing in entry types
 
-2. **Margin Note Alignment:**
+3. **Margin Note Alignment:**
    - Fixed with `\marginnote{...}[-0.5em]` offset
    - Moved margin note inside tabular environment
 
-3. **Definition-Style Formatting:**
-   - Applied hanging indent (5em) to "Summary:" and "Contributions:"
-   - Set line height to 1em
+4. **Definition-Style Formatting:**
+   - Projects now use org-mode native description lists
+   - Labels (Synopsis/Details): 8pt bold, on separate line
+   - Body text: 9pt light font
+   - Configured via enumitem in projectbodyblock
 
-4. **Page Breaks:**
+5. **LaTeX Warning Reduction:**
+   - Added sloppypar to cvparagraph for summary section
+   - Added RaggedRight to skills table
+   - Reduced project body width by 3pt
+   - Added emergencystretch=1em to skills
+
+6. **Page Breaks:**
    - Selective page breaks using `:PAGEBREAK: t` property
    - Currently: Experience (page 2), Projects (page 4), Awards (page 8)
 
@@ -499,6 +536,20 @@ lighttext:           #999999  (subtle elements)
 
 ## Content Guidelines for AI Assistants
 
+### Projects Section Format
+
+**Current Standard (as of 2025-11-30):**
+- Use org-mode native description lists: `- Synopsis ::` and `- Details ::`
+- Synopsis: 1-2 sentences explaining project context and purpose
+- Details: Specific achievements with technologies and quantifiable results
+- LaTeX styling is automatic via enumitem configuration in cv-commands.sty
+
+**Example:**
+```org
+- Synopsis :: Leading development of storage acceleration solutions on AMD Pensando DPUs. Architecting high-performance offload engines for NVMe-oF and storage virtualization.
+- Details :: Architecting NVMe-over-Fabrics offload engine achieving sub-10μs latency. Developing P4-based packet processing pipelines. Implementing Xen-based virtualization stack for secure multi-tenant isolation.
+```
+
 ### When Rewriting Content
 
 **DO:**
@@ -549,6 +600,8 @@ lighttext:           #999999  (subtle elements)
 
 ### Adding New Project
 
+**IMPORTANT**: Use org-mode native description lists, NOT raw LaTeX
+
 ```org
 *** Project Name
 :PROPERTIES:
@@ -560,14 +613,18 @@ lighttext:           #999999  (subtle elements)
 :TECH: Tech1, Tech2
 :END:
 
-*Summary:* Project overview and context.
-
-#+latex: \par\vspace{2mm}
-
-*Contributions:*
-- Specific achievement 1
-- Specific achievement 2
+- Synopsis :: Project overview and context in one or two sentences explaining the what and why.
+- Details :: Specific technical achievements with quantifiable results. Technologies used and impact delivered.
 ```
+
+**DO NOT use raw LaTeX blocks like this:**
+```org
+#+latex: \begin{description}[...]
+#+latex: \item[Synopsis:] ...
+#+latex: \end{description}
+```
+
+**Description list formatting is handled automatically by LaTeX styling in cv-commands.sty**
 
 ### Adding Page Break
 
@@ -604,6 +661,10 @@ lighttext:           #999999  (subtle elements)
 **Error**: "Runaway argument"  
 **Cause**: Missing `:END:` tag or unmatched braces  
 **Fix**: Check org-mode property blocks
+
+**Error**: "dubious ownership in repository"  
+**Cause**: Running git inside podman container with mounted volume  
+**Fix**: `git config --global --add safe.directory /workspace` (inside container)
 
 ## Python Data Files (Legacy)
 
