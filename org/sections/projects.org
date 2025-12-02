@@ -28,7 +28,7 @@
 :PROPERTIES:
 :CV_ENV: cvproject
 :PROJECT: AMD Cryptography Library
-:DATE: Jan. 2022 -- Jun. 2025
+:DATE: Jan. 2023 -- Jun. 2025
 :LANGUAGES: C++, x86-64 Assembly
 :TOOLS: Git, CMake, GCC, Clang, OpenSSL Provider API
 :TECH: AES-CFB, AES-GCM, SHA256, SHA512, AVX2, AVX-512, AESNI, SHANI, VAES
@@ -36,11 +36,12 @@
 
 - Synopsis :: Initiated as proof-of-concept to address ISV performance bottlenecks with AES-CFB cryptography on AMD EPYC Milan servers. Evolved into comprehensive cryptographic primitives library delivering production-grade implementations of AES and SHA algorithms optimized for AMD processor architectures.
 - Details :: Engineered parallel AES-CFB decryption algorithm delivering 3x performance improvement over standard OpenSSL implementation. Developed multi-algorithm cryptographic library supporting AVX2, AESNI, and SHANI instruction set extensions. Implemented CPUID-based runtime dispatcher for automatic selection of optimal algorithm variant per processor generation. Integrated library as OpenSSL provider enabling transparent drop-in replacement for existing applications.
+
 *** AMD Math Library (AOCL-libm)
 :PROPERTIES:
 :CV_ENV: cvproject
 :PROJECT: AMD Math Library (AOCL-libm)
-:DATE: Feb. 2018 -- Dec. 2021
+:DATE: Dec. 2019 -- Dec. 2022
 :LANGUAGES: C, x86-64 Assembly, Python
 :TOOLS: CMake, GCC, Clang, AOCC, Git, Perf, VTune
 :TECH: AVX2, AVX-512, FMA3, FMA4, Estrin Polynomial, SIMD Vectorization, Cache Optimization
@@ -49,6 +50,19 @@
 - Synopsis :: High-performance mathematical library providing optimized implementations of transcendental functions (exp, log, pow, trigonometric) for AMD EPYC and Ryzen processors. Led comprehensive modernization initiative to enhance performance through advanced algorithmic techniques and microarchitecture-aware optimizations.
 - Details :: Implemented Estrin's polynomial evaluation method enabling parallel FMA instruction utilization for reduced latency. Developed vectorized lookup table architecture with cache-line alignment and interleaving for optimal memory bandwidth. Achieved 30% performance improvement in scalar operations and 2x improvement in vector operations across function portfolio. Engineered CPUID-based dynamic dispatcher selecting optimal code paths based on processor generation and feature flags.
 
+** Sr. Member of Technical Staff
+*** Model0
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: Model0, Pre-Silicon validation
+:DATE: Feb. 2018 -- Dec. 2019
+:LANGUAGES: C, x86-64 Assembly, Python
+:TOOLS: CMake, GCC, Linux Kernel, Virtualization
+:TECH: AMD-SEV, AMD-SNP
+:END:
+- Synopsis :: Next generation AMD processors needed to be tested before IO and other components are integrated, as part of the **shift-left** strategy. Allows faster integration and 
+- Details :: <TBD>
+  
 * Broadcom Ltd.
 :PROPERTIES:
 :CV_ENV: cvemployer
