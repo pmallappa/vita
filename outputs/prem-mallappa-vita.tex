@@ -1,4 +1,4 @@
-% Created 2025-11-30 Sun 13:53
+% Created 2025-12-02 Tue 17:05
 % Intended LaTeX compiler: pdflatex
 \documentclass[12pt,a4paper]{pawesome-cv}
 
@@ -48,7 +48,7 @@ Seasoned Software Architect with extensive expertise in designing and developing
 A highly analytical and collaborative team player, recognized for strong problem-solving abilities, logical thinking, and a passion for mastering emerging technologies. Committed to driving innovation and excellence through clean architecture, optimized code, and best-in-class engineering practices.
 \end{cvparagraph}
 \cvsection{Skills}
-\label{sec:org2d1b45b}
+\label{sec:org0c2bd07}
 \begin{cvskills}
 \cvskill{Leadership}{Over 22 years of multidisciplinary team and project leadership experience; Software Architecture and Design.}
 \cvskill{Communications}{Excellent written and spoken communication skills.}
@@ -61,7 +61,7 @@ A highly analytical and collaborative team player, recognized for strong problem
 \cvskill{Specialized Skills}{Linux Kernel Development, Device Drivers, Embedded Systems, System Software, Performance Optimization, Cryptography, Filesystem Development}
 \end{cvskills}
 \cvsection{Education}
-\label{sec:org38cbcae}
+\label{sec:org2f213a2}
 
 \begin{cventries}
 
@@ -81,7 +81,7 @@ A highly analytical and collaborative team player, recognized for strong problem
 \end{cventries}
 \clearpage
 \cvsection{Experience}
-\label{sec:org4c44b38}
+\label{sec:org20f576e}
 
 \begin{cventries}
 \experienceemployer{AMD Ltd.}{2018}{Present}{Bengaluru, India}
@@ -135,7 +135,7 @@ Optimized DMA transfers and interrupt handling paths to minimize latency and max
 \shortstintentry{Harman International}{Bengaluru, India}{Engineer}{Jul. 2009 -- Nov. 2009}{}
 \end{cventries}
 \cvsection{Open Source}
-\label{sec:org404a5d2}
+\label{sec:org6413f83}
 
 \begin{cventries}
 \opensourceproject{QEMU}{2014-2016}{}{https://www.qemu.org/}
@@ -177,7 +177,7 @@ Optimized DMA transfers and interrupt handling paths to minimize latency and max
 \end{cventries}
 \clearpage
 \cvsection{Projects}
-\label{sec:orge6d7aeb}
+\label{sec:orgf841acc}
 
 \begin{cventries}
 \experienceemployer{AMD Ltd.}{2018}{Present}{Bengaluru, India}
@@ -190,20 +190,29 @@ Optimized DMA transfers and interrupt handling paths to minimize latency and max
 }{\marginnotelabel{Languages:} \marginnotevalue{C, C++, P4, Python}\\[0.2mm]
 \marginnotelabel{Tools:} \marginnotevalue{Git, GDB, Qemu, Xen Hypervisor, DPDK}\\[0.2mm]
 \marginnotelabel{Tech:} \marginnotevalue{NVMe-oF, RDMA, SmartNIC, DPU, Hardware Offload, Packet Processing Pipelines}}
-\projectsubentry{AMD Cryptography Library}{Jan. 2022 -- Jun. 2025 -- }{\begin{description}
+\projectsubentry{AMD Cryptography Library}{Jan. 2023 -- Jun. 2025 -- }{\begin{description}
 \item[{Synopsis}] Initiated as proof-of-concept to address ISV performance bottlenecks with AES-CFB cryptography on AMD EPYC Milan servers. Evolved into comprehensive cryptographic primitives library delivering production-grade implementations of AES and SHA algorithms optimized for AMD processor architectures.
 \item[{Details}] Engineered parallel AES-CFB decryption algorithm delivering 3x performance improvement over standard OpenSSL implementation. Developed multi-algorithm cryptographic library supporting AVX2, AESNI, and SHANI instruction set extensions. Implemented CPUID-based runtime dispatcher for automatic selection of optimal algorithm variant per processor generation. Integrated library as OpenSSL provider enabling transparent drop-in replacement for existing applications.
 \end{description}
 }{\marginnotelabel{Languages:} \marginnotevalue{C++, x86-64 Assembly}\\[0.2mm]
 \marginnotelabel{Tools:} \marginnotevalue{Git, CMake, GCC, Clang, OpenSSL Provider API}\\[0.2mm]
 \marginnotelabel{Tech:} \marginnotevalue{AES-CFB, AES-GCM, SHA256, SHA512, AVX2, AVX-512, AESNI, SHANI, VAES}}
-\projectsubentry{AMD Math Library (AOCL-libm)}{Feb. 2018 -- Dec. 2021 -- }{\begin{description}
+\projectsubentry{AMD Math Library (AOCL-libm)}{Dec. 2019 -- Dec. 2022 -- }{\begin{description}
 \item[{Synopsis}] High-performance mathematical library providing optimized implementations of transcendental functions (exp, log, pow, trigonometric) for AMD EPYC and Ryzen processors. Led comprehensive modernization initiative to enhance performance through advanced algorithmic techniques and microarchitecture-aware optimizations.
 \item[{Details}] Implemented Estrin's polynomial evaluation method enabling parallel FMA instruction utilization for reduced latency. Developed vectorized lookup table architecture with cache-line alignment and interleaving for optimal memory bandwidth. Achieved 30\% performance improvement in scalar operations and 2x improvement in vector operations across function portfolio. Engineered CPUID-based dynamic dispatcher selecting optimal code paths based on processor generation and feature flags.
 \end{description}
 }{\marginnotelabel{Languages:} \marginnotevalue{C, x86-64 Assembly, Python}\\[0.2mm]
 \marginnotelabel{Tools:} \marginnotevalue{CMake, GCC, Clang, AOCC, Git, Perf, VTune}\\[0.2mm]
 \marginnotelabel{Tech:} \marginnotevalue{AVX2, AVX-512, FMA3, FMA4, Estrin Polynomial, SIMD Vectorization, Cache Optimization}}\end{experiencecontent}
+\subsection*{Sr. Member of Technical Staff}
+\label{sec:org53ca0b2}
+\projectsubentry{Model0}{Feb. 2018 -- Dec. 2019 -- }{\begin{description}
+\item[{Synopsis}] Next generation AMD processors needed to be tested before IO and other components are integrated, as part of the \textbf{\textbf{shift-left}} strategy. Allows faster integration and
+\item[{Details}] <TBD>
+\end{description}
+}{\marginnotelabel{Languages:} \marginnotevalue{C, x86-64 Assembly, Python}\\[0.2mm]
+\marginnotelabel{Tools:} \marginnotevalue{CMake, GCC, Linux Kernel, Virtualization}\\[0.2mm]
+\marginnotelabel{Tech:} \marginnotevalue{AMD-SEV, AMD-SNP}}
 \experienceemployer{Broadcom Ltd.}{2011}{2016}{Bengaluru, India}
 \experiencerole{Principal Engineer}
 \begin{experiencecontent}
@@ -310,7 +319,7 @@ Optimized DMA transfers and interrupt handling paths to minimize latency and max
 \end{cventries}
 \clearpage
 \cvsection{Awards}
-\label{sec:orgfc4cf3a}
+\label{sec:org0ebb7e1}
 
 \begin{cvhonors}
 \cvhonor{Spotlight}{AMD}{AMD}{Q3 2018}{Helping Emulation team find design bug in data fabric}

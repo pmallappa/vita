@@ -7,8 +7,8 @@ all: cv vita coverletter
 resume:
 	@echo "Building resume..."
 	@python3 scripts/generate.py --type resume --output outputs/resume.tex
-	@cd outputs && TEXMFHOME=$(CURDIR)/texmf xelatex resume.tex
-	@cd outputs && TEXMFHOME=$(CURDIR)/texmf xelatex resume.tex
+	@cd outputs && TEXMFHOME=$(CURDIR)/texmf lualatex resume.tex
+	@cd outputs && TEXMFHOME=$(CURDIR)/texmf lualatex resume.tex
 	@echo "Resume built: outputs/resume.pdf"
 
 # Build cover letter (dummy target for now)
@@ -24,8 +24,8 @@ vita:
 		--visit=org/prem-mallappa-vita.org \
 		--eval "(org-export-to-file 'awesomecv \"$(CURDIR)/outputs/prem-mallappa-vita.tex\")"
 	@cd outputs && sed -i 's/\\n\[NO-DEFAULT-PACKAGES\]//g;/\\usepackage\[normalem]{ulem}/d;/\\usepackage{amssymb}/d' prem-mallappa-vita.tex
-	@cd outputs && TEXMFHOME=$(CURDIR)/texmf xelatex prem-mallappa-vita.tex
-	@cd outputs && TEXMFHOME=$(CURDIR)/texmf xelatex prem-mallappa-vita.tex
+	@cd outputs && TEXMFHOME=$(CURDIR)/texmf lualatex prem-mallappa-vita.tex
+	@cd outputs && TEXMFHOME=$(CURDIR)/texmf lualatex prem-mallappa-vita.tex
 	@echo "Vita built: outputs/prem-mallappa-vita.pdf"
 
 # Build 2-page CV from org-mode file
@@ -37,8 +37,8 @@ cv:
 		--visit=org/prem-mallappa-cv.org \
 		--eval "(org-export-to-file 'awesomecv \"$(CURDIR)/outputs/prem-mallappa-cv.tex\")"
 	@cd outputs && sed -i 's/\\n\[NO-DEFAULT-PACKAGES\]//g;/\\usepackage\[normalem]{ulem}/d;/\\usepackage{amssymb}/d' prem-mallappa-cv.tex
-	@cd outputs && TEXMFHOME=$(CURDIR)/texmf xelatex prem-mallappa-cv.tex
-	@cd outputs && TEXMFHOME=$(CURDIR)/texmf xelatex prem-mallappa-cv.tex
+	@cd outputs && TEXMFHOME=$(CURDIR)/texmf lualatex prem-mallappa-cv.tex
+	@cd outputs && TEXMFHOME=$(CURDIR)/texmf lualatex prem-mallappa-cv.tex
 	@echo "CV built: outputs/prem-mallappa-cv.pdf"
 
 # Clean build artifacts
