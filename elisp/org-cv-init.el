@@ -5,12 +5,12 @@
 (defconst org-cv--repo-root (expand-file-name ".." org-cv--elisp-dir)
   "Root of the repository.")
 
-(add-to-list 'load-path (expand-file-name "org-cv" org-cv--elisp-dir))
+;; Add system-installed org-cv to load path
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/org-cv")
 (add-to-list 'load-path (expand-file-name "ox-ext" org-cv--elisp-dir))
 (add-to-list 'load-path org-cv--elisp-dir)
 
 (require 'ox-awesomecv)
-(require 'ox-awesomecv2)
 (require 'ox-awesomecv-extensions)
 
 (add-to-list 'org-latex-classes

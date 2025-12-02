@@ -232,7 +232,7 @@
   \needspace{0.5\baselineskip}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm} R{5.5cm}}
+  \begin{tabular*}{\dimexpr\textwidth-3pt\relax}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm - 3pt} R{5.5cm}}
     \ifempty{#1#2}
     {\entrypositionstyle{#3} & \entrydatestyle{#4} }
     {\ifempty{#3#4}
@@ -240,7 +240,7 @@
     {\entrytitlestyle{#1} & \entrylocationstyle{#2} \\
       \entrypositionstyle{#3} & \entrydatestyle{#4} }}
     \ifempty{#5}{}{ \\
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+    \multicolumn{2}{L{\dimexpr\textwidth-3pt\relax}}{\descriptionstyle{#5}}}
   \end{tabular*}%
 }
 
@@ -251,7 +251,7 @@
   \needspace{0.5\baselineskip}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm} R{5.5cm}}
+  \begin{tabular*}{\dimexpr\textwidth-3pt\relax}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm - 3pt} R{5.5cm}}
     \ifempty{#1#2}
     {\entrypositionstyle{#3} & \entrydatestyle{#4} }
     {\ifempty{#3#4}
@@ -259,7 +259,7 @@
     {{\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} \\
       \entrypositionstyle{#3} & \entrydatestyle{#4} }}
     \ifempty{#5}{}{ \\
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+    \multicolumn{2}{L{\dimexpr\textwidth-3pt\relax}}{\descriptionstyle{#5}}}
   \end{tabular*}%
 }
 
@@ -270,7 +270,7 @@
   \needspace{0.5\baselineskip}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm} R{5.5cm}}
+  \begin{tabular*}{\dimexpr\textwidth-3pt\relax}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm - 3pt} R{5.5cm}}
     \ifempty{#1#2}
     {\entrypositionstyle{#3} & \entrydatestyle{#4} }
     {\ifempty{#3#4}
@@ -278,7 +278,7 @@
     {{\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} \\
       \entrypositionstyle{#3} & \entrydatestyle{#4} }}
     \ifempty{#5}{}{ \\
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+    \multicolumn{2}{L{\dimexpr\textwidth-3pt\relax}}{\descriptionstyle{#5}}}
   \end{tabular*}%
 }
 
@@ -319,6 +319,9 @@
       \vspace{0pt}%
       \fontsize{7pt}{1.05em}\bodyfontlight\color{text}%
       \setlength{\parskip}{0.25em}%
+      \RaggedRight%
+      \tolerance=1000%
+      \emergencystretch=1em%
       #1%
     \end{minipage}%
   }[0pt]%

@@ -21,8 +21,8 @@ RUN apk add --progress \
     emacs-nox && \
     apk add --progress texmf-dist-fontsrecommended || true
 
-# Clone org-cv package from GitLab to a temporary location
-RUN git clone https://gitlab.com/Titan-C/org-cv.git /tmp/org-cv
+# Clone org-cv package from GitLab and install to /usr/share/emacs/site-lisp
+RUN git clone https://gitlab.com/Titan-C/org-cv.git /usr/share/emacs/site-lisp/org-cv
 
 # Python packages installed via apk
 # py3-yaml - YAML parsing
