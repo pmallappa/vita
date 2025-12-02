@@ -18,6 +18,10 @@ on:
       - 'Makefile'
       - '.github/workflows/build-resume.yml'
 
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   build-resume:
     runs-on: ubuntu-latest
