@@ -16,6 +16,7 @@
 :END:
 #+INCLUDE: "sections/education.org"
 
+#+latex: \newgeometry{left=2.0cm, top=1.5cm, right=4.6cm, bottom=2.0cm, footskip=.5cm, marginparwidth=4.1cm}
 * Experience
 :PROPERTIES:
 :CV_ENV: cventries
