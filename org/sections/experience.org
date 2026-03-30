@@ -12,15 +12,15 @@
 :END:
 
 Worked in multiple teams within AMD including *AMD LibM*, *AOCL Cryptography*, *BSP*, and *NVMe* in *Pensando* BU.
-Every project was different, requiring quick learning and adaptation to new domains. The role also involved leading a team of four-to-six 
+Every project was different, requiring quick learning and adaptation to new domains. The role also involved *leading a team* of four-to-six
 engineers in various projects. I was also part of the leadership team where I mentored engineers from across AOCL and Pensando BU.
 
-** Sr. Member of Technical Staff 
+** Sr. Member of Technical Staff
 :PROPERTIES:
 :CV_ENV: cvrole
 :END:
 
-Worked on Model0 project which was pre-silicon validation of next generation AMD cores, including Zen2 and Zen3. The role involved working with 
+Worked on *Model0* which was *pre-silicon validation* of next generation AMD cores, including Zen2 and Zen3. The role involved working with
 hardware team to bring up bare-minimum processor configuration with just core and memory controller, and run Linux, stressors and benchmarks.
 This involved working on low-level firmware, bootloaders, Linux kernel and performance analysis tools.
 
@@ -38,8 +38,8 @@ This involved working on low-level firmware, bootloaders, Linux kernel and perfo
 :END:
 
 Architected foundational software stack for Broadcom Vulcan, a multicore-multithreaded ARMv8 64-bit server processor.
-Engineered complete SMMUv3 (System Memory Management Unit) driver infrastructure supporting advanced IOMMU virtualization.
-Developed and contributed SMMUv3 emulation model to QEMU mainline, enabling early platform validation and ecosystem enablement.
+Engineered complete *SMMUv3* (System Memory Management Unit) driver infrastructure supporting advanced IOMMU virtualization.
+Developed and contributed an *SMMUv3 emulation model* to QEMU mainline, enabling early platform validation and ecosystem enablement.
 Implemented comprehensive virtualization features including command queue processing, STE/CD descriptor parsing, multi-level page table walks, and stage-1/stage-2 address translation.
 
 * Cavium India Pvt. Ltd.
@@ -56,9 +56,9 @@ Implemented comprehensive virtualization features including command queue proces
 :END:
 
 Led low-level software development for Cavium Octeon III (MIPS64) multicore network processors, delivering stable platform firmware for networking customers.
-Resolved a critical KEXEC kernel bug and authored the full MIPS64 port of the Kexec/Kdump crash dump infrastructure, ultimately merged into Linux mainline.
+Resolved a critical KEXEC kernel bug and authored the full *MIPS64 port* of the Kexec/Kdump crash dump infrastructure, ultimately merged into Linux mainline.
 Engineered a bare-metal core dump generation framework with a host-resident daemon that enabled detailed post-mortem GDB analysis during bring-up.
-Designed and implemented the CavHv hypervisor for MIPS64 architecture using experimental hardware virtualization extensions to validate next-generation features.
+Designed and implemented the *CavHv hypervisor* for MIPS64 architecture using hardware virtualization extensions to validate next-generation features.
 
 * ARM Ltd.
 :PROPERTIES:
@@ -73,10 +73,10 @@ Designed and implemented the CavHv hypervisor for MIPS64 architecture using expe
 :CV_ENV: cvrole
 :END:
 
-Executed comprehensive OS porting initiatives for emerging ARM architectures including ARM1176JZFS with TrustZone security extensions and the Cortex-A8 application processor.
+Executed comprehensive *OS porting initiatives* for emerging ARM architectures including ARM1176JZFS with TrustZone security extensions and the Cortex-A8 application processor.
 Developed a production-grade touchscreen driver for Symbian OS along with a Python-based automated validation framework used across multiple programs.
 Designed a precision interrupt latency measurement infrastructure that quantified TrustZone secure-world context switching overhead for silicon partners.
-Ported the L4Ka::Pistachio microkernel to ARM architecture, enabling virtualization research and multiple proof-of-concept implementations.
+Ported the *L4Ka::Pistachio microkernel* to ARM architecture, enabling virtualization research and multiple proof-of-concept implementations.
 
 * Sasken Communication Technologies Ltd.
 :PROPERTIES:
@@ -91,8 +91,8 @@ Ported the L4Ka::Pistachio microkernel to ARM architecture, enabling virtualizat
 :CV_ENV: cvrole
 :END:
 
-Architected and maintained the Extended File System (EFS) for VxWorks-based UMTS base station infrastructure, balancing throughput with resiliency requirements.
-Engineered a reset-resilient filesystem with advanced wear-leveling algorithms so data integrity held across unexpected power cycles in the field.
+Architected and maintained the *Extended File System (EFS)* for VxWorks-based UMTS base station infrastructure, balancing throughput with resiliency requirements.
+Engineered a reset-resilient filesystem with *advanced wear-leveling algorithms* so data integrity held across unexpected power cycles in the field.
 Designed a flash-optimized flat file tree structure that minimized write amplification and significantly extended device longevity.
 
 * Global Edge Software Ltd.
@@ -108,9 +108,9 @@ Designed a flash-optimized flat file tree structure that minimized write amplifi
 :CV_ENV: cvrole
 :END:
 
-Designed and implemented a comprehensive SDIO host controller driver for Linux on Intel StrongARM embedded platforms used in consumer devices.
+Designed and implemented a *comprehensive SDIO host controller driver* for Linux on Intel StrongARM embedded platforms used in consumer devices.
 Engineered a high-performance 4-bit SDIO driver for Marvell 802.11g WiFi chipsets that consistently achieved maximum theoretical throughput.
-Optimized DMA transfers and interrupt handling paths to minimize latency and maximize wireless data transfer efficiency under heavy load.
+Optimized *DMA transfers* and interrupt handling paths to minimize latency and maximize wireless data transfer efficiency under heavy load.
 
 * Short Stints
 :PROPERTIES:
@@ -152,7 +152,3 @@ Optimized DMA transfers and interrupt handling paths to minimize latency and max
 :FROM: Jul. 2009
 :TO: Nov. 2009
 :END:
-
-
-
-

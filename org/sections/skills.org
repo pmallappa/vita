@@ -1,9 +1,11 @@
-- Leadership :: Over 22 years of multidisciplinary team and project leadership experience; Software Architecture and Design.
-- Communications :: Excellent written and spoken communication skills.
-- Technology :: Broad and deep IT expertise, including cloud computing, computer security, operating systems, embedded systems, software & services development, programming languages, etc.
-- Computer Security :: Cryptography; virtualization and cloud computing security architecture and implementation; risk management and compliance; intrusion detection and prevention; software security and secure software development.
-- Programming Languages :: C, Assembly (x86, ARM, MIPS), Rust, Python, C++, Go, BASH
-- Operating Systems :: Linux, FreeBSD, QNX, VxWorks, Symbian
-- Architecture :: x86, ARM - v6,v7,v8, MIPS64, PowerPC, RISC-V
-- Development Tools :: GCC, Clang, Git, Make, CMake, ARM Development Tools, Keil, JTAG, Docker,
-- Specialized Skills :: Linux Kernel Development, Device Drivers, Embedded Systems, System Software, Performance Optimization, Cryptography, Filesystem Development
+- Leadership :: *22+ years* of multidisciplinary team and project leadership experience; *software architecture* and technical direction across systems and platform teams.
+- Communications :: *Clear written and spoken communication* for architecture reviews, design discussions, mentoring, and cross-functional execution.
+- Technology :: Broad and deep IT expertise across *embedded systems*, *system software*, *cloud/security*, *virtualization*, and software services development.
+- Computer Security :: *Cryptography*, virtualization and cloud computing security architecture, *secure software development*, risk management, compliance, intrusion detection, and prevention.
+- Programming Languages :: *C*, *C++*, Assembly (*x86*, *ARM*, *MIPS*), Rust, Python, Go, BASH
+- Operating Systems :: *Linux*, FreeBSD, QNX, VxWorks, Symbian
+- Architecture :: *x86*, *ARM v6/v7/v8*, *MIPS64*, PowerPC, RISC-V
+- Development Tools :: *GCC*, *Clang*, *Git*, *CMake*, Make, GDB, Perf, VTune, ARM Development Tools, Keil, JTAG, Docker, QEMU
+- Systems & Virtualization :: *Linux kernel development*, *device drivers*, hypervisors, *IOMMU/SMMU*, pre-silicon validation, boot flows, and low-level firmware bring-up.
+- Performance & Acceleration :: *SIMD/vectorization*, *performance optimization*, math and crypto libraries, *SmartNIC/DPU offload*, NVMe-oF, RDMA, and hardware-assisted data paths.
+- Specialized Skills :: Embedded systems, system software, *cryptography*, filesystems, performance engineering, packet/data-path acceleration, and platform enablement.

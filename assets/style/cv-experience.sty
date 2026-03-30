@@ -11,7 +11,7 @@
 % Experience employer header - displays company name with date/location in right margin
 % Usage: \experienceemployer{<company name>}{<start date>}{<end date>}{<location>}
 \newcommand*{\experienceemployer}[4]{%
-  \vspace{2mm}
+  \par\addvspace{0.2mm}%
   \Needspace{12\baselineskip}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
@@ -20,7 +20,7 @@
     \begin{tabular}[t]{@{}l@{}}
       \companydatestyle{#2 -- #3}\\[1pt]
       \explocationstyle{#4}
-    \end{tabular} \\[-3mm]
+    \end{tabular} \\[-4mm]
   \end{tabular*}%
 }
 
@@ -33,7 +33,7 @@
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.7\textwidth} R{0.3\textwidth}}
     {\exppositionstyle{#1}} &
   \end{tabular*}%
-  \vspace{0.5mm}
+  \vspace{0mm}
 }
 
 % Experience entry - displays description items
@@ -60,7 +60,7 @@
 }{%
   \par
   \endgroup
-  \vspace{2mm}
+  \vspace{1mm}
 }
 
 \endinput

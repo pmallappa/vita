@@ -43,3 +43,29 @@ Providing important patches to GLIBC to fix memcpy behaviour on AMD, open sourci
 :END:
 Delivering Cryptography PoC (CFB based parallel decrypting), increases performance by 3x
 
+* Recognition
+:PROPERTIES:
+:CV_ENV: cvhonor
+:ORGANIZATION: Broadcom
+:LOCATION: Broadcom
+:DATE: 2016
+:END:
+Upstreaming SMMUv3 emulation and delivering Linux driver infrastructure that enabled early ARMv8 server platform bring-up and validation
+
+* Recognition
+:PROPERTIES:
+:CV_ENV: cvhonor
+:ORGANIZATION: Cavium
+:LOCATION: Cavium
+:DATE: 2013
+:END:
+Delivering the MIPS64 Kexec/Kdump port and virtualization bring-up work that improved Octeon III platform readiness and post-mortem debug capability
+
+* Recognition
+:PROPERTIES:
+:CV_ENV: cvhonor
+:ORGANIZATION: ARM
+:LOCATION: ARM
+:DATE: 2008
+:END:
+Driving ARM platform enablement through OS porting, automated validation, and L4Ka::Pistachio microkernel work that expanded early ecosystem readiness

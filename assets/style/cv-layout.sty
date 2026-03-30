@@ -14,11 +14,13 @@
 \newcommand{\acvSidebarRightMargin}{4.6cm}
 \newcommand{\acvSidebarMarginWidth}{4.1cm}
 \newcommand{\acvSidebarFooterOffset}{2.6cm}
+\newcommand{\acvSectionRuleExtension}{0pt}
 
 % Switch from the full-width first page to the sidebar layout used by sections
 % that carry margin notes on subsequent pages.
 \newcommand{\acvsidebarlayout}{%
   \newgeometry{left=2.0cm, top=1.5cm, right=\acvSidebarRightMargin, bottom=2.0cm, footskip=.5cm, marginparwidth=\acvSidebarMarginWidth}%
+  \renewcommand{\acvSectionRuleExtension}{\acvSidebarFooterOffset}%
   \fancyhfoffset[R]{\acvSidebarFooterOffset}%
 }
 \newcommand{\acvsidebarpagebreak}{%

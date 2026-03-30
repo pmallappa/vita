@@ -142,9 +142,12 @@
 \newcommand{\cvsection}[1]{%
   \needspace{5\baselineskip}
   \vspace{\acvSectionTopSkip}
-  \sectionstyle{#1}
-  \phantomsection
-  \color{gray}\vhrulefill{0.9pt}
+  \noindent\makebox[\textwidth][l]{%
+    \sectionstyle{#1}%
+    \phantomsection
+    \color{gray}\vhrulefill{0.9pt}%
+    \makebox[0pt][l]{\rule{\acvSectionRuleExtension}{0.9pt}}%
+  }%
 }
 
 % Define a subsection for CV
@@ -333,7 +336,7 @@
 % Usage: \projectsubentry{<project name>}{<date>}{<description>}{<sidebar>}
 \long\def\projectsubentry#1#2#3#4{%
   \Needspace{10\baselineskip}%
-  \vspace{-3mm}%
+  \par\addvspace{1.5mm}%
   \setlength\tabcolsep{0pt}%
   \setlength{\extrarowheight}{0pt}%
   \noindent\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.7cm} R{5.7cm}}
@@ -342,8 +345,7 @@
   \par\noindent
   \ifx&#4&\else\projectsidebarblock{#4}\fi
   \noindent\projectbodyblock{#3}%
-  \par
-  \vspace{3mm}%
+  \par\addvspace{4mm}%
 }
 
 % Open source subentry - for open source contributions (title and year on same line)
