@@ -243,21 +243,22 @@
 }
 
 % Education entry - for education section
-% Usage: \educationentry{<degree>}{<institution>}{<location>}{<date>}{<description>}
-\long\def\educationentry#1#2#3#4#5{%
+% Usage: \educationentry{<degree>}{<location>}{<school>}{<date>}{<affiliated>}{<description>}
+% Row 1: degree | location
+% Row 2: school | date
+% Row 3: affiliated university (if non-empty) | (blank)
+\long\def\educationentry#1#2#3#4#5#6{%
   \vspace{0.5mm}
   \needspace{0.5\baselineskip}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm} R{5.5cm}}
-    \ifempty{#1#2}
-    {\entrypositionstyle{#3} & \entrydatestyle{#4} }
-    {\ifempty{#3#4}
-    {{\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} }
-    {{\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} \\
-      \entrypositionstyle{#3} & \entrydatestyle{#4} }}
-    \ifempty{#5}{}{ \\
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+    {\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} \\
+    \entrypositionstyle{#3} & \entrydatestyle{#4}
+    \ifempty{#5}{}{\\
+    {\fontsize{8pt}{1em}\bodyfontlight\itshape\color{graytext}Affiliated: #5} & }
+    \ifempty{#6}{}{ \\
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#6}}}
   \end{tabular*}%
 }
 

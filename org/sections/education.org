@@ -9,8 +9,9 @@
 * Bachelors (Computer Science)
 :PROPERTIES:
 :CV_ENV: cvschool
-:SCHOOL: Visvesvaraya Technological University (VTU)
-:LOCATION: Adichunchangiri Institute of Technology, Karnataka, India
+:SCHOOL: Adichunchangiri Institute of Technology (AIT)
+:LOCATION: Karnataka, India
+:AFFILIATED: Visvesvaraya Technological University (VTU)
 :DATE: 2002
 :END:
 
