@@ -174,34 +174,55 @@
   \vspace{-2mm}
   \begingroup
   \paragraphstyle
+  \begin{sloppypar}
 }{%
+  \end{sloppypar}
   \par
   \endgroup
   \vspace{2mm}
 }
 
 % Define an environment for cventries
+% Keep the content width anchored to the page margins instead of centering so
+% that downstream tabular blocks (experience/project rows) line up exactly with
+% the section heading. The grouping ensures we do not leak the alignment tweaks.
 \newenvironment{cventries}{%
-  \vspace{\acvSectionContentTopSkip}
-  \begin{center}
+  \vspace{\acvSectionContentTopSkip}%
+  \par\begingroup
+  \setlength{\leftskip}{0pt}%
+  \setlength{\rightskip}{0pt}%
+  \setlength{\parindent}{0pt}%
+  \ignorespaces
 }{%
-  \end{center}
+  \par\endgroup
 }
 
 % Define an environment for experience entries
+% Mirrors cventries semantics in case sections choose to nest inside the custom
+% experience wrapper; maintained separately to avoid a breaking change to public
+% macros.
 \newenvironment{experienceentries}{%
-  \vspace{\acvSectionContentTopSkip}
-  \begin{center}
+  \vspace{\acvSectionContentTopSkip}%
+  \par\begingroup
+  \setlength{\leftskip}{0pt}%
+  \setlength{\rightskip}{0pt}%
+  \setlength{\parindent}{0pt}%
+  \ignorespaces
 }{%
-  \end{center}
+  \par\endgroup
 }
 
-% Define an environment for open source entries
+% Define an environment for open source entries using the same alignment rules
+% so that the section contents stay vertically consistent across the document.
 \newenvironment{opensourceentries}{%
-  \vspace{\acvSectionContentTopSkip}
-  \begin{center}
+  \vspace{\acvSectionContentTopSkip}%
+  \par\begingroup
+  \setlength{\leftskip}{0pt}%
+  \setlength{\rightskip}{0pt}%
+  \setlength{\parindent}{0pt}%
+  \ignorespaces
 }{%
-  \end{center}
+  \par\endgroup
 }
 
 % Define a top-level entry of cv information
@@ -211,7 +232,7 @@
   \needspace{0.5\baselineskip}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm} R{5.5cm}}
+  \begin{tabular*}{\dimexpr\textwidth-3pt\relax}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm - 3pt} R{5.5cm}}
     \ifempty{#1#2}
     {\entrypositionstyle{#3} & \entrydatestyle{#4} }
     {\ifempty{#3#4}
@@ -219,7 +240,7 @@
     {\entrytitlestyle{#1} & \entrylocationstyle{#2} \\
       \entrypositionstyle{#3} & \entrydatestyle{#4} }}
     \ifempty{#5}{}{ \\
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+    \multicolumn{2}{L{\dimexpr\textwidth-3pt\relax}}{\descriptionstyle{#5}}}
   \end{tabular*}%
 }
 
@@ -230,7 +251,7 @@
   \needspace{0.5\baselineskip}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm} R{5.5cm}}
+  \begin{tabular*}{\dimexpr\textwidth-3pt\relax}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm - 3pt} R{5.5cm}}
     \ifempty{#1#2}
     {\entrypositionstyle{#3} & \entrydatestyle{#4} }
     {\ifempty{#3#4}
@@ -238,7 +259,7 @@
     {{\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} \\
       \entrypositionstyle{#3} & \entrydatestyle{#4} }}
     \ifempty{#5}{}{ \\
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+    \multicolumn{2}{L{\dimexpr\textwidth-3pt\relax}}{\descriptionstyle{#5}}}
   \end{tabular*}%
 }
 
@@ -262,23 +283,67 @@
   \end{tabular*}%
 }
 
-% Project entry for Projects section - specifically for project names
-% Usage: \projectsubentry{<project name>}{<date>}{<description>}{<margin notes>}
+% Reserve horizontal padding between the main content block and the margin so
+% that margin notes (Languages/Tools/Tech) have breathing room. Adjust
+% \acvProjectMarginGap if future layouts need more or less whitespace.
+\newlength{\acvProjectMarginGap}
+\setlength{\acvProjectMarginGap}{.12cm}
+% Keep the margin note separation tight so the sidebar hugs the main content
+% without colliding. This length is reused by \marginnote for all sections.
+\setlength{\marginparsep}{0.12cm}
+
+% Helper to confine the rich project description (often a description list) so
+% it does not encroach into the reserved gap for margin notes.
+\newcommand*{\projectbodyblock}[1]{%
+  \begin{minipage}[t]{\dimexpr\textwidth - \acvProjectMarginGap - \marginparsep - 3pt\relax}%
+    \vspace{0pt}% Keep top aligned with the sidebar note
+    % Customize description list for Synopsis/Details formatting
+    \setlist[description]{
+      leftmargin=6.2em,
+      labelwidth=5.6em,
+      labelsep=0.3em,
+      style=nextline,
+      itemsep=0pt,
+      parsep=0pt,
+      font=\fontsize{8pt}{1em}\bodyfont\bfseries,
+      before={\fontsize{9pt}{1.2em}\bodyfontlight\selectfont}
+    }%
+    #1%
+  \end{minipage}%
+}
+
+% Helper to typeset the margin note content using the standard \marginnote flow
+% while ensuring a consistent font treatment and spacing between rows.
+\newcommand*{\projectsidebarblock}[1]{%
+  \rlap{\hspace{\dimexpr\textwidth+\marginparsep\relax}%
+    \begin{minipage}[t]{\marginparwidth}%
+      \vspace{0pt}%
+      \fontsize{7pt}{1.05em}\bodyfontlight\color{text}%
+      \setlength{\parskip}{0.25em}%
+      \RaggedRight%
+      \tolerance=1000%
+      \emergencystretch=1em%
+      #1%
+    \end{minipage}%
+  }%
+}
+
+% Project entry for Projects section - specifically for project names plus the
+% descriptive body and sidebar metadata.
+% Usage: \projectsubentry{<project name>}{<date>}{<description>}{<sidebar>}
 \long\def\projectsubentry#1#2#3#4{%
-  \needspace{4\baselineskip}
-  \vspace{-1mm}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.7cm} C{5.7cm}}
-    \ifx&#4&%
-      {\fontsize{9pt}{1em}\bodyfont\bfseries\hypersetup{urlcolor=black,linkcolor=black}\color{black}#1}%
-    \else
-      \marginnote{{\fontsize{7pt}{1em}\bodyfontlight\raggedright#4}}[-0.5em]{\fontsize{9pt}{1em}\bodyfont\bfseries\hypersetup{urlcolor=black,linkcolor=black}\color{black}#1}%
-    \fi
-     & \projectdatestyle{#2} \\[-1mm]
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#3}}
+  \Needspace{10\baselineskip}%
+  \vspace{-3mm}%
+  \setlength\tabcolsep{0pt}%
+  \setlength{\extrarowheight}{0pt}%
+  \noindent\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.7cm} R{5.7cm}}
+    {\fontsize{9pt}{1em}\bodyfont\bfseries\hypersetup{urlcolor=black,linkcolor=black}\color{black}#1} & \projectdatestyle{#2} \\
   \end{tabular*}%
-  \vspace{1mm}
+  \par\noindent
+  \ifx&#4&\else\projectsidebarblock{#4}\fi
+  \noindent\projectbodyblock{#3}%
+  \par
+  \vspace{3mm}%
 }
 
 % Open source subentry - for open source contributions (title and year on same line)
@@ -304,24 +369,34 @@
 \newenvironment{cvhonors}{%
   \vspace{\acvSectionContentTopSkip}
   \vspace{-2mm}
-  \begin{center}
+  \begin{flushleft}
     \setlength\tabcolsep{0ex}
     \setlength{\extrarowheight}{2pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{1.5cm} L{\textwidth - 4.0cm - 2ex} R{2.5cm}}
 }{%
-    \end{tabular*}
-  \end{center}
+  \end{flushleft}
 }
+
+% Extra breathing room between consecutive honor rows plus a small buffer
+% between the description block and the location column to avoid overlaps.
+\newlength{\acvHonorEntryGap}
+\setlength{\acvHonorEntryGap}{1.8mm}
+\newlength{\acvHonorLocationSep}
+\setlength{\acvHonorLocationSep}{0.7cm}
 
 % Define a line of cv information(honor, award or something else)
 % Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cvhonor}[5]{%
-  \honordatestyle{#4} & \honorpositionstyle{#1} & \honorlocationstyle{#3} \\[0pt]
+  \vspace{1mm}%
+  \noindent%
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{1.5cm} L{\textwidth - 1.5cm - 2ex}}
+    \honordatestyle{#4} & \honorpositionstyle{#1} \\
+  \end{tabular*}%
+  \ifx&#3&\else\marginnote{\honorlocationstyle{#3}}[0pt]\fi%
   \ifx&#5&%
-    % No description
   \else
-    & \multicolumn{2}{p{70ex}}{\raisebox{0pt}[0pt][0pt]{\honortitlestyle{#5}}} \\[-2mm]
+    \par\noindent\honortitlestyle{#5}%
   \fi
+  \par\vspace{\acvHonorEntryGap}%
 }
 
 %-------------------------------------------------------------------------------
@@ -387,7 +462,8 @@
   \center
   \setlength\tabcolsep{1ex}
   \setlength{\extrarowheight}{5pt}
-  \tabularx{\textwidth}{>{\setskilltypestyle}r>{\setskillsetstyle}X}
+  \emergencystretch=1em
+  \tabularx{\textwidth}{>{\setskilltypestyle}r>{\setskillsetstyle\RaggedRight}X}
 }{\endtabularx\endcenter}
 
 % Define a line of cv information(skill)

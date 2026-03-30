@@ -315,7 +315,7 @@
 % Helper to typeset the margin note content using the standard \marginnote flow
 % while ensuring a consistent font treatment and spacing between rows.
 \newcommand*{\projectsidebarblock}[1]{%
-  \marginnote{%
+  \rlap{\hspace{\dimexpr\textwidth+\marginparsep\relax}%
     \begin{minipage}[t]{\marginparwidth}%
       \vspace{0pt}%
       \fontsize{7pt}{1.05em}\bodyfontlight\color{text}%
@@ -325,7 +325,7 @@
       \emergencystretch=1em%
       #1%
     \end{minipage}%
-  }[0pt]%
+  }%
 }
 
 % Project entry for Projects section - specifically for project names plus the

@@ -47,26 +47,42 @@ PROJECT-LINK is optional URL for the project."
 When FROM-DATE and TO-DATE are nil, FALLBACK is parsed for a
 range separated by `--' or `-'."
   (cond
-       ((or from-date to-date)
-        (let* ((from (or (and from-date (string-trim from-date)) ""))
-         (to (or (and to-date (string-trim to-date)) "")))
-       (cond
-        ((and (org-string-nw-p fallback) (string= from to))
-         (org-awesomecv-ext--split-date-range nil nil fallback))
-        ((and (string-empty-p to) (org-string-nw-p fallback))
-         (org-awesomecv-ext--split-date-range nil nil fallback))
-        ((and (string-empty-p to) (org-string-nw-p from))
-         (org-awesomecv-ext--split-date-range nil nil from))
-        (t (cons from to)))))
-   ((and fallback (string-match "\\`\\s-*\\([^\\-]+?\\)\\s*--\\s*\\(.+\\)\\'" fallback))
-    (cons (string-trim (match-string 1 fallback))
-          (string-trim (match-string 2 fallback))))
-   ((and fallback (string-match "\\`\\s-*\\([^\\-]+?\\)\\s*-\\s*\\(.+\\)\\'" fallback))
-    (cons (string-trim (match-string 1 fallback))
-          (string-trim (match-string 2 fallback))))
-   (fallback
-    (cons (string-trim fallback) ""))
+   ((or from-date to-date)
+    (let* ((from (or (and from-date (string-trim from-date)) ""))
+           (to (or (and to-date (string-trim to-date)) "")))
+      (cond
+       ((and (org-string-nw-p fallback) (string= from to))
+        (org-awesomecv-ext--split-date-range nil nil fallback))
+       ((and (string-empty-p to) (org-string-nw-p fallback))
+        (org-awesomecv-ext--split-date-range nil nil fallback))
+       ((and (string-empty-p to) (org-string-nw-p from))
+        (org-awesomecv-ext--split-date-range nil nil from))
+       (t (cons from to)))))
+   ((org-string-nw-p fallback)
+    (let* ((value (string-trim fallback))
+           (parts (cond
+                   ((string-match-p "\\s-+--\\s-+" value)
+                    (split-string value "\\s-*--\\s-*" t))
+                   ((string-match-p "\\`[^[:space:]]+-[^[:space:]]+\\'" value)
+                    (split-string value "\\s*-\\s*" t))
+                   (t nil))))
+      (if (and parts (= (length parts) 2))
+          (cons (string-trim (car parts))
+                (string-trim (cadr parts)))
+        (cons value ""))))
    (t (cons "" ""))))
+
+(defconst org-awesomecv-ext--sidebar-pagebreak-command
+  "\\acvsidebarpagebreak\n"
+  "LaTeX emitted for top-level section breaks that switch to sidebar layout.")
+
+(defun org-awesomecv-ext--pagebreak-command (pagebreak)
+  "Return the LaTeX command for PAGEBREAK.
+When PAGEBREAK is `sidebar', switch to the wide-right-margin layout before the
+page break.  Any other non-empty value keeps the legacy clearpage behavior."
+  (if (string= (downcase (string-trim pagebreak)) "sidebar")
+      org-awesomecv-ext--sidebar-pagebreak-command
+    "\\clearpage\n"))
 
 (defun org-awesomecv-ext--render-marginnote (note)
   "Render NOTE inside a formatted LaTeX margin note if content exists."

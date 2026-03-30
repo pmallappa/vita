@@ -48,6 +48,10 @@ as a communication channel."
      ;; Handle cventryshort
      ((string= entrytype "cventryshort")
       (org-awesomecv-ext--format-cventryshort headline contents info from-date to-date employer location title))
+
+     ;; Handle cvschool
+     ((string= entrytype "cvschool")
+      (org-awesomecv-ext--format-cvschool headline contents info from-date to-date employer location title))
      
      ;; Handle cvsubsection
      ((string= entrytype "cvsubsection")

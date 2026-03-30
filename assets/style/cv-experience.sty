@@ -11,13 +11,17 @@
 % Experience employer header - displays company name with date/location in right margin
 % Usage: \experienceemployer{<company name>}{<start date>}{<end date>}{<location>}
 \newcommand*{\experienceemployer}[4]{%
-  \vspace{4mm}
-  \needspace{2\baselineskip}
-  \noindent\exptitlestyle{#1}\hfill
-  \begin{tabular}[t]{@{}r@{}}
-    \companydatestyle{#2 -- #3}\\[1pt]
-    \explocationstyle{#4}
-  \end{tabular}\par%
+  \vspace{2mm}
+  \Needspace{12\baselineskip}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \noindent\begin{tabular*}{\dimexpr\textwidth+\marginparsep+\marginparwidth\relax}{@{}L{\textwidth}@{\hspace{\marginparsep}}L{\marginparwidth}@{}}
+    \exptitlestyle{#1} &
+    \begin{tabular}[t]{@{}l@{}}
+      \companydatestyle{#2 -- #3}\\[1pt]
+      \explocationstyle{#4}
+    \end{tabular} \\[-3mm]
+  \end{tabular*}%
 }
 
 % Experience role - displays role title
@@ -25,8 +29,9 @@
 \newcommand*{\experiencerole}[1]{%
   \vspace{0mm}
   \setlength\tabcolsep{0pt}
+  \noindent
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.7\textwidth} R{0.3\textwidth}}
-    {\sourcesanspro\bfseries\scshape #1} &
+    {\exppositionstyle{#1}} &
   \end{tabular*}%
   \vspace{0.5mm}
 }
@@ -42,7 +47,7 @@
 
 % Experience content environment - ensures consistent font/spacing for role details
 \newenvironment{experiencecontent}{%
-  \vspace{-1mm}
+  \vspace{0mm}
   \begingroup
   \fontsize{9pt}{13pt}\bodyfontlight\color{text}\selectfont
   \setlength{\parindent}{0pt}%
@@ -52,11 +57,10 @@
   \tolerance=1000%
   \emergencystretch=1em%
   \justifying
-  \leavevmode\par\vspace{-\parskip}%
 }{%
   \par
   \endgroup
-  \vspace{1mm}
+  \vspace{2mm}
 }
 
 \endinput

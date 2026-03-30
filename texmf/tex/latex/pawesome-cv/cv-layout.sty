@@ -11,6 +11,20 @@
 %% Page Layout
 % Configure page margins with geometry (more space on right for margin notes)
 \geometry{left=2.0cm, top=1.5cm, right=2.0cm, bottom=2.0cm, footskip=.5cm}
+\newcommand{\acvSidebarRightMargin}{4.6cm}
+\newcommand{\acvSidebarMarginWidth}{4.1cm}
+\newcommand{\acvSidebarFooterOffset}{2.6cm}
+
+% Switch from the full-width first page to the sidebar layout used by sections
+% that carry margin notes on subsequent pages.
+\newcommand{\acvsidebarlayout}{%
+  \newgeometry{left=2.0cm, top=1.5cm, right=\acvSidebarRightMargin, bottom=2.0cm, footskip=.5cm, marginparwidth=\acvSidebarMarginWidth}%
+  \fancyhfoffset[R]{\acvSidebarFooterOffset}%
+}
+\newcommand{\acvsidebarpagebreak}{%
+  \acvsidebarlayout%
+  \clearpage%
+}
 
 %% Header & Footer
 % Set offset to each header and footer to extend into margin area on both sides

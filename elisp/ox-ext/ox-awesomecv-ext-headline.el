@@ -11,7 +11,7 @@ as a communication channel."
                              (org-export-get-tags headline info)))
           (pagebreak (org-string-nw-p (org-element-property :PAGEBREAK headline))))
       (concat
-       (when pagebreak "\\clearpage\n")
+       (when pagebreak (org-awesomecv-ext--pagebreak-command pagebreak))
        (cond
         ;; is a cv entry or subentry (including our extensions)
         ((seq-intersection environment  '("cventry"

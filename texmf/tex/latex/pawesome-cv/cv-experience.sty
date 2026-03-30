@@ -11,13 +11,17 @@
 % Experience employer header - displays company name with date/location in right margin
 % Usage: \experienceemployer{<company name>}{<start date>}{<end date>}{<location>}
 \newcommand*{\experienceemployer}[4]{%
-  \vspace{4mm}
+  \vspace{2mm}
   \Needspace{12\baselineskip}
-  \noindent\exptitlestyle{#1}\hfill
-  \begin{tabular}[t]{@{}r@{}}
-    \companydatestyle{#2 -- #3}\\[1pt]
-    \explocationstyle{#4}
-  \end{tabular}\par%
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \noindent\begin{tabular*}{\dimexpr\textwidth+\marginparsep+\marginparwidth\relax}{@{}L{\textwidth}@{\hspace{\marginparsep}}L{\marginparwidth}@{}}
+    \exptitlestyle{#1} &
+    \begin{tabular}[t]{@{}l@{}}
+      \companydatestyle{#2 -- #3}\\[1pt]
+      \explocationstyle{#4}
+    \end{tabular} \\[-3mm]
+  \end{tabular*}%
 }
 
 % Experience role - displays role title

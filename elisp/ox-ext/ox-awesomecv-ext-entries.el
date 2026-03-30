@@ -47,6 +47,19 @@ CONTENTS holds the contents.  TITLE is the subsection title."
           title
           (if contents (concat "\n" contents) "")))
 
+(defun org-awesomecv-ext--format-cvschool (headline contents info from-date to-date employer location title)
+  "Format cvschool entry for HEADLINE using the custom education macro.
+CONTENTS holds the contents.  INFO is a plist.
+FROM-DATE, TO-DATE, EMPLOYER, LOCATION, and TITLE are entry details."
+  (let ((affiliated (or (org-element-property :AFFILIATED headline) "")))
+    (format "\\educationentry{%s}{%s}{%s}{%s}{%s}{%s}"
+            title
+            location
+            employer
+            (org-cv-utils--format-time-window from-date to-date)
+            affiliated
+            (if contents (org-trim contents) ""))))
+
 (defun org-awesomecv-ext--format-cvrole (headline contents title)
   "Format cvrole entry for HEADLINE.
 CONTENTS holds the contents.  TITLE is the role title."

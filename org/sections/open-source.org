@@ -34,7 +34,7 @@
 
 - Performance optimizations for AMD processors
 - Fixed memcpy behaviour on AMD processors
-- Optimized string functions for x86_64 architecture
+- Optimized string functions for x86\_64 architecture
 - Performance improvements for memory operations
 
 * AMD LibM
