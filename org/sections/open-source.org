@@ -41,7 +41,7 @@
 :PROPERTIES:
 :CV_ENV: opensourceentry
 :PROJECT: AMD LibM
-:DATE: 2018-Present
+:DATE: 2018-2025
 :URL: https://github.com/amd/aocl-libm-ose
 :END:
 

@@ -10,7 +10,7 @@
 :PROPERTIES:
 :CV_ENV: cvschool
 :SCHOOL: Adichunchangiri Institute of Technology (AIT)
-:LOCATION: Karnataka, India
+:LOCATION: Chikkmagalur, Karnataka, India
 :AFFILIATED: Visvesvaraya Technological University (VTU)
 :DATE: 2002
 :END:

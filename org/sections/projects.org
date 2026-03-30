@@ -61,7 +61,7 @@
 :TECH: AMD-SEV, AMD-SNP
 :END:
 - Synopsis :: Next generation AMD processors needed to be tested before IO and other components are integrated, as part of the **shift-left** strategy. Allows faster integration and 
-- Details :: <TBD>
+- Details :: As part of the Shift-Left strategy, full OS boot and CPU stressers were run early in the development before tape-out, with just the compute core and simulated memory, but no I/O. stress-ng and lmbench etc were run to stress the CPU code path. Efforts involvled trimming down Linux kernel enough so that it boots without ACPI, and in some cases with a very small ACPI table.
   
 * Broadcom Ltd.
 :PROPERTIES:
