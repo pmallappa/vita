@@ -1,4 +1,4 @@
-.PHONY: all resume coverletter vita cv clean help
+.PHONY: all resume coverletter vita cv check-dates clean help
 
 # Default target - build all documents
 all: cv vita coverletter
@@ -41,6 +41,11 @@ cv:
 	@cd outputs && TEXMFHOME=$(CURDIR)/texmf lualatex prem-mallappa-cv.tex
 	@echo "CV built: outputs/prem-mallappa-cv.pdf"
 
+# Validate Org date consistency between experience and projects sections
+check-dates:
+	@echo "Checking date consistency across Org sections..."
+	@python3 python/check_org_date_consistency.py
+
 # Clean build artifacts
 clean:
 	@echo "Cleaning build artifacts..."
@@ -54,5 +59,6 @@ help:
 	@echo "  make coverletter  - Build cover letter"
 	@echo "  make vita         - Build full vita from org-mode file"
 	@echo "  make cv           - Build 2-page CV from org-mode file"
+	@echo "  make check-dates  - Validate Org experience/project date consistency"
 	@echo "  make clean        - Remove build artifacts"
 	@echo "  make help         - Show this help message"

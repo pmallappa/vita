@@ -11,18 +11,31 @@
 :CV_ENV: cvrole
 :END:
 
-*** AMD Pensando SmartNIC Platform
+*** DPU-Accelerated Virtio Live Migration
 :PROPERTIES:
 :CV_ENV: cvproject
 :PROJECT: AMD Pensando SmartNIC Platform
-:DATE: Jun. 2025 -- Present
+:DATE: Jan. 2025 -- Present
 :LANGUAGES: C, C++, P4, Python
 :TOOLS: Git, GDB, Qemu, Xen Hypervisor, DPDK
-:TECH: NVMe-oF, RDMA, SmartNIC, DPU, Hardware Offload, Packet Processing Pipelines
+:TECH: NVMe-oF, SmartNIC, DPU, Packet Processing Pipelines
 :END:
 
-- Synopsis :: Leading development of storage acceleration solutions on AMD Pensando Data Processing Units (DPUs). Architecting high-performance offload engines for NVMe-oF and storage virtualization leveraging programmable P4 pipelines and hardware acceleration.
-- Details :: Architecting NVMe-over-Fabrics offload engine on Pensando DPU achieving *sub-10μs latency*. Developing *P4-based packet processing pipelines* for storage protocol acceleration. Implementing Xen-based virtualization stack for secure multi-tenant storage isolation. Designing hardware-accelerated compression and encryption for in-line data protection.
+- Synopsis :: Verification and addressing scalability issues on AMD/Pensando Elba ASICs during Live-Migration. Analyzed SEQ/ACK bitmap dirty-tracking protocol across VFIO and vDPA driver paths, identified vDPA implementation gaps, and built a full end-to-end suite covering NVMe+virtio-pci VM topology with automated QEMU orchestration and QMP-driven migration control.
+- Details :: Investigated *scalability bottlenecks* in the live-migration path on AMD/Pensando Elba ASICs by tracing dirty-page reporting from the *SEQ/ACK bitmap protocol* in the dataplane through firmware and host migration drivers. Compared *VFIO* and *vDPA* implementations, documented the missing dirty-tracking pieces in the vDPA path, and clarified where hardware capability was not being surfaced correctly in software. Built an *end-to-end validation framework* for NVMe + virtio-pci VM topologies with automated QEMU launch, disk-format detection, VF bind checks, hugepage preparation, and QMP-driven pre-copy / stop-and-copy orchestration. Used the framework to reproduce corner cases, validate migration sequencing, and establish a repeatable path for scaling analysis and future feature bring-up.
+
+*** AMD Pensando DSC Platform PCIe support
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: AMD Pensando SmartNIC Platform
+:DATE: Jun. 2025 -- Dec. 2025
+:LANGUAGES: C, C++, P4, Python
+:TOOLS: Git, GDB, Qemu, Xen Hypervisor
+:TECH: PCIe, SmartNIC, DPU, Hardware Offload 
+:END:
+
+- Synopsis :: The DPU presents itself as a PCIe device, all access from the host ends up in indirect access and handled in software stack. Optimizting the PMT/PRT entries to make most of the hardware access end up as direct memory access.
+- Details :: Analyzed the host-to-DPU PCIe access path and identified where *indirect register and memory accesses* were introducing avoidable software overhead. Reworked *PMT/PRT programming* so frequently used host accesses could be resolved as *direct memory transactions* instead of trapping into slower software-managed flows. Validated the updated PCIe mapping behavior across host driver interactions and DPU-side handling to reduce access latency, simplify the datapath, and improve overall platform responsiveness for control-plane and bring-up operations.
 
 *** AMD Cryptography Library
 :PROPERTIES:
@@ -167,8 +180,8 @@
 * Cisco Systems
 :PROPERTIES:
 :CV_ENV: cvemployer
-:FROM: 2010
-:TO: 2011
+:FROM: Oct. 2010
+:TO: Apr. 2011
 :LOCATION: Bengaluru, India
 :END:
 
@@ -193,8 +206,8 @@
 * B-Labs
 :PROPERTIES:
 :CV_ENV: cvemployer
-:FROM: 2009
-:TO: 2010
+:FROM: Nov. 2009
+:TO: Sep. 2010
 :LOCATION: London, UK (Remote)
 :END:
 
@@ -219,8 +232,8 @@
 * Harman International
 :PROPERTIES:
 :CV_ENV: cvemployer
-:FROM: 2009
-:TO: 2009
+:FROM: Jul. 2009
+:TO: Nov. 2009
 :LOCATION: Bengaluru, India
 :END:
 
