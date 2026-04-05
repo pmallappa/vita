@@ -5,6 +5,11 @@
 
 \ProvidesPackage{cv-commands}[2025/11/28 v2.0 Awesome CV Commands Package]
 
+% Shared state for role headers so the first project row underneath can sit
+% tighter than subsequent entries.
+\newif\ifacvAfterRoleHeader
+\acvAfterRoleHeaderfalse
+
 %-------------------------------------------------------------------------------
 %                Commands for personal information
 %-------------------------------------------------------------------------------
@@ -250,20 +255,23 @@
 % Short stint entry - for short stints section
 % Usage: \shortstintentry{<organization>}{<location>}{<position>}{<date>}{<description>}
 \long\def\shortstintentry#1#2#3#4#5{%
-  \vspace{0.5mm}
-  \needspace{0.5\baselineskip}
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\dimexpr\textwidth-3pt\relax}{@{\extracolsep{\fill}} L{\textwidth - 5.5cm - 3pt} R{5.5cm}}
-    \ifempty{#1#2}
-    {\entrypositionstyle{#3} & \entrydatestyle{#4} }
-    {\ifempty{#3#4}
-    {{\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} }
-    {{\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1} & \entrylocationstyle{#2} \\
-      \entrypositionstyle{#3} & \entrydatestyle{#4} }}
-    \ifempty{#5}{}{ \\
-    \multicolumn{2}{L{\dimexpr\textwidth-3pt\relax}}{\descriptionstyle{#5}}}
+  \par\addvspace{0.2mm}%
+  \needspace{0.5\baselineskip}%
+  \setlength\tabcolsep{0pt}%
+  \setlength{\extrarowheight}{0pt}%
+  \noindent\begin{tabular*}{\dimexpr\textwidth+\marginparsep+\marginparwidth\relax}{@{}L{\textwidth}@{\hspace{\marginparsep}}L{\marginparwidth}@{}}
+    \begin{tabular}[t]{@{}l@{}}
+      {\fontsize{11pt}{1em}\bodyfont\bfseries\color{black}#1}\\[-0.2mm]
+      \entrypositionstyle{#3}
+    \end{tabular} &
+    \begin{tabular}[t]{@{}l@{}}
+      \expdatestyle{#4}\\[0.5pt]
+      \explocationstyle{#2}
+    \end{tabular}
   \end{tabular*}%
+  \ifx&#5&\else
+    \par\noindent\descriptionstyle{#5}%
+  \fi
 }
 
 % Education entry - for education section
@@ -336,7 +344,13 @@
 % Usage: \projectsubentry{<project name>}{<date>}{<description>}{<sidebar>}
 \long\def\projectsubentry#1#2#3#4{%
   \Needspace{10\baselineskip}%
-  \par\addvspace{1.5mm}%
+  \par
+  \ifacvAfterRoleHeader
+    \global\acvAfterRoleHeaderfalse
+    \addvspace{0mm}%
+  \else
+    \addvspace{1.5mm}%
+  \fi
   \setlength\tabcolsep{0pt}%
   \setlength{\extrarowheight}{0pt}%
   \noindent\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 5.7cm} R{5.7cm}}

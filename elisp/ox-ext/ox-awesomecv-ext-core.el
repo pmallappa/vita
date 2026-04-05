@@ -59,7 +59,7 @@ as a communication channel."
      
      ;; Handle cvrole
      ((string= entrytype "cvrole")
-      (org-awesomecv-ext--format-cvrole headline contents title))
+      (org-awesomecv-ext--format-cvrole headline contents info title))
 
       ;; Handle cvhonor to ensure 5th argument is present
       ((string= entrytype "cvhonor")

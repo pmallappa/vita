@@ -12,22 +12,28 @@
 % Usage: \experienceemployer{<company name>}{<start date>}{<end date>}{<location>}
 \newcommand*{\experienceemployer}[4]{%
   \par\addvspace{0.2mm}%
-  \Needspace{12\baselineskip}
+  \Needspace{15\baselineskip}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \noindent\begin{tabular*}{\dimexpr\textwidth+\marginparsep+\marginparwidth\relax}{@{}L{\textwidth}@{\hspace{\marginparsep}}L{\marginparwidth}@{}}
     \exptitlestyle{#1} &
-    \begin{tabular}[t]{@{}l@{}}
-      \companydatestyle{#2 -- #3}\\[1pt]
-      \explocationstyle{#4}
-    \end{tabular} \\[-4mm]
+    \ifx&#4&%
+      \companydatestyle{#2 -- #3}%
+    \else
+      \begin{tabular}[t]{@{}l@{}}
+        \companydatestyle{#2 -- #3}\\[0.6pt]
+        \explocationstyle{#4}
+      \end{tabular}%
+    \fi \\[-6.2mm]
   \end{tabular*}%
 }
 
 % Experience role - displays role title
 % Usage: \experiencerole{<role title>}
 \newcommand*{\experiencerole}[1]{%
-  \vspace{0mm}
+  \vspace{-0.6mm}
+  \Needspace{6\baselineskip}%
+  \global\acvAfterRoleHeadertrue
   \setlength\tabcolsep{0pt}
   \noindent
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.7\textwidth} R{0.3\textwidth}}

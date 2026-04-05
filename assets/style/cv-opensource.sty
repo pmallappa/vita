@@ -11,7 +11,7 @@
 % Open source project header - displays project name with dates
 % Usage: \opensourceproject{<project name>}{<start year>}{<end year>}{<url>}
 \newcommand*{\opensourceproject}[4]{%
-  \vspace{-1mm}
+  \vspace{-1.4mm}
   \needspace{2\baselineskip}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
@@ -19,7 +19,7 @@
     \ostitlestyle{#1} & \osdatestyle{#2 -- #3} \\[-1mm]
     \multicolumn{2}{L{\textwidth}}{\osdescriptionstyle{#4}}
   \end{tabular*}%
-  \par\vspace{1mm}
+  \par\vspace{0.2mm}
 }
 
 % Open source contribution entry - displays contribution description
@@ -29,6 +29,21 @@
   \setlength{\extrarowheight}{0pt}
   \osdescriptionstyle{#1}
   \par\vspace{-1mm}
+}
+
+% Open source content environment - keep bullet spacing slightly tighter than
+% the default list spacing used elsewhere in the document.
+\newenvironment{opensourcecontent}{%
+  \vspace{-1.3mm}%
+  \begingroup
+  \fontsize{8.8pt}{1.08em}\bodyfontlight\color{text}%
+  \setlength{\parindent}{0pt}%
+  \setlength{\parskip}{0.2mm}%
+  \setlist[itemize]{leftmargin=1.6em, itemsep=0.15mm, topsep=0pt, parsep=0pt, partopsep=0pt}%
+}{%
+  \par
+  \endgroup
+  \vspace{0.1mm}%
 }
 
 \endinput

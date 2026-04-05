@@ -1,5 +1,7 @@
 ;;; ox-awesomecv-ext-utils.el --- Utility functions for ox-awesomecv extensions -*- lexical-binding: t; -*-
 
+(require 'cl-lib)
+(require 'org)
 (require 'subr-x)
 
 ;; Utility function to build margin notes from properties
@@ -88,6 +90,43 @@ page break.  Any other non-empty value keeps the legacy clearpage behavior."
   "Render NOTE inside a formatted LaTeX margin note if content exists."
   (when (org-string-nw-p (org-trim note))
     (format "\\marginnote{\\raggedright %s}[-0.5em]\n" note)))
+
+(defun org-awesomecv-ext--headline-in-section-p (headline section-title)
+  "Return non-nil when HEADLINE appears under SECTION-TITLE."
+  (let ((node headline)
+        found)
+    (while (and node (not found))
+      (when (and (eq (org-element-type node) 'headline)
+                 (string= (org-element-property :raw-value node) section-title))
+        (setq found t))
+      (setq node (org-element-property :parent node)))
+    found))
+
+(defun org-awesomecv-ext--projects-section-p (headline)
+  "Return non-nil when HEADLINE belongs to the Projects section."
+  (org-awesomecv-ext--headline-in-section-p headline "Projects"))
+
+(defun org-awesomecv-ext--nearest-ancestor (headline predicate)
+  "Return the nearest ancestor headline for HEADLINE matching PREDICATE."
+  (let ((node (org-element-property :parent headline))
+        found)
+    (while (and node (not found))
+      (when (and (eq (org-element-type node) 'headline)
+                 (funcall predicate node))
+        (setq found node))
+      (setq node (org-element-property :parent node)))
+    found))
+
+(defun org-awesomecv-ext--inherited-location (headline)
+  "Return LOCATION from HEADLINE or the nearest enclosing cvemployer."
+  (or (org-element-property :LOCATION headline)
+      (let ((employer
+             (org-awesomecv-ext--nearest-ancestor
+              headline
+              (lambda (node)
+                (string= (org-element-property :CV_ENV node) "cvemployer")))))
+        (and employer (org-element-property :LOCATION employer)))
+      ""))
 
 (provide 'ox-awesomecv-ext-utils)
 ;;; ox-awesomecv-ext-utils.el ends here

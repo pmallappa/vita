@@ -21,8 +21,12 @@ FROM-DATE, TO-DATE, EMPLOYER, LOCATION, and TITLE are entry details."
                       (org-string-nw-p title)
                       (org-string-nw-p raw-title)
                       ""))
-         (date-pair (org-awesomecv-ext--split-date-range from-date to-date nil)))
-    (format "\\experienceemployer{%s}{%s}{%s}{%s}\n%s"
+         (date-pair (org-awesomecv-ext--split-date-range from-date to-date nil))
+         (macro (if (org-awesomecv-ext--projects-section-p headline)
+                    "\\projectcompany"
+                  "\\experienceemployer")))
+    (format "%s{%s}{%s}{%s}{%s}\n%s"
+            macro
             company
             (car date-pair)
             (cdr date-pair)
@@ -60,12 +64,18 @@ FROM-DATE, TO-DATE, EMPLOYER, LOCATION, and TITLE are entry details."
             affiliated
             (if contents (org-trim contents) ""))))
 
-(defun org-awesomecv-ext--format-cvrole (headline contents title)
+(defun org-awesomecv-ext--format-cvrole (headline contents info title)
   "Format cvrole entry for HEADLINE.
-CONTENTS holds the contents.  TITLE is the role title."
-  (format "\\experiencerole{%s}\n\\begin{experiencecontent}\n%s\\end{experiencecontent}\n"
-          title
-          (if contents (org-trim contents) "")))
+CONTENTS holds the contents.  INFO is a plist.  TITLE is the role title."
+  (let* ((location (org-awesomecv-ext--inherited-location headline))
+         (role-macro (if (org-awesomecv-ext--projects-section-p headline)
+                         (if (org-string-nw-p location)
+                             (format "\\projectrole[%s]{%s}" location title)
+                           (format "\\projectrole{%s}" title))
+                       (format "\\experiencerole{%s}" title))))
+    (format "%s\n\\begin{experiencecontent}\n%s\\end{experiencecontent}\n"
+            role-macro
+            (if contents (org-trim contents) ""))))
 
 (provide 'ox-awesomecv-ext-entries)
 ;;; ox-awesomecv-ext-entries.el ends here

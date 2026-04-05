@@ -8,27 +8,36 @@
 %-------------------------------------------------------------------------------
 %                Commands for Projects Section
 %-------------------------------------------------------------------------------
-% Project company header - displays company name with dates and location
+% Project company header - displays company name with dates. The location is
+% kept for signature compatibility but rendered alongside the role instead.
 % Usage: \projectcompany{<company name>}{<start year>}{<end year>}{<location>}
 \newcommand*{\projectcompany}[4]{%
-  \vspace{0.5mm}
-  \Needspace{12\baselineskip}
+  \par\addvspace{0.2mm}%
+  \Needspace{12\baselineskip}%
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.55\textwidth} R{0.22\textwidth} R{0.23\textwidth}}
-    \entrytitlestyle{#1} & \companydatestyle{#2 -- #3} & \entrylocationstyle{#4}
+  \noindent\begin{tabular*}{\dimexpr\textwidth+\marginparsep+\marginparwidth\relax}{@{}L{\textwidth}@{\hspace{\marginparsep}}L{\marginparwidth}@{}}
+    \exptitlestyle{#1} & \companydatestyle{#2 -- #3} \\[-7.2mm]
   \end{tabular*}%
+  \par\vspace{-1.1mm}%
+  \noindent\begin{tikzpicture}[baseline]
+    \draw[color=graytext!95, line width=0.45pt, densely dotted] (0,0) -- (0.7\textwidth,0);
+  \end{tikzpicture}%
+  \par\vspace{-4.3mm}%
 }
 
-% Project role - displays role title
-% Usage: \projectrole{<role title>}
-\newcommand*{\projectrole}[1]{%
-  \vspace{3mm}
+% Project role - displays role title with optional location on the same line.
+% Usage: \projectrole[<location>]{<role title>}
+\newcommand*{\projectrole}[2][]{%
+  \vspace{-1.8mm}
+  \Needspace{6\baselineskip}%
+  \global\acvAfterRoleHeadertrue
   \setlength\tabcolsep{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{0.7\textwidth} R{0.3\textwidth}}
-    {\sourcesanspro\bfseries\scshape #1} &
+  \noindent\begin{tabular*}{\dimexpr\textwidth+\marginparsep+\marginparwidth\relax}{@{}L{\textwidth}@{\hspace{\marginparsep}}L{\marginparwidth}@{}}
+    {\exppositionstyle{#2}} &
+    \ifx&#1&\else\explocationstyle{#1}\fi \\[-6.4mm]
   \end{tabular*}%
-  \vspace{2mm}
+  \vspace{-0.4mm}
 }
 
 % Project entry - displays project name with dates and description
