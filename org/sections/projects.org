@@ -11,6 +11,19 @@
 :CV_ENV: cvrole
 :END:
 
+*** AMD Pensando DSC Live Migration
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: AMD Pensando SmartNIC Platform
+:DATE: Jan. 2022 -- Dec. 2024
+:LANGUAGES: C, P4
+:TOOLS: Git, GDB, Qemu, Linux Kernel
+:TECH: VFIO, VDPA, IOMMU, Live Migration, SmartNIC, DPU, P4+, virtio
+:END:
+
+- Synopsis :: Delivered fully supported live-migration feature for the AMD Pensando DSC SmartNIC across all host-visible device modes — network, virtio, and NVMe. Work spanned Linux kernel control-path frameworks, P4+-based dataplane, and hardware dirty-page tracking to achieve zero-downtime VM migration in cloud environments.
+- Details :: Engineered vendor control-path support across the *Linux VFIO and vDPA frameworks*, ensuring correct migration sequencing for all device presentation modes. Implemented the migration datapath entirely in *P4+ language* with *hardware-level dirty-page tracking* to minimize pre-copy transfer volume and downtime. For the vDPA path, integrated *system IOMMU dirty-tracking* as the page-change source in place of device hardware, fully closing the feature gap. Validated both VFIO and vDPA combinations end-to-end using *QEMU-orchestrated migration across multiple physical hosts*, confirming correctness under real network conditions.
+
 *** DPU-Accelerated Virtio Live Migration
 :PROPERTIES:
 :CV_ENV: cvproject
