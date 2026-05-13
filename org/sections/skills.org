@@ -3,7 +3,8 @@
 - Technology :: Broad and deep IT expertise across *embedded systems*, *system software*, *cloud/security*, *virtualization*, and software services development.
 - Computer Security :: *Cryptography*, virtualization and cloud computing security architecture, *secure software development*, risk management, compliance, intrusion detection, and prevention.
 - Programming Languages :: *C*, *C++*, Assembly (*x86*, *ARM*, *MIPS*), Rust, Python, Go, BASH
-- Operating Systems :: *Linux*, FreeBSD, QNX, VxWorks, Symbian
+- Operating Systems :: *Linux*, FreeBSD, Symbian
+- RTOS :: *VxWorks*, *QNX*, seL4, Zephyr, ThreadX
 - Architecture :: *x86*, *ARM v6/v7/v8*, *MIPS64*, PowerPC, RISC-V
 - Development Tools :: *GCC*, *Clang*, *Git*, *CMake*, Make, GDB, Perf, VTune, ARM Development Tools, Keil, JTAG, Docker, QEMU
 - Systems & Virtualization :: *Linux kernel development*, *device drivers*, hypervisors, *IOMMU/SMMU*, pre-silicon validation, boot flows, and low-level firmware bring-up.

@@ -15,27 +15,14 @@
 :PROPERTIES:
 :CV_ENV: cvproject
 :PROJECT: AMD Pensando SmartNIC Platform
-:DATE: Jan. 2022 -- Dec. 2024
-:LANGUAGES: C, P4
-:TOOLS: Git, GDB, Qemu, Linux Kernel
-:TECH: VFIO, VDPA, IOMMU, Live Migration, SmartNIC, DPU, P4+, virtio
-:END:
-
-- Synopsis :: Delivered fully supported live-migration feature for the AMD Pensando DSC SmartNIC across all host-visible device modes — network, virtio, and NVMe. Work spanned Linux kernel control-path frameworks, P4+-based dataplane, and hardware dirty-page tracking to achieve zero-downtime VM migration in cloud environments.
-- Details :: Engineered vendor control-path support across the *Linux VFIO and vDPA frameworks*, ensuring correct migration sequencing for all device presentation modes. Implemented the migration datapath entirely in *P4+ language* with *hardware-level dirty-page tracking* to minimize pre-copy transfer volume and downtime. For the vDPA path, integrated *system IOMMU dirty-tracking* as the page-change source in place of device hardware, fully closing the feature gap. Validated both VFIO and vDPA combinations end-to-end using *QEMU-orchestrated migration across multiple physical hosts*, confirming correctness under real network conditions.
-
-*** DPU-Accelerated Virtio Live Migration
-:PROPERTIES:
-:CV_ENV: cvproject
-:PROJECT: AMD Pensando SmartNIC Platform
-:DATE: Jan. 2025 -- Present
+:DATE: Jan. 2022 -- Present
 :LANGUAGES: C, C++, P4, Python
-:TOOLS: Git, GDB, Qemu, Xen Hypervisor, DPDK
-:TECH: NVMe-oF, SmartNIC, DPU, Packet Processing Pipelines
+:TOOLS: Git, GDB, Qemu, Xen Hypervisor, DPDK, Linux Kernel
+:TECH: VFIO, VDPA, IOMMU, NVMe-oF, SmartNIC, DPU, P4+, virtio, Packet Processing Pipelines
 :END:
 
-- Synopsis :: Verification and addressing scalability issues on AMD/Pensando Elba ASICs during Live-Migration. Analyzed SEQ/ACK bitmap dirty-tracking protocol across VFIO and vDPA driver paths, identified vDPA implementation gaps, and built a full end-to-end suite covering NVMe+virtio-pci VM topology with automated QEMU orchestration and QMP-driven migration control.
-- Details :: Investigated *scalability bottlenecks* in the live-migration path on AMD/Pensando Elba ASICs by tracing dirty-page reporting from the *SEQ/ACK bitmap protocol* in the dataplane through firmware and host migration drivers. Compared *VFIO* and *vDPA* implementations, documented the missing dirty-tracking pieces in the vDPA path, and clarified where hardware capability was not being surfaced correctly in software. Built an *end-to-end validation framework* for NVMe + virtio-pci VM topologies with automated QEMU launch, disk-format detection, VF bind checks, hugepage preparation, and QMP-driven pre-copy / stop-and-copy orchestration. Used the framework to reproduce corner cases, validate migration sequencing, and establish a repeatable path for scaling analysis and future feature bring-up.
+- Synopsis :: Delivered fully supported live-migration feature for the AMD Pensando DSC SmartNIC across all host-visible device modes — network, virtio, and NVMe. Work spanned Linux kernel control-path frameworks, P4+-based dataplane with hardware dirty-page tracking, and scalability validation on Elba ASICs to achieve zero-downtime VM migration in cloud environments.
+- Details :: Engineered vendor control-path support across the *Linux VFIO and vDPA frameworks*, ensuring correct migration sequencing for all device presentation modes. Implemented the migration datapath entirely in *P4+ language* with *hardware-level dirty-page tracking* to minimize pre-copy transfer volume and downtime. For the vDPA path, integrated *system IOMMU dirty-tracking* as the page-change source in place of device hardware, fully closing the feature gap. Validated both VFIO and vDPA combinations end-to-end using *QEMU-orchestrated migration across multiple physical hosts*. Subsequently investigated *scalability bottlenecks* on AMD/Pensando Elba ASICs by tracing dirty-page reporting through the *SEQ/ACK bitmap protocol* in the dataplane, firmware, and host migration drivers. Built an *end-to-end validation framework* for NVMe + virtio-pci VM topologies with automated QEMU launch, VF bind checks, hugepage preparation, and *QMP-driven pre-copy / stop-and-copy orchestration*.
 
 *** AMD Pensando DSC Platform PCIe support
 :PROPERTIES:
