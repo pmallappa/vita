@@ -3,8 +3,11 @@
 # Default target - build all documents
 all: cv vita coverletter
 
+outputs:
+	@mkdir -p outputs
+
 # Build resume
-resume:
+resume: outputs
 	@echo "Building resume..."
 	@python3 scripts/generate.py --type resume --output outputs/resume.tex
 	@cd outputs && TEXMFHOME=$(CURDIR)/texmf lualatex resume.tex
@@ -16,7 +19,7 @@ coverletter:
 	@echo "Cover letter target - to be implemented later"
 
 # Build vita from org-mode file
-vita:
+vita: outputs
 	@echo "Building vita from org-mode..."
 	@emacs --batch \
 			--load elisp/org-cv-init.el \
@@ -29,7 +32,7 @@ vita:
 	@echo "Vita built: outputs/prem-mallappa-vita.pdf"
 
 # Build 2-page CV from org-mode file
-cv:
+cv: outputs
 	@echo "Building CV from org-mode..."
 	@emacs --batch \
 			--load elisp/org-cv-init.el \
