@@ -29,9 +29,12 @@
 - Everything under `outputs/` is auto-generated; never hand-edit `.tex` or `.pdf` files there.
 - Run `make clean` (within the container) before committing if intermediate `.aux/.log` files appear.
 
-## Automation & releases
-- `.github/workflows/build-resume.yml` builds the PDF in CI, uploads it as an artifact, and publishes GitHub releases tagged `v${{ github.run_number }}` (workflow-level `permissions: contents: write` is required).
-- Releases keep only the last 5 entries via `dev-drprasad/delete-older-releases@v0.3.2`; avoid manual deletions that would break the history.
+## Automation & Pages publishing
+- `.github/workflows/build-resume.yml` builds the condensed CV and full vita in CI, uploads them as workflow artifacts, and publishes only the generated PDFs plus a small `index.html` to the `gh-pages` branch.
+- The Pages branch keeps the latest PDFs at the site root, archives runs under `builds/<run>-<sha>/`, and prunes older published builds after the most recent 7 entries.
+- Matching `resume-pdfs-*` workflow artifacts are also pruned after the most recent 7 entries.
+- The workflow runs on every push to `main`, monthly on the 1st day at 9 AM UTC, and manually from the Actions tab.
+- The repository source should stay private on `main`; GitHub Pages should be configured to deploy from the `gh-pages` branch at `/ (root)`.
 
 ## Common pitfalls
 - Forgetting to run inside the container results in missing Emacs packages or TeX fonts.

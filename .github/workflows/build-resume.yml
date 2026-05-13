@@ -1,40 +1,38 @@
-name: Build Resume PDF
+name: Publish Resume PDFs
 
 on:
-  # Allow manual trigger from Actions tab
   workflow_dispatch:
-  
-  # Run automatically every Monday at 9 AM UTC
+
+  # Refresh the public PDFs once a month even if the source has not changed.
   schedule:
-    - cron: '0 9 * * 1'
-  
-  # Run on push to main branch
+    - cron: '0 9 1 * *'
+
+  # Publish a new PDF set for every source check-in to main.
   push:
     branches:
       - main
-    paths:
-      - 'org/**'
-      - 'assets/**'
-      - 'Makefile'
-      - '.github/workflows/build-resume.yml'
 
 permissions:
+  actions: write
   contents: write
-  actions: read
+
+concurrency:
+  group: publish-resume-pdfs
+  cancel-in-progress: false
 
 jobs:
-  build-resume:
+  build-and-publish:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           submodules: recursive
-      
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      
+
       - name: Build resume builder image
         uses: docker/build-push-action@v6
         with:
@@ -44,36 +42,225 @@ jobs:
           load: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
-      
-      - name: Build Resume PDF
+
+      - name: Build CV and vita PDFs
         run: |
           docker run --rm \
             -v "$PWD:/workspace" \
             -w /workspace \
-            resume-builder make vita
-      
-      - name: Upload Resume PDF as Artifact
+            resume-builder sh -lc 'make cv && make vita'
+
+      - name: Prepare static Pages payload
+        run: |
+          set -euo pipefail
+
+          mkdir -p public
+          cp outputs/prem-mallappa-cv.pdf public/
+          cp outputs/prem-mallappa-vita.pdf public/
+          touch public/.nojekyll
+
+      - name: Upload generated PDFs as workflow artifact
         uses: actions/upload-artifact@v4
         with:
-          name: resume-pdf-${{ github.run_number }}
-          path: outputs/prem-mallappa-vita.pdf
+          name: resume-pdfs-${{ github.run_number }}
+          path: |
+            outputs/prem-mallappa-cv.pdf
+            outputs/prem-mallappa-vita.pdf
           retention-days: 90
-      
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
+
+      - name: Delete older workflow artifacts
+        uses: actions/github-script@v7
         with:
-          tag_name: v${{ github.run_number }}
-          name: Resume Build ${{ github.run_number }}
-          files: outputs/prem-mallappa-vita.pdf
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Delete old releases (keep last 5)
-        uses: dev-drprasad/delete-older-releases@v0.3.2
-        with:
-          keep_latest: 5
-          delete_tags: true
+          script: |
+            const keep = 7;
+            const prefix = 'resume-pdfs-';
+            const { owner, repo } = context.repo;
+
+            const artifacts = await github.paginate(
+              github.rest.actions.listArtifactsForRepo,
+              { owner, repo, per_page: 100 },
+            );
+
+            const staleArtifacts = artifacts
+              .filter((artifact) => artifact.name.startsWith(prefix))
+              .sort((left, right) => new Date(right.created_at) - new Date(left.created_at))
+              .slice(keep);
+
+            for (const artifact of staleArtifacts) {
+              await github.rest.actions.deleteArtifact({
+                owner,
+                repo,
+                artifact_id: artifact.id,
+              });
+            }
+
+      - name: Publish static payload to gh-pages
+        run: |
+          set -euo pipefail
+
+          publish_dir="$(mktemp -d)"
+          repo_url="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+          if git ls-remote --exit-code --heads "$repo_url" gh-pages >/dev/null 2>&1; then
+            git clone --depth 1 --branch gh-pages "$repo_url" "$publish_dir"
+          else
+            git init "$publish_dir"
+            cd "$publish_dir"
+            git checkout -b gh-pages
+            git remote add origin "$repo_url"
+          fi
+
+          cd "$publish_dir"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          build_date="$(date -u '+%Y-%m-%d %H:%M UTC')"
+          short_sha="${GITHUB_SHA::7}"
+          build_id="$(printf '%06d-%s' "$GITHUB_RUN_NUMBER" "$short_sha")"
+          build_dir="builds/$build_id"
+
+          mkdir -p "$build_dir"
+          cp "$GITHUB_WORKSPACE/public/prem-mallappa-cv.pdf" .
+          cp "$GITHUB_WORKSPACE/public/prem-mallappa-vita.pdf" .
+          cp "$GITHUB_WORKSPACE/public/prem-mallappa-cv.pdf" "$build_dir/"
+          cp "$GITHUB_WORKSPACE/public/prem-mallappa-vita.pdf" "$build_dir/"
+          touch .nojekyll
+
+          if [ -d builds ]; then
+            find builds -mindepth 1 -maxdepth 1 -type d | sort -r | tail -n +8 | xargs -r rm -rf
+          fi
+
+          cat > index.html <<HTML
+          <!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Prem Mallappa Resume</title>
+            <style>
+              :root {
+                color-scheme: light;
+                --ink: #18212f;
+                --muted: #5d6878;
+                --line: #d7dee8;
+                --paper: #fbf7ee;
+                --accent: #0f766e;
+              }
+              * { box-sizing: border-box; }
+              body {
+                min-height: 100vh;
+                margin: 0;
+                display: grid;
+                place-items: center;
+                padding: 2rem;
+                color: var(--ink);
+                font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+                background:
+                  radial-gradient(circle at 20% 10%, rgba(15, 118, 110, 0.14), transparent 30rem),
+                  linear-gradient(135deg, #fffdf7, var(--paper));
+              }
+              main {
+                width: min(52rem, 100%);
+                padding: clamp(1.5rem, 5vw, 3rem);
+                border: 1px solid var(--line);
+                border-radius: 1.25rem;
+                background: rgba(255, 255, 255, 0.82);
+                box-shadow: 0 1.5rem 4rem rgba(24, 33, 47, 0.12);
+              }
+              h1 {
+                margin: 0 0 0.75rem;
+                font-size: clamp(2.25rem, 8vw, 4.5rem);
+                line-height: 0.95;
+                letter-spacing: -0.06em;
+              }
+              h2 {
+                margin: 2rem 0 0.75rem;
+                font-size: 1rem;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+              }
+              p {
+                max-width: 36rem;
+                margin: 0 0 1.5rem;
+                color: var(--muted);
+                font-size: 1.08rem;
+                line-height: 1.55;
+              }
+              nav, ul {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+                gap: 0.75rem;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+              }
+              a {
+                display: block;
+                padding: 1rem 1.1rem;
+                border: 1px solid var(--line);
+                border-radius: 0.9rem;
+                color: var(--ink);
+                text-decoration: none;
+                background: white;
+              }
+              a strong { display: block; margin-bottom: 0.2rem; }
+              a span { color: var(--muted); font-size: 0.92rem; }
+              a:hover, a:focus-visible {
+                border-color: var(--accent);
+                outline: none;
+                box-shadow: 0 0 0 0.2rem rgba(15, 118, 110, 0.12);
+              }
+              footer {
+                margin-top: 1.25rem;
+                color: var(--muted);
+                font: 0.85rem/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+              }
+            </style>
+          </head>
+          <body>
+            <main>
+              <h1>Prem Mallappa Resume</h1>
+              <p>Generated from the private resume source repository by GitHub Actions. This public Pages site contains the latest PDF outputs and the last 7 builds.</p>
+              <nav aria-label="Latest resume downloads">
+                <a href="prem-mallappa-cv.pdf">
+                  <strong>Latest Condensed CV</strong>
+                  <span>Two-page PDF</span>
+                </a>
+                <a href="prem-mallappa-vita.pdf">
+                  <strong>Latest Full Vita</strong>
+                  <span>Complete PDF</span>
+                </a>
+              </nav>
+              <h2>Recent Builds</h2>
+              <ul>
+          HTML
+
+          find builds -mindepth 1 -maxdepth 1 -type d | sort -r | while read -r dir; do
+            name="$(basename "$dir")"
+            cat >> index.html <<HTML
+                <li>
+                  <a href="${dir}/prem-mallappa-vita.pdf">
+                    <strong>${name}</strong>
+                    <span>Full vita PDF</span>
+                  </a>
+                </li>
+          HTML
+          done
+
+          cat >> index.html <<HTML
+              </ul>
+              <footer>Latest build ${build_date} from ${short_sha}. Older published builds are pruned after 7 entries.</footer>
+            </main>
+          </body>
+          </html>
+          HTML
+
+          git add .
+          if git diff --cached --quiet; then
+            echo "No Pages changes to publish."
+          else
+            git commit -m "Publish resume PDFs from ${short_sha}"
+            git push origin gh-pages
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
