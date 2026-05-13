@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prem Mallappa Resume</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18212f;
+      --muted: #5d6878;
+      --line: #d7dee8;
+      --paper: #fbf7ee;
+      --accent: #0f766e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      color: var(--ink);
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(15, 118, 110, 0.14), transparent 30rem),
+        linear-gradient(135deg, #fffdf7, var(--paper));
+    }
+    main {
+      width: min(52rem, 100%);
+      padding: clamp(1.5rem, 5vw, 3rem);
+      border: 1px solid var(--line);
+      border-radius: 1.25rem;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 1.5rem 4rem rgba(24, 33, 47, 0.12);
+    }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(2.25rem, 8vw, 4.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+    h2 {
+      margin: 2rem 0 0.75rem;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    p {
+      max-width: 36rem;
+      margin: 0 0 1.5rem;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.55;
+    }
+    nav, ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    a {
+      display: block;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 0.9rem;
+      color: var(--ink);
+      text-decoration: none;
+      background: white;
+    }
+    a strong { display: block; margin-bottom: 0.2rem; }
+    a span { color: var(--muted); font-size: 0.92rem; }
+    a:hover, a:focus-visible {
+      border-color: var(--accent);
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba(15, 118, 110, 0.12);
+    }
+    footer {
+      margin-top: 1.25rem;
+      color: var(--muted);
+      font: 0.85rem/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Prem Mallappa Resume</h1>
+    <p>Generated from the private resume source repository by GitHub Actions. This public Pages site contains the latest PDF outputs and the last 7 builds.</p>
+    <nav aria-label="Latest resume downloads">
+      <a href="prem-mallappa-cv.pdf">
+        <strong>Latest Condensed CV</strong>
+        <span>Two-page PDF</span>
+      </a>
+      <a href="prem-mallappa-vita.pdf">
+        <strong>Latest Full Vita</strong>
+        <span>Complete PDF</span>
+      </a>
+    </nav>
+    <h2>Recent Builds</h2>
+    <ul>
+      <li>
+        <a href="builds/000035-4a02964/prem-mallappa-vita.pdf">
+          <strong>000035-4a02964</strong>
+          <span>Full vita PDF</span>
+        </a>
+      </li>
+    </ul>
+    <footer>Latest build 2026-05-13 14:54 UTC from 4a02964. Older published builds are pruned after 7 entries.</footer>
+  </main>
+</body>
+</html>
