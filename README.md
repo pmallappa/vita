@@ -56,7 +56,7 @@ GitHub Actions automatically builds and publishes the resume PDFs:
 - **Monthly** on the 1st day of the month at 9 AM UTC
 - **Manually** via the Actions tab
 
-The workflow builds `make cv` and `make vita`, stages only the generated PDFs plus a small `index.html`, and publishes that static payload to the `gh-pages` branch. The latest PDFs are copied to the site root, each run is archived under `builds/<run>-<sha>/`, and older published builds are pruned after the most recent 7 entries. Matching `resume-pdfs-*` workflow artifacts are also pruned after the most recent 7 entries. Keep `main` private and configure GitHub Pages to publish from `gh-pages` at the repository root.
+The workflow builds `make cv` and `make vita`, stages only the generated PDFs plus a small `index.html`, and publishes that static payload to the `gh-pages` branch. The latest PDFs are copied to the site root, each run is archived under `builds/<run>-<sha>/`, and older published builds are pruned after the most recent 7 entries. Matching `resume-pdfs-*` workflow artifacts are also pruned after the most recent 7 entries, and workflow run history is pruned after the most recent 10 runs. Keep `main` private and configure GitHub Pages to publish from `gh-pages` at the repository root.
 
 ### GitHub Repository Settings
 

@@ -264,3 +264,28 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Delete older workflow runs
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const keep = 10;
+            const workflowId = 'build-resume.yml';
+            const { owner, repo } = context.repo;
+
+            const runs = await github.paginate(
+              github.rest.actions.listWorkflowRuns,
+              { owner, repo, workflow_id: workflowId, per_page: 100 },
+            );
+
+            const staleRuns = runs
+              .sort((left, right) => new Date(right.created_at) - new Date(left.created_at))
+              .slice(keep);
+
+            for (const run of staleRuns) {
+              await github.rest.actions.deleteWorkflowRun({
+                owner,
+                repo,
+                run_id: run.id,
+              });
+            }

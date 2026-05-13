@@ -33,6 +33,7 @@
 - `.github/workflows/build-resume.yml` builds the condensed CV and full vita in CI, uploads them as workflow artifacts, and publishes only the generated PDFs plus a small `index.html` to the `gh-pages` branch.
 - The Pages branch keeps the latest PDFs at the site root, archives runs under `builds/<run>-<sha>/`, and prunes older published builds after the most recent 7 entries.
 - Matching `resume-pdfs-*` workflow artifacts are also pruned after the most recent 7 entries.
+- Workflow run history for `.github/workflows/build-resume.yml` is pruned after the most recent 10 runs.
 - The workflow runs on every push to `main`, monthly on the 1st day at 9 AM UTC, and manually from the Actions tab.
 - The repository source should stay private on `main`; GitHub Pages should be configured to deploy from the `gh-pages` branch at `/ (root)`.
 
