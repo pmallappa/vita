@@ -7,8 +7,9 @@
 *.fdb_latexmk
 *.fls
 
-# Output directory - all temporary build files
+# Output directories - all generated build files
 output/
+outputs/
 
 # Org build artifacts
 org/*.tex
