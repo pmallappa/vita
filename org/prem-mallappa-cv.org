@@ -1,4 +1,3 @@
-#+TITLE: Prem Mallappa - CV (2-page)
 #+AUTHOR: Prem Mallappa
 #+EMAIL: prem.mallappa@gmail.com
 

@@ -3,7 +3,7 @@
 :CV_ENV: opensourceentry
 :PROJECT: QEMU
 :DATE: 2014-2016
-:URL: https://www.qemu.org/
+:URL: https://lists.gnu.org/archive/html/qemu-devel/2016-08/msg03531.html
 :END:
 
 - SMMUv3 (IOMMU) emulation support for ARMv8
@@ -11,18 +11,27 @@
 - Added support for Stage1, Stage2, and nested virtualization
 - Implemented command queue processing and page table walk
 
-* Linux Kernel
+* Linux Kernel (IOMMU/SMMUv3)
 :PROPERTIES:
 :CV_ENV: opensourceentry
 :PROJECT: Linux Kernel
-:DATE: 2011-2016
-:URL: https://kernel.org/
+:DATE: 2015-2016
 :END:
 
-- MIPS Kexec/Kdump port and IOMMU subsystem
+- Contributed to IOMMU/SMMUv3 driver development ([[https://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/393582.html][Fix GERRORN register write]]) ([[https://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/394442.html][Fix STE.VALID check in Vulcan]]) ([[https://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/394443.html][Workaround for STE.VALID]])
+- Collaborated with ARM on upstream SMMUv3 driver implementation
+
+* Linux Kernel (Kexec/Kdump)
+:PROPERTIES:
+:CV_ENV: opensourceentry
+:PROJECT: Linux Kernel
+:DATE: 2011-2013
+:URL: https://linux-mips.org/archives/linux-mips/2013-08/msg00290.html
+:END:
+
+- MIPS Kexec/Kdump port for Cavium Octeon platforms
 - Developed MIPS64 port of Kexec and Kdump (merged upstream)
 - Fixed critical bugs in KEXEC for Cavium Octeon platforms
-- Contributed to IOMMU/SMMUv3 driver development
 
 * GLIBC
 :PROPERTIES:

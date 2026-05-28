@@ -1,22 +1,10 @@
-.PHONY: all resume coverletter vita cv check-dates clean help
+.PHONY: all vita cv check-dates clean help
 
 # Default target - build all documents
-all: cv vita coverletter
+all: cv vita
 
 outputs:
 	@mkdir -p outputs
-
-# Build resume
-resume: outputs
-	@echo "Building resume..."
-	@python3 scripts/generate.py --type resume --output outputs/resume.tex
-	@cd outputs && TEXMFHOME=$(CURDIR)/texmf lualatex resume.tex
-	@cd outputs && TEXMFHOME=$(CURDIR)/texmf lualatex resume.tex
-	@echo "Resume built: outputs/resume.pdf"
-
-# Build cover letter (dummy target for now)
-coverletter:
-	@echo "Cover letter target - to be implemented later"
 
 # Build vita from org-mode file
 vita: outputs
@@ -58,8 +46,6 @@ clean:
 # Show help
 help:
 	@echo "Available targets:"
-	@echo "  make resume       - Build standard resume (Python-based)"
-	@echo "  make coverletter  - Build cover letter"
 	@echo "  make vita         - Build full vita from org-mode file"
 	@echo "  make cv           - Build 2-page CV from org-mode file"
 	@echo "  make check-dates  - Validate Org experience/project date consistency"
