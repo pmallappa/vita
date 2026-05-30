@@ -159,10 +159,12 @@
 % Usage: \cvsubsection{<subsection-title>}
 \newcommand{\cvsubsection}[1]{%
   \needspace{2\baselineskip}
-  \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
-  \subsectionstyle{#1}
-  \phantomsection
+  \vspace{2mm}
+  \noindent\makebox[0.5\textwidth][l]{%
+    \subsectionstyle{\@sectioncolor{#1}}%
+    \phantomsection
+    \color{gray}\vhrulefill{0.9pt}%
+  }%
 }
 
 % Define a role title for CV (used in Projects section)

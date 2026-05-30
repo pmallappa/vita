@@ -11,7 +11,7 @@
 % Open source project header - displays project name with dates and URL
 % Usage: \opensourceproject{<project name>}{<start year>}{<end year>}{<url>}
 \newcommand*{\opensourceproject}[4]{%
-  \vspace{-1.4mm}
+  \vspace{\acvOSBeforeProjectSkip}
   \needspace{2\baselineskip}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
@@ -23,7 +23,7 @@
     \fi
     & \opensourceformatdates{#2}{#3}
   \end{tabular*}%
-  \par\vspace{0.2mm}
+  \par\vspace{\acvOSAfterHeaderSkip}
 }
 
 % Helper macro to format open source date ranges with spaced hyphen
@@ -50,7 +50,7 @@
 
 % Open source content environment - matches experience font/spacing
 \newenvironment{opensourcecontent}{%
-  \vspace{-1.3mm}%
+  \vspace{\acvOSContentTopSkip}%
   \begingroup
   \fontsize{8.8pt}{1.08em}\bodyfontlight\color{text}%
   \setlength{\parindent}{0pt}%
@@ -59,7 +59,7 @@
 }{%
   \par
   \endgroup
-  \vspace{0.1mm}%
+  \vspace{\acvOSAfterContentSkip}%
 }
 
 \endinput

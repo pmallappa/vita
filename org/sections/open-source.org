@@ -18,10 +18,11 @@
 :DATE: 2015-2016
 :END:
 
-#+latex: \noindent\begin{tabular*}{\textwidth}{@{}p{0.48\textwidth}@{\hfill}p{0.48\textwidth}@{}}
-#+latex: \textbullet~Contributed to upstream SMMUv3 driver & \textbullet~\href{https://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/393582.html}{Fix GERRORN register write} \\
-#+latex: \textbullet~\href{https://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/394442.html}{Fix STE.VALID check in Vulcan} & \textbullet~\href{https://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/394443.html}{Workaround for STE.VALID} \\
-#+latex: \end{tabular*}
+Contributed to upstream SMMUv3 driver for Broadcom Vulcan
+
+- [[https://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/393582.html][Fix GERRORN register write]]
+- [[https://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/394442.html][Fix STE.VALID check in Vulcan]]
+- [[https://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/394443.html][Workaround for STE.VALID]]
 
 * Linux Kernel (Kexec/Kdump)
 :PROPERTIES:
@@ -45,7 +46,7 @@
 
 - Performance optimizations for AMD processors
 - Fixed memcpy behaviour on AMD processors
-- Optimized string functions for x86\_64 architecture
+- Optimized string functions for x86-64 architecture
 - Performance improvements for memory operations
 
 * AMD LibM
