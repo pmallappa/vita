@@ -26,5 +26,6 @@
 * Experience
 :PROPERTIES:
 :CV_ENV: cventries
+:PAGEBREAK: sidebar
 :END:
 #+INCLUDE: "sections/experience.org"

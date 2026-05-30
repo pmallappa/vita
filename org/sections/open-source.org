@@ -18,8 +18,10 @@
 :DATE: 2015-2016
 :END:
 
-- Contributed to IOMMU/SMMUv3 driver development ([[https://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/393582.html][Fix GERRORN register write]]) ([[https://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/394442.html][Fix STE.VALID check in Vulcan]]) ([[https://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/394443.html][Workaround for STE.VALID]])
-- Collaborated with ARM on upstream SMMUv3 driver implementation
+#+latex: \noindent\begin{tabular*}{\textwidth}{@{}p{0.48\textwidth}@{\hfill}p{0.48\textwidth}@{}}
+#+latex: \textbullet~Contributed to upstream SMMUv3 driver & \textbullet~\href{https://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/393582.html}{Fix GERRORN register write} \\
+#+latex: \textbullet~\href{https://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/394442.html}{Fix STE.VALID check in Vulcan} & \textbullet~\href{https://lists.infradead.org/pipermail/linux-arm-kernel/2015-December/394443.html}{Workaround for STE.VALID} \\
+#+latex: \end{tabular*}
 
 * Linux Kernel (Kexec/Kdump)
 :PROPERTIES:

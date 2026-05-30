@@ -17,6 +17,7 @@
   \setlength{\extrarowheight}{0pt}
   \noindent\begin{tabular*}{\dimexpr\textwidth+\marginparsep+\marginparwidth\relax}{@{}L{\textwidth}@{\hspace{\marginparsep}}L{\marginparwidth}@{}}
     \exptitlestyle{#1} &
+    \smash{\raisebox{0pt}[0pt][0pt]{%
     \ifx&#4&%
       \companydatestyle{#2 -- #3}%
     \else
@@ -24,7 +25,7 @@
         \companydatestyle{#2 -- #3}\\[0.6pt]
         \explocationstyle{#4}
       \end{tabular}%
-    \fi \\[-6.2mm]
+    \fi}} \\[-5mm]
   \end{tabular*}%
 }
 
