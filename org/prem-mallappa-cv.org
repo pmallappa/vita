@@ -29,3 +29,9 @@
 :PAGEBREAK: sidebar
 :END:
 #+INCLUDE: "sections/experience.org"
+
+* Personal Projects
+:PROPERTIES:
+:CV_ENV: cventries
+:END:
+#+INCLUDE: "sections/personal-projects.org"
