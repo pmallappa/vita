@@ -1,33 +1,29 @@
-* helm
+* HELM — Heterogeneous Execution and Latency Model
 :PROPERTIES:
 :CV_ENV: cvproject
-:PROJECT: helm
-:DATE: TODO -- TODO
-:LANGUAGES: TODO
-:TOOLS: TODO
-:TECH: TODO
-:URL: TODO
+:PROJECT: HELM (helm-ng)
+:DATE: Sep. 2026 -- Present
+:LANGUAGES: Rust, Python, C
+:TOOLS: Cargo, PyO3, mdBook, Clippy, Git
+:TECH: AArch64, RISC-V RV64GC, Syscall Emulation, Full-System Simulation, Cycle-Accurate Timing, Device Modeling
 :END:
 
-# TODO: fill in the two lines below. Keep the `Synopsis ::` / `Details ::`
-# description-list form used in projects.org; the exporter turns them into the
-# project body, and the properties above become the right-margin note.
+# NOTE: repo is private (github.com/dev-pmallapp/helm), so no :URL: is set --
+# a link would be a dead end for a reader. Add one if it goes public.
 
-- Synopsis :: TODO one-paragraph summary of what helm is and why it exists.
-- Details :: TODO implementation detail, notable design decisions, and outcomes.
+- Synopsis :: Research-grade hardware simulator targeting the same problem space as *gem5*, *QEMU*, and *Simics*, but designed from first principles for clarity, correctness, and composability. Runs AArch64 and RISC-V RV64GC binaries in *syscall-emulation* or *full-system* mode with selectable timing fidelity, built as a Rust core behind a Python-first control plane.
+- Details :: Architected a *27-crate Rust workspace* spanning framework, runtime, hardware, and debug layers. Designed the engine so that *timing is the sole generic parameter*, monomorphized and inlined into the engine rather than dispatched through a vtable, while ISA and execution mode are *enum-dispatched once per Python call*, costing nothing per instruction. Implemented three timing models spanning functional (IPC=1), *interval estimation over a two-level L1D/L2 cache hierarchy*, and cycle-accurate. Built a *Device* trait and bus tree with dynamic device loading, where platform code owns base addresses and IRQ wiring instead of the device. Exposed a *gem5-style Python configuration layer via PyO3* as the first-class interface for configure, start, stop, query, and debug. Enforced *determinism by default*, admitting no wall-clock reads and no background threads in the hot loop.
 
-* zclip
+* zclip — Zellij Yank-Buffer Plugin
 :PROPERTIES:
 :CV_ENV: cvproject
 :PROJECT: zclip
-:DATE: TODO -- TODO
-:LANGUAGES: TODO
-:TOOLS: TODO
-:TECH: TODO
-:URL: TODO
+:DATE: Sep. 2026 -- Present
+:LANGUAGES: Rust, Python, Nix
+:TOOLS: Cargo, Just, Nix Flakes, GitHub Actions, Git
+:TECH: WebAssembly, wasm32-wasip1, Zellij Plugin API, Terminal Scrollback, KDL Configuration
+:URL: https://github.com/dev-pmallapp/zclip
 :END:
 
-# TODO: same as above — replace the placeholders with real content.
-
-- Synopsis :: TODO one-paragraph summary of what zclip is and why it exists.
-- Details :: TODO implementation detail, notable design decisions, and outcomes.
+- Synopsis :: Zellij plugin bringing tmux-style *paste-buffer* semantics to a terminal multiplexer that lacked them, compiled to *WebAssembly* against the *zellij-tile* plugin API. Alpha software with the core yank, paste, and copy-mode workflow working end to end.
+- Details :: Implemented a *paste-buffer ring* with bounded eviction alongside *named, pinned buffers* that are never evicted, mirroring tmux semantics. Built a *copy mode* over terminal scrollback supporting *vi and emacs keymap presets* with per-action key overrides, cursor motions, and char, line, and block selection rendered with reverse-video highlighting. Developed a *pipe interface* (yank, paste, copy mode, cancel, list) drivable from keybindings or *zellij pipe*, plus headless background loading so paste targets whichever pane currently holds focus. Added *opt-in per-session persistence* of the buffer ring surviving plugin reloads and detach/attach, with the privacy tradeoffs documented. Packaged via a *Nix flake* and backed by CI running fmt, clippy, tests, and the wasm build, with a tag-triggered release workflow.
