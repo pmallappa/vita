@@ -36,6 +36,12 @@
 :END:
 #+INCLUDE: "sections/projects.org"
 
+* Personal Projects
+:PROPERTIES:
+:CV_ENV: cventries
+:END:
+#+INCLUDE: "sections/personal-projects.org"
+
 * Awards
 :PROPERTIES:
 :CV_ENV: cvhonors

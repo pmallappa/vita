@@ -1,0 +1,33 @@
+* helm
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: helm
+:DATE: TODO -- TODO
+:LANGUAGES: TODO
+:TOOLS: TODO
+:TECH: TODO
+:URL: TODO
+:END:
+
+# TODO: fill in the two lines below. Keep the `Synopsis ::` / `Details ::`
+# description-list form used in projects.org; the exporter turns them into the
+# project body, and the properties above become the right-margin note.
+
+- Synopsis :: TODO one-paragraph summary of what helm is and why it exists.
+- Details :: TODO implementation detail, notable design decisions, and outcomes.
+
+* zclip
+:PROPERTIES:
+:CV_ENV: cvproject
+:PROJECT: zclip
+:DATE: TODO -- TODO
+:LANGUAGES: TODO
+:TOOLS: TODO
+:TECH: TODO
+:URL: TODO
+:END:
+
+# TODO: same as above — replace the placeholders with real content.
+
+- Synopsis :: TODO one-paragraph summary of what zclip is and why it exists.
+- Details :: TODO implementation detail, notable design decisions, and outcomes.
