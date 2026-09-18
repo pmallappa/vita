@@ -6,10 +6,8 @@
 :LANGUAGES: Rust, Python, C
 :TOOLS: Cargo, PyO3, mdBook, Clippy, Git
 :TECH: AArch64, RISC-V RV64GC, Syscall Emulation, Full-System Simulation, Cycle-Accurate Timing, Device Modeling
+:URL: https://github.com/dev-pmallapp/helm
 :END:
-
-# NOTE: repo is private (github.com/dev-pmallapp/helm), so no :URL: is set --
-# a link would be a dead end for a reader. Add one if it goes public.
 
 - Synopsis :: Research-grade hardware simulator targeting the same problem space as *gem5*, *QEMU*, and *Simics*, but designed from first principles for clarity, correctness, and composability. Runs AArch64 and RISC-V RV64GC binaries in *syscall-emulation* or *full-system* mode with selectable timing fidelity, built as a Rust core behind a Python-first control plane.
 - Details :: Architected a *27-crate Rust workspace* spanning framework, runtime, hardware, and debug layers. Designed the engine so that *timing is the sole generic parameter*, monomorphized and inlined into the engine rather than dispatched through a vtable, while ISA and execution mode are *enum-dispatched once per Python call*, costing nothing per instruction. Implemented three timing models spanning functional (IPC=1), *interval estimation over a two-level L1D/L2 cache hierarchy*, and cycle-accurate. Built a *Device* trait and bus tree with dynamic device loading, where platform code owns base addresses and IRQ wiring instead of the device. Exposed a *gem5-style Python configuration layer via PyO3* as the first-class interface for configure, start, stop, query, and debug. Enforced *determinism by default*, admitting no wall-clock reads and no background threads in the hot loop.
